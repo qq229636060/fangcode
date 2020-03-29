@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/newhouse/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color":"#666",
+    "selectedColor":"#27CDA1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home-g.png",
+        "text": "首页"
+        
+      },
+      {
+        "pagePath": "pages/newhouse/index",
+        "iconPath": "img/house.png",
+        "selectedIconPath": "img/house-g.png",
+        "text": "新房"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/user.png",
+        "selectedIconPath": "img/user-g.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
