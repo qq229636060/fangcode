@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="topso">
+    <view class="city"><view>福州</view><i></i></view>
+    <view class="soblock"><i></i>请输入楼盘名/小区等</view>
+  </view>
+  <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" indicator-dots="true" indicator-active-color="#fff">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item">
+               <image src="{{item.url}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="nav">
+    <view class="page-section">
+      <view class="page-section-spacing">
+          <view class="flex-wrp" style="flex-direction:row;">
+            <view class="flex-item">
+                <image src="../../img/n1.png"></image>
+                <view>新房</view>
+            </view>
+            <view class="flex-item">
+                <image src="../../img/n2.png"></image>
+                <view>楼市动态</view>
+            </view>
+            <view class="flex-item">
+                <image src="../../img/n3.png"></image>
+                <view>VR看房</view>
+            </view>
+            <view class="flex-item">
+                <image src="../../img/n4.png"></image>
+                <view>算房价</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="toplist">
+      <view class="hotname">推荐楼盘</view>
+      <view class="lplist">
+          <view class="lpbox flex-wrp">
+            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"></image>
+            <view class="lpmsg">
+                <view class="lpname"><image src="../../img/i1.png"></image>正荣宝嘉江滨府</view>
+                <view class="lp_txt">洛阳区 阳江新城 | 89-140m</view>
+                <view class="lp_money"><i>10500</i>元/㎡</view>
+                <view class="lp_tag"><i>住宅</i></view>
+            </view>
+          </view>
+      </view>
+    </view>
+</view>

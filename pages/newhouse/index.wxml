@@ -1,0 +1,8 @@
+<!--pages/newhouse/index.wxml-->
+<view class="container">
+ <view class="topso">
+    <view class="soblock"><i></i>请输入楼盘名/小区等</view>
+    <view class="findmap"></view>
+  </view>
+  <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' dropDownMenuSourceData='{{data2}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}' bind:selectedItem='selectedItem' />
+</view>

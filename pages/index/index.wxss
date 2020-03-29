@@ -1,0 +1,28 @@
+/**index.wxss**/
+.topso{display: flex; display: -webkit-flex; padding: 0 30rpx; align-items:center}
+.city{font-size: 30rpx;display: flex;align-items:center}
+.city i{ width: 13rpx; height: 8rpx; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAHCAYAAADTcMcaAAAA5ElEQVQoU22QsSvFcRTFP8cjm9Fssr763TdaKAOTUhbFaGSyPKM/AKWUkcWiLEYGZXr3+x/IzmaQUr+jr94TL3e5dc751D1XEWHbj5KWM/OdfyYipmzfSFoBntQ0zbOkOeAWWMvMzzFOEXEBbNp+adt2Qd1ud77T6TxImpV0ORgMtgCPwIg4AnaBN2AxM4uq2TRNSLoDZoDjzNwb6n1Jh8AHsJqZ91X/hoaBpXqipGnbB8CrpDOgtb1RSrkeZX+gKvR6vXXbV8BEDddte6eUcv675x+oGhGxDZzanpS0n5kn4w/9AkPsVjIc7kUaAAAAAElFTkSuQmCC) no-repeat 0 0; background-size: 100%; display: block; margin-left: 15rpx;}
+.soblock{ width: 540rpx; height: 65rpx; border-radius: 50rpx; border: solid 2rpx #EBEBEB;margin-left: 50rpx; display: flex; align-items: center; font-size: 26rpx; color: #aaa;}
+.soblock i { width: 27rpx; height: 28rpx; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAC4UlEQVRIS72WXYiMURjH/8+Z2b2Qqx3ZyZULuaB2KaKUlHyUC5RW5Ks27XnemQkruZA2JGpjXcy879ndtlZI9mZDokQhiZWsuCAXriRsbvZq953z6Ewz0+ya2S9e5+bU+Xh+5znPJ6HG8H2/iYjaiWgbgC8i8hbA9+LxhUS0AsBiEbknIpc9z3tXS1ZpnSYfyGazCaXUZSLaBKCzvr7+Vmtr69dqgvr6+haNjY3tBnBCRB5aa9vT6fRILegEWDabXR6Px28DGMzn82dSqdTodK91+7lcbn4sFusAsDMMw+3pdPpDtXtlWBH0CMAxrfXNmUAmnzHG7AHQFYbhxmrAAsx9XTwefwng9FxBJXAReC4MwzWTv7QA833/qjO+53kn5qJRFQ07rbULPc87WLlHRa97YK1dOlMbTfcgZ0Ol1CcR2VrppRQEQT+AYWbumk7IbPaDIDgGoJmZD5Vd3xjzo66urrmWe88GUHnWhcX4+PhwQ0NDsqWlJe/2nGZDzLx6rkKnumeMGRKRo8z8vATrZebDUcCCIOgF8IqZ3VzQ7Dwzn4oIdp6IRrXWFyKHGWM6ReQbM1/6H994HcB9Zr5RgDkjaq0jcZAgCF4TUUZr/aIEi8T1c7lcUin1PpFINFa6fpRBvZKZD5SDOop01d3dPc9a+xnAZmZ+X4aVErFS6rvW+l8l4ksi0sjM+yYk4ghKzC4RuSgiqz3P+/UHrAh0VfqviqeTY4x5DOCZ1tpV7gmjaltgrR0UkRm3BUUbHSeiOy5jWGufEpHWWt+tqllpcTYNT7HCHxSRIwCeuNl9nTFmleu6iGhHKcYKcVYrJ07RysUBLHCtnIgscc2RtTaXSqWGKmUFQbAFQL+IbPA87+OUsNLFgYGB2MjIyFoAy4hogYi42vRTKeU6qDdtbW3jtR7c09OzP5/Pnw3DcF0mk/laU7N/VQV83z9JRHuVUusjhxU99AqApv8C6+joUMlk8tpvASJ29hrO6e8AAAAASUVORK5CYII=) no-repeat 0 0;
+  display: block; background-size: 100%;margin-left:30rpx;margin-right: 20rpx; }
+  .page-section{width: 690rpx; height: 190rpx; margin:30rpx auto 0 30rpx;}
+  .page-section swiper{width: 690rpx; height: 190rpx;}
+  .swiper-item{ width: 690rpx; height: 190rpx; overflow: hidden; }
+  .swiper-item image{ width: 100%; height: 100%;border-radius: 30rpx;}
+  .page-section-spacing .flex-item{ width: 100rpx; flex: 1; text-align: center;}
+  .page-section-spacing .flex-item view{ font-size: 26rpx; color: #666;}
+  .page-section-spacing .flex-item image{ width: 97rpx; height: 98rpx;}
+  .flex-wrp {display: flex; }
+  .toplist{margin-top:20rpx;}
+  .hotname{ font-size: 38rpx; margin-left: 30rpx;}
+  /*列表*/
+  .lpbox{ border-bottom: solid 1px #eee; padding: 40rpx 0;}
+  .lpbox image{ width: 245rpx; height: 183rpx; border-radius: 10rpx; margin:0 20rpx 0 30rpx;}
+  .lpmsg view{ margin-bottom: 5rpx;}
+  .lpmsg view:last-child{margin-bottom: 0;}
+  .lpmsg .lpname{font-size: 34rpx; display: flex; align-items: center;}
+  .lpmsg .lpname image{ width: 63rpx; height: 31rpx;margin:0 10rpx 0 0}
+  .lpmsg .lp_txt{ font-size: 24rpx; color:#333 ;}
+  .lpmsg .lp_money{ font-size: 24rpx; color: #FF3831; margin: 0;}
+  .lpmsg .lp_money i{font-size: 36rpx;}
+  .lpmsg .lp_tag i{ font-size: 22rpx; color:#999; border:solid 1px #CECECE; padding: 5rpx 8rpx; display: inline-block;}
