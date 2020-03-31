@@ -73,23 +73,32 @@ Page({
         title: '出售'
       }
     ],
-    data4: [{
+    data4: [
+      {
       id: 1,
       title: '面积',
-      area:[{areaid:1,areaname:'60以下'},{areaid:2,areaname:'60-80'}]
+      selectbox:[
+        {selectid:1,selectname:'60以下'},
+        {selectid:2,selectname:'60-80'},
+        {selectid:3,selectname:'60以下'},
+        {selectid:4,selectname:'60-80'},
+        {selectid:5,selectname:'60以下'},
+        {selectid:6,selectname:'60-80'},
+        {selectid:7,selectname:'60以下'},
+        {selectid:8,selectname:'60-80'}]
     }, {
       id: 2,
       title: '物业',
-      housetype:[{houseid:1,housetype:'住宅'},{houseid:2,housetype:'别墅'}]
+      selectbox:[{selectid:1,selectname:'住宅'},{selectid:2,selectname:'别墅'}]
     }, {
       id: 3,
       title: '销售状态',
-      buytype:[{buyid:1,buyname:'在售'},{buyid:2,buyname:'待售'}]
+      selectbox:[{selectid:1,selectname:'在售'},{selectid:2,selectname:'待售'}]
     },
     {
       id: 4,
       title: '装修',
-      renovation:[{renovationid:1,renovation:'毛胚'},{renovationid:2,renovation:'精装'}]
+      selectbox:[{selectid:1,selectname:'毛胚'},{selectid:2,selectname:'精装'}]
     }
   ],
   },

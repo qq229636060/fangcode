@@ -48,14 +48,39 @@
     </view>
   </view>
 </view>
-<view class="container container_hd {{filter_open ? 'show' : 'disappear'}} " bindtap="close">
+<view class="container container_hd {{filter_open ? 'show' : 'disappear'}} ">
   <view class='z-height'>
     <view>
-      <block wx:for="{{dropDownMenuFilterData}}" wx:key="unique">
-        <view class="sortitem {{selected_filter_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' catchtap='selectFilterItem'> {{item.title}}
-            <view wx:for="{{item.area}}" wx:for-item="list">{{list.areaname}}</view>
+      <block>
+        <view class="sortitem" catchtap='selectFilterItem'> 
+            <view class="h2">{{dropDownMenuFilterData[0].title}}</view> 
+            <view class="zll">
+              <view wx:for="{{dropDownMenuFilterData[0].selectbox}}" wx:for-item="list" class="moreselect {{selec_diy1 == list.selectid ? 'cur' : ''}}" data-model='{{list.selectid}}' catchtap="moreselect('1')">{{list.selectname}}</view>
+            </view>
+        </view>
+        <view class="sortitem" catchtap='selectFilterItem'> 
+            <view class="h2">{{dropDownMenuFilterData[1].title}}</view> 
+            <view class="zll">
+              <view wx:for="{{dropDownMenuFilterData[1].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' >{{list.selectname}}</view>
+            </view>
+        </view>
+        <view class="sortitem" catchtap='selectFilterItem'> 
+            <view class="h2">{{dropDownMenuFilterData[2].title}}</view> 
+            <view class="zll">
+              <view wx:for="{{dropDownMenuFilterData[2].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' >{{list.selectname}}</view>
+            </view>
+        </view>
+        <view class="sortitem" catchtap='selectFilterItem'> 
+            <view class="h2">{{dropDownMenuFilterData[3].title}}</view> 
+            <view class="zll">
+              <view wx:for="{{dropDownMenuFilterData[3].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' >{{list.selectname}}</view>
+            </view>
         </view>
       </block>
+      <view class="selectbtn">
+        <button size="default" bindtap="ag">重置</button>
+        <button type="primary" size="default">确定</button>
+      </view>
     </view>
   </view>
 </view>

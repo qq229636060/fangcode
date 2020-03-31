@@ -42,7 +42,11 @@ Component({
     selected_source_id: 0,
     selected_source_name: '',
     selected_filter_id: 0,
-    selected_filter_name: ''
+    selected_filter_name: '',
+    selec_diy1:"",
+    selec_diy2:"",
+    selec_diy3:"",
+    selec_diy4:""
   },
   methods: {
     close:function(e){
@@ -251,6 +255,12 @@ Component({
         })
       }
     },
+    ag:function(){
+
+    },
+    moreselect:function(){
+      
+    }
   },
   //组件生命周期函数，在组件实例进入页面节点树时执行
   attached: function() {
