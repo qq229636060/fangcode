@@ -78,27 +78,27 @@ Page({
       id: 1,
       title: '面积',
       selectbox:[
-        {selectid:1,selectname:'60以下'},
-        {selectid:2,selectname:'60-80'},
-        {selectid:3,selectname:'60以下'},
-        {selectid:4,selectname:'60-80'},
-        {selectid:5,selectname:'60以下'},
-        {selectid:6,selectname:'60-80'},
-        {selectid:7,selectname:'60以下'},
-        {selectid:8,selectname:'60-80'}]
+        {selectid:1,selectname:'60以下',is_select:false},
+        {selectid:2,selectname:'60-80',is_select:false},
+        {selectid:3,selectname:'60以下',is_select:false},
+        {selectid:4,selectname:'60-80',is_select:false},
+        {selectid:5,selectname:'60以下',is_select:false},
+        {selectid:6,selectname:'60-80',is_select:false},
+        {selectid:7,selectname:'60以下',is_select:false},
+        {selectid:8,selectname:'60-80',is_select:false}]
     }, {
       id: 2,
       title: '物业',
-      selectbox:[{selectid:1,selectname:'住宅'},{selectid:2,selectname:'别墅'}]
+      selectbox:[{selectid:1,selectname:'住宅',is_select:false},{selectid:2,selectname:'别墅',is_select:false}]
     }, {
       id: 3,
       title: '销售状态',
-      selectbox:[{selectid:1,selectname:'在售'},{selectid:2,selectname:'待售'}]
+      selectbox:[{selectid:1,selectname:'在售',is_select:false},{selectid:2,selectname:'待售',is_select:false}]
     },
     {
       id: 4,
       title: '装修',
-      selectbox:[{selectid:1,selectname:'毛胚'},{selectid:2,selectname:'精装'}]
+      selectbox:[{selectid:1,selectname:'毛胚',is_select:false},{selectid:2,selectname:'精装',is_select:false}]
     }
   ],
   },

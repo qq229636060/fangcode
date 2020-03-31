@@ -52,28 +52,28 @@
   <view class='z-height'>
     <view>
       <block>
-        <view class="sortitem" catchtap='selectFilterItem'> 
+        <view class="sortitem"> 
             <view class="h2">{{dropDownMenuFilterData[0].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[0].selectbox}}" wx:for-item="list" class="moreselect {{selec_diy1 == list.selectid ? 'cur' : ''}}" data-model='{{list.selectid}}' catchtap="moreselect('1')">{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[0].selectbox}}" wx:for-item="list" class="moreselect {{selec_diy1 == list.selectid ? 'cur' : ''}}" data-index='{{index}}' data-model='{{list.selectid}}' bindtap="moreselect" wx:key="d">{{list.selectname}}</view>
             </view>
         </view>
         <view class="sortitem" catchtap='selectFilterItem'> 
             <view class="h2">{{dropDownMenuFilterData[1].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[1].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' >{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[1].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' wx:key="c">{{list.selectname}}</view>
             </view>
         </view>
         <view class="sortitem" catchtap='selectFilterItem'> 
             <view class="h2">{{dropDownMenuFilterData[2].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[2].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' >{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[2].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' wx:key="b">{{list.selectname}}</view>
             </view>
         </view>
         <view class="sortitem" catchtap='selectFilterItem'> 
             <view class="h2">{{dropDownMenuFilterData[3].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[3].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' >{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[3].selectbox}}" wx:for-item="list" class="moreselect" data-model='{{list.selectid}}' wx:key="a">{{list.selectname}}</view>
             </view>
         </view>
       </block>
