@@ -260,8 +260,10 @@ Component({
     },
     moreselect:function(e){
       var index = e.currentTarget.dataset.index;
-      console.log(index)
-      console.log(this.data.dropDownMenuFilterData)
+      var bindex = e.currentTarget.dataset.bigindex;
+      console.log(index);
+      console.log(bindex);
+      console.log(this.data.dropDownMenuFilterData);
     }
   },
   //组件生命周期函数，在组件实例进入页面节点树时执行

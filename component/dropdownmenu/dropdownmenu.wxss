@@ -232,5 +232,6 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .moreselect{ width: 156rpx; height: 59rpx; background-color: #F6F6F6; border-radius: 10rpx; text-align: center; line-height: 59rpx; font-size: 24rpx; margin-right: 18rpx;margin-top:20rpx;}
+
 .zll{display: flex; display: -webkit-flex;flex-wrap:wrap}
 .selectbtn{display: flex; display: -webkit-flex;padding: 20rpx; border-top: solid 1px #eee;}
