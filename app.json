@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/newhouse/index"
+    "pages/newhouse/index",
+    "pages/use/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,7 +28,7 @@
         "text": "新房"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/use/index",
         "iconPath": "img/user.png",
         "selectedIconPath": "img/user-g.png",
         "text": "我的"

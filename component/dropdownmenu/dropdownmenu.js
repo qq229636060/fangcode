@@ -252,7 +252,15 @@ Component({
       }
     },
     ag:function(){
-
+      var now_dom = this.data.dropDownMenuFilterData;
+      now_dom.forEach(function(item,index){
+        item.selectbox.forEach(function(items,idx){
+          items.is_select = false 
+        })
+      })
+      this.setData({
+        dropDownMenuFilterData:now_dom
+      });
     },
     moreselect:function(e){
       var index = e.currentTarget.dataset.index;

@@ -78,7 +78,7 @@
         </view>
       </block>
       <view class="selectbtn">
-        <button size="default" bindtap="ag">重置</button>
+        <button size="default" catchtap="ag">重置</button>
         <button type="primary" size="default">确定</button>
       </view>
     </view>

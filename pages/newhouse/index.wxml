@@ -5,4 +5,15 @@
     <view class="findmap"></view>
   </view>
   <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' dropDownMenuSourceData='{{data2}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}' bind:selectedItem='selectedItem' />
+   <view class="lplist">
+          <view class="lpbox flex-wrp">
+            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"></image>
+            <view class="lpmsg">
+                <view class="lpname"><image src="../../img/i1.png"></image>正荣宝嘉江滨府</view>
+                <view class="lp_txt">洛阳区 阳江新城 | 89-140m</view>
+                <view class="lp_money"><i>10500</i>元/㎡</view>
+                <view class="lp_tag"><i>住宅</i></view>
+            </view>
+          </view>
+      </view>
 </view>

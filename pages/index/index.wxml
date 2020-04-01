@@ -42,7 +42,6 @@
     </view>
     <view class="toplist">
       <view class="hotname">推荐楼盘</view>
-      <button open-type="getUserInfo" bindgetuserinfo="test">454545</button>
       <view class="lplist">
           <view class="lpbox flex-wrp">
             <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"></image>
