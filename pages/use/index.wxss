@@ -1,0 +1,7 @@
+/* pages/use/index.wxss */
+page{background:rgba(248,248,248,1) ;}
+.usetop{display: flex; display: -webkit-flex; background: #fff; padding: 40rpx; align-items: center;}
+.useface{ width: 124rpx; height: 124rpx; border-radius: 50%;}
+.usetxt{margin-left: 20rpx;}
+.usetxt text{display: block;margin-bottom: 10rpx;}
+.usetxt text:last-child{color: #999; font-size: 26rpx;}

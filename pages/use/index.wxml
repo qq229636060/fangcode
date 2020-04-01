@@ -1,0 +1,13 @@
+<!--pages/use/index.wxml-->
+<view class="container">
+    <view class="usetop">
+      <image src="../../img/useface.png" class="useface"></image>
+      <view wx:if='{{!isLogin}}' class="usetxt">
+        <button open-type="getUserInfo">登陆</button>
+      </view>
+      <view class="usetxt" wx:else>
+        <text>Sammi</text>
+        <text>1860****023</text>
+      </view>
+    </view>
+</view>
