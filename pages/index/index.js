@@ -24,6 +24,9 @@ Page({
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
   },
+  test(e){
+    console.log(e)
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       console.log(app.globalData)
