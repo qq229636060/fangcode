@@ -3,11 +3,25 @@
     <view class="usetop">
       <image src="../../img/useface.png" class="useface"></image>
       <view wx:if='{{!isLogin}}' class="usetxt">
-        <button open-type="getUserInfo">登陆</button>
+        <button open-type="getUserInfo" class="nonebtn">点击登录</button>
       </view>
       <view class="usetxt" wx:else>
         <text>Sammi</text>
         <text>1860****023</text>
       </view>
     </view>
+   <mp-cells class="mt30">
+            <mp-cell value="我的关注" hover link>
+                <image slot="icon" src="../../img/u1.png" class="useicon"></image>
+            </mp-cell>
+            <mp-cell value="历史记录" hover link>
+                <image slot="icon" src="../../img/u2.png" class="useicon"></image>
+            </mp-cell>
+            <mp-cell value="关注公众号" hover link>
+                <image slot="icon" src="../../img/u3.png" class="useicon"></image>
+            </mp-cell>
+            <mp-cell value="客服电话" footer="400-1234-5678" hover link>
+                <image slot="icon" src="../../img/u4.png" class="useicon"></image>
+            </mp-cell>
+  </mp-cells>
 </view>
