@@ -19,14 +19,6 @@ Page({
     interval:3000,
     list:[]
   },
-  getPhoneNumber (e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
-  },
-  test(e){
-    console.log(e)
-  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       console.log(app.globalData)

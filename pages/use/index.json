@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+      "mp-dialog": "/path/components/dialog/dialog"
+  }
 }
