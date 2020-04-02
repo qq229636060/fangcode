@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/newhouse/index",
-    "pages/use/index"
+    "pages/use/index",
+    "pages/newhouse/houseinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

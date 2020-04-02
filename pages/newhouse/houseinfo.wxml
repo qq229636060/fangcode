@@ -1,0 +1,18 @@
+<!--pages/newhouse/houseinfo.wxml-->
+<view class="container">
+    <view class="housepic">
+      <view class="picnumber">共100张</view>
+      <view class="page-section">
+      <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" 
+      duration="{{duration}}">
+        <block wx:key="*this" wx:for="{{background}}">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{item.url}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+        </view>
+    </view>
+</view>
