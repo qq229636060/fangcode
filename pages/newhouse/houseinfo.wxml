@@ -3,16 +3,29 @@
     <view class="housepic">
       <view class="picnumber">共100张</view>
       <view class="page-section">
-      <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" 
-      duration="{{duration}}">
-        <block wx:key="*this" wx:for="{{background}}">
-          <swiper-item>
-            <view class="swiper-item {{item}}">
-              <image src="{{item.url}}"></image>
-            </view>
-          </swiper-item>
-        </block>
-      </swiper>
+          <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" 
+          duration="{{duration}}">
+            <block wx:key="*this" wx:for="{{background}}">
+              <swiper-item>
+                <view class="swiper-item {{item}}">
+                  <image src="{{item.url}}"></image>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
         </view>
+    </view>
+    <view class="house_info_text">
+      <view class="housename">世茂云境<image src="../../img/i1.png" mode="widthFix"></image></view>
+      <view class="house_txt">售价：<view class="moneyred"><view>11000</view>/㎡</view></view>
+      <view class="house_txt">开盘：<text>时间待定</text></view>
+      <view class="house_txt">地址：<text class="adder">福州市仓山区盖山镇浦下村</text><image src="../../img/smap.png" class="smap"></image></view>
+      <view class="house_tag"><text>住宅</text></view>
+      <view class="jsq">房贷计算器</view>
+      <view class="morebtn">更多信息</view>
+      <view class="notice">
+        <text>降价通知</text>
+        <text>开盘通知</text>
+      </view>
     </view>
 </view>

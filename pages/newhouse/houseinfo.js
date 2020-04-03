@@ -8,11 +8,11 @@ Page({
     background:[
       {
         id:1,
-        url:'https://pic4.ajkimg.com/display/xinfang/22b9d897175ab9114f711f19e4334775/414x298x50c@2x.jpg?t=5'
+        url:'http://pic.ffw.com.cn/cell/pic/1311/20131121143148_0.jpg'
       },
       {
         id:2,
-        url:'https://pic4.ajkimg.com/display/xinfang/22b9d897175ab9114f711f19e4334775/414x298x50c@2x.jpg?t=5'
+        url:'http://pic.ffw.com.cn/cell/pic/1311/20131121143148_0.jpg'
       }
     ],//焦点图
     interval:3000,
