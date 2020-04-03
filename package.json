@@ -1,0 +1,22 @@
+{
+  "name": "fangcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qq229636060/fangcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qq229636060/fangcode/issues"
+  },
+  "homepage": "https://github.com/qq229636060/fangcode#readme",
+  "dependencies": {
+    "weui-miniprogram": "^0.2.2"
+  }
+}
