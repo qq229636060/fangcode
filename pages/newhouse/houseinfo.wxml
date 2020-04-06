@@ -28,4 +28,67 @@
         <text>开盘通知</text>
       </view>
     </view>
+    <view class="tel">
+      <view class="tel_l">
+        <text>0595-8888888</text>
+        <text>联系时，请告知福房网上看到，谢谢！</text>
+      </view>
+      <view class="tel_r"><image src="../../img/tel.png"></image></view>
+    </view>
+    <view class="hx_pic mt50">
+      <view class="title_x">
+        <view class="h2">世茂云境户型(3)</view>
+        <view class="more">查看更多<view></view></view>
+      </view>
+      <view class="scroll_x_box">
+        <view class="hxpicbox">
+            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
+            <view class="f26">3室2厅1卫 35m</view>
+        </view>
+         <view class="hxpicbox">
+            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
+            <view class="f26">3室2厅1卫 35m</view>
+        </view>
+         <view class="hxpicbox">
+            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
+            <view class="f26">3室2厅1卫 35m</view>
+        </view>
+         <view class="hxpicbox">
+            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
+            <view class="f26">3室2厅1卫 35m</view>
+        </view>
+      </view>
+    </view>
+    <view class="lpdt">
+       <view class="title_x mt50">
+        <view class="h2">楼盘动态</view>
+        <view class="more">查看更多<view></view></view>
+       </view>
+         <view class="lplist">
+          <view class="lpbox flex-wrp">
+            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"  class="dtpic"></image>
+            <view class="lpmsg">
+              <view class="h3">
+                放风单价超1万元/㎡！时隔9个月，新产品涨幅或超25%？！
+              </view>
+              <view class="times">
+                <image src="../../img/time.png" class="timeicon"></image>
+                2020.01.02 20:25:34
+              </view>
+            </view>
+          </view>
+      </view>
+    </view>
+    <view class="lp_yelp">
+      <view class="title_x mt50">
+        <view class="h2">楼盘点评(100)</view>
+        <view class="more">查看更多<view></view></view>
+       </view>
+       <view class="dp_list">
+        <view class="dp_box">
+          <view class="dp_box_l"><image src="../../img/useface.png"></image></view>
+          <view class="dp_box_r"></view>
+        </view>
+       </view>
+    </view>
 </view>
