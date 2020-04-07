@@ -59,8 +59,8 @@
         </view>
       </view>
     </view>
-    <view class="lpdt">
-       <view class="title_x mt50">
+    <view class="lpdt mt50">
+       <view class="title_x">
         <view class="h2">楼盘动态</view>
         <view class="more">查看更多<view></view></view>
        </view>
@@ -79,16 +79,55 @@
           </view>
       </view>
     </view>
-    <view class="lp_yelp">
-      <view class="title_x mt50">
+    <view class="lp_yelp mt50">
+      <view class="title_x">
         <view class="h2">楼盘点评(100)</view>
         <view class="more">查看更多<view></view></view>
        </view>
        <view class="dp_list">
         <view class="dp_box">
           <view class="dp_box_l"><image src="../../img/useface.png"></image></view>
-          <view class="dp_box_r"></view>
+          <view class="dp_box_r">
+            <view class="use_name">我是用户名人…</view>
+            <view class="use_cont">我是一条超级长的评论，大家来看看这么长的评论是怎么显示的</view>
+            <view class="use_time">2019.03.18 21:42</view>
+          </view>
+        </view>
+        <view class="morebtn">
+          我要点评
         </view>
        </view>
+    </view>
+
+    <view class="lp_ask mt50">
+     <view class="title_x">
+        <view class="h2">楼盘问答</view>
+        <view class="more">查看更多<view></view></view>
+       </view>
+    </view>
+    <view class="lp_asklist">
+      <view class="lp_askbox">
+          <view class="ask1">
+            <i>问</i>
+            <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
+          </view>
+          <view class="ask2">
+            <i>答</i>
+            <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
+          </view>
+      </view>
+      <view class="lp_askbox">
+          <view class="ask1">
+            <i>问</i>
+            <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
+          </view>
+          <view class="ask2">
+            <i>答</i>
+            <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
+          </view>
+      </view>
+      <view class="morebtn">
+          我要咨询
+        </view>
     </view>
 </view>
