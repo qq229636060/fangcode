@@ -175,12 +175,11 @@
        <view class="f_btn">微聊</view>
        <view class="f_btn">致电售楼处</view>
     </view>
-    <mp-halfScreenDialog 
-      bindbuttontap="buttontap"
-      show="{{show}}"
-      maskClosable="{{false}}" 
-      title="{{tz_txt}}" 
-    >
-    <slot title="fdfdf">tteet</slot>
-    </mp-halfScreenDialog>
+   <van-action-sheet show="{{ show }}" z-index="9999" title="{{tz_txt}}" bind:close="close_bm">
+    <view class="telfrombox">
+        <input type="text" placeholder="请输入您的姓名"></input>
+        <input type="number" placeholder="请输入您的手机号"></input>
+    </view>
+    <view class="bm_btnz">确定</view>
+    </van-action-sheet>
 </view>

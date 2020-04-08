@@ -98,3 +98,8 @@ border-radius:5px;opacity:0.7; display: block; font-size: 24rpx; text-align: cen
  .lpmsg .lp_money{ font-size: 24rpx; color: #FF3831; margin: 0;}
  .lpmsg .lp_money i{font-size: 36rpx;}
  .lpmsg .lp_tag i{ font-size: 22rpx; color:#999; border:solid 1px #CECECE; padding: 5rpx 8rpx; display: inline-block;}
+
+ /*降价通知*/
+ .telfrombox{width: 680rpx; margin:0 auto;}
+ .telfrombox input{ width: 680rpx; height: 100rpx; border: solid 1px #E5E5E5; border-radius: 60rpx; margin-top: 40rpx; box-sizing: border-box; padding: 0 40rpx;}
+ .bm_btnz{ width: 100%; height: 100rpx; background: #27CDA1; color: #fff; text-align: center; line-height: 100rpx; font-size: 32rpx; margin:40rpx 0 0 0 ;}

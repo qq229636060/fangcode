@@ -80,5 +80,10 @@ Page({
     this.setData({
          show:true
     });
+  },
+  close_bm:function(){
+    this.setData({
+      show:false
+ });
   }
 })
