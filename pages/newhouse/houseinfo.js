@@ -16,7 +16,9 @@ Page({
       }
     ],//焦点图
     interval:3000,
-    duration:500
+    duration:500,
+    show:false,
+    tz_txt:"世茂云境的降价通知"//降价通知标题
   },
 
   /**
@@ -73,5 +75,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  notice:function(e){
+    this.setData({
+         show:true
+    });
   }
 })

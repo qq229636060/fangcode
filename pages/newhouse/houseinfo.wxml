@@ -1,5 +1,5 @@
 <!--pages/newhouse/houseinfo.wxml-->
-<view class="container">
+<view class="container pb120">
     <view class="housepic">
       <view class="picnumber">共100张</view>
       <view class="page-section">
@@ -24,7 +24,7 @@
       <view class="jsq">房贷计算器</view>
       <view class="morebtn">更多信息</view>
       <view class="notice">
-        <text>降价通知</text>
+        <text bindtap="notice">降价通知</text>
         <text>开盘通知</text>
       </view>
     </view>
@@ -100,34 +100,87 @@
     </view>
 
     <view class="lp_ask mt50">
-     <view class="title_x">
-        <view class="h2">楼盘问答</view>
-        <view class="more">查看更多<view></view></view>
-       </view>
+      <view class="title_x">
+          <view class="h2">楼盘问答</view>
+          <view class="more">查看更多<view></view></view>
+        </view>
+      </view>
+      <view class="lp_asklist">
+        <view class="lp_askbox">
+            <view class="ask1">
+              <i>问</i>
+              <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
+            </view>
+            <view class="ask2">
+              <i>答</i>
+              <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
+            </view>
+        </view>
+        <view class="lp_askbox">
+            <view class="ask1">
+              <i>问</i>
+              <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
+            </view>
+            <view class="ask2">
+              <i>答</i>
+              <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
+            </view>
+        </view>
+        <view class="morebtn">
+            我要咨询
+          </view>
     </view>
-    <view class="lp_asklist">
-      <view class="lp_askbox">
-          <view class="ask1">
-            <i>问</i>
-            <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
-          </view>
-          <view class="ask2">
-            <i>答</i>
-            <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
-          </view>
-      </view>
-      <view class="lp_askbox">
-          <view class="ask1">
-            <i>问</i>
-            <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
-          </view>
-          <view class="ask2">
-            <i>答</i>
-            <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
-          </view>
-      </view>
-      <view class="morebtn">
-          我要咨询
+    <view class="lp_gw mt50">
+      <view class="title_x">
+          <view class="h2">置业顾问</view>
+          <view class="more">政策解读 楼盘导览 户型解析</view>
         </view>
     </view>
+    <view class="agentlist">
+      <view class="agentbox">
+        <view class="agentbox_l">
+          <image src="../../img/useface.png" class="ag_1"></image>
+          <view class="ag_2">陈敏</view>
+        </view>
+        <view class="agentbox_r">
+          <view class="tel_btn"><i></i>电话</view>
+          <view class="wechat_btn"><i></i>咨询</view>
+        </view>
+      </view>
+    </view>
+    <view class="lplist mt50">
+
+      <view class="title_x">
+          <view class="h2">推荐楼盘</view>
+        </view>
+          <view class="lpbox flex-wrp">
+            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"></image>
+            <view class="lpmsg">
+                <view class="lpname"><image src="../../img/i1.png"></image>正荣宝嘉江滨府</view>
+                <view class="lp_txt">洛阳区 阳江新城 | 89-140m</view>
+                <view class="lp_money"><i>10500</i>元/㎡</view>
+                <view class="lp_tag"><i>住宅</i></view>
+            </view>
+          </view>
+    </view>
+    <view class="cont_foot">
+       <view class="w60">
+        <image src="../../img/s1.png"></image>
+        <view class="ftext">收藏</view>
+       </view>
+        <view class="w60">
+        <image src="../../img/fx.png"></image>
+        <view class="ftext">分享</view>
+       </view>
+       <view class="f_btn">微聊</view>
+       <view class="f_btn">致电售楼处</view>
+    </view>
+    <mp-halfScreenDialog 
+      bindbuttontap="buttontap"
+      show="{{show}}"
+      maskClosable="{{false}}" 
+      title="{{tz_txt}}" 
+    >
+    <slot title="fdfdf">tteet</slot>
+    </mp-halfScreenDialog>
 </view>
