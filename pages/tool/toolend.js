@@ -1,4 +1,5 @@
 // pages/tool/toolend.js
+import Calculation from '../../utils/calculate'
 Page({
 
   /**
@@ -16,7 +17,7 @@ Page({
     eventChannel.on('moneydata', function(data) {
       console.log(data)
     })
-    console.log(eventChannel);
+    console.log(Calculation);
 
   },
 

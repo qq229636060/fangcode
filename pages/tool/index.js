@@ -36,7 +36,7 @@ Page({
       wx.navigateTo({
         url:'toolend',
         success: function(res) {
-          res.eventChannel.emit('moneydata', { sydk_money: _this.data.money,sydk_year:_this.data.year_index,sydk_lilv:_this.data.shangdai_numdata})
+          res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.year_index,sydk_lilv:_this.data.shangdai_numdata,tyepe:1})
         }
       })
     },1000)
