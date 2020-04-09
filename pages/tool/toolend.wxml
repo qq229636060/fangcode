@@ -1,0 +1,33 @@
+<!--pages/tool/toolend.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange" color="#27CDA1" border='false'>
+  <van-tab title="等额本息">
+      <view class="endline">
+        <view class="endbox">
+          <text>贷款金额</text>
+          <text></text>
+        </view>
+        <view class="endbox">
+          <text>还款总额</text>
+          <text></text>
+        </view>
+      </view>
+      <view class="endline">
+        <view class="endbox">
+          <text>利息总额</text>
+          <text></text>
+        </view>
+        <view class="endbox">
+          <text>还款月数</text>
+          <text></text>
+        </view>
+      </view>
+      <view class="endline last">
+        <view class="endbox">
+          <text>月均还款</text>
+          <text></text>
+        </view>
+      </view>
+      <view class="huiline"></view>
+  </van-tab>
+  <van-tab title="等额本金">内容 2</van-tab>
+</van-tabs>

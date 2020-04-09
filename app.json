@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/newhouse/index",
     "pages/use/index",
-    "pages/newhouse/houseinfo"
+    "pages/newhouse/houseinfo",
+    "pages/tool/index",
+    "pages/tool/toolend"
   ],
   "window": {
     "backgroundTextStyle": "light",
