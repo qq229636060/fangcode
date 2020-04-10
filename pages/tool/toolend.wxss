@@ -2,5 +2,6 @@
 .endline{ display: flex; border-bottom: solid 1px #eee;width:680rpx; margin:50rpx auto 0 auto;flex-direction: row}
 .last{border-bottom: none;}
 .endbox{  display: flex ; flex: 1; padding: 0 0 30rpx 0;}
-.endbox text:first-child{ font-size: 26rpx; color: #999999;}
+.endbox text:first-child{  color: #999999; margin-right: 20rpx;}
+.endbox text{font-size: 26rpx;}
 .huiline{ width: 100%; height: 20rpx; background: rgba(248,248,248,1);}

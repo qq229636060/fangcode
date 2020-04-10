@@ -1,26 +1,42 @@
 // pages/tool/toolend.js
-import Calculation from '../../utils/calculate'
+import loan from '../../utils/calculate'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    active:0
+    active:0,
+    prevpage_data:{},//接受的数据
+    enddata:""//计算后的数据
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     const eventChannel = this.getOpenerEventChannel();
     eventChannel.on('moneydata', function(data) {
-      console.log(data)
+      _this.setData({
+         prevpage_data: data
+      })
     })
-    console.log(Calculation);
-
+    console.log(loan);
+    console.log(this.data.prevpage_data);
+    console.log(this.data.prevpage_data.tyepe,this.data.prevpage_data.sydk_money,this.data.prevpage_data.sydk_year,this.data.prevpage_data.sydk_lilv)
+    this.jisuan()
   },
-
+  jisuan:function(){
+    var jsdata = loan.Calculation.singleDk(this.data.prevpage_data.tyepe,this.data.prevpage_data.sydk_money,this.data.prevpage_data.sydk_year,this.data.prevpage_data.sydk_lilv);
+    console.log(jsdata)
+    jsdata.totalLixi = jsdata.totalLixi.toFixed(2)
+    jsdata.totalPrice = jsdata.totalPrice.toFixed(2)
+    jsdata.yuegong = jsdata.yuegong.toFixed(2)
+    this.setData({
+      enddata:jsdata
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

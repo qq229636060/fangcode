@@ -9,6 +9,7 @@ Page({
     active:"a",
     year_array:jsonData.dataList.loanyear,
     year_index:0,
+    dk_year:1,
     shangdai_index:0,
     shangdai_numdata:1,//商业贷款利率
     shangdai_array:jsonData.dataList.shangdaiSelect
@@ -27,16 +28,11 @@ Page({
       })
       return false
     }
-    if(this.data.year_index == 0){
-      this.setData({
-        year_index:1
-      })
-    }
     setTimeout(()=>{
       wx.navigateTo({
         url:'toolend',
         success: function(res) {
-          res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.year_index,sydk_lilv:_this.data.shangdai_numdata,tyepe:1})
+          res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.dk_year,sydk_lilv:_this.data.shangdai_numdata,tyepe:1})
         }
       })
     },1000)
@@ -87,11 +83,12 @@ Page({
   bindpicker_year:function(e){
     this.setData({
       year_index: e.detail.value,
-      
+      dk_year:this.data.year_array[e.detail.value].year
     })
-    
+    console.log(this.data.dk_year)
   },
   bindpicker_shangdaiSelect:function(e){
+   
     this.setData({
       shangdai_index: e.detail.value,
       shangdai_numdata:this.data.shangdai_array[e.detail.value].lilv
