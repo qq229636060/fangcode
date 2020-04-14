@@ -35,7 +35,7 @@ Page({
           res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.dk_year,sydk_lilv:_this.data.shangdai_numdata,tyepe:1})
         }
       })
-    },1000)
+    },100)
     
   },
   /**

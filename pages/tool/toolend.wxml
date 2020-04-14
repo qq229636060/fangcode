@@ -29,5 +29,37 @@
       </view>
       <view class="huiline"></view>
   </van-tab>
-  <van-tab title="等额本金">内容 2</van-tab>
+  <van-tab title="等额本金">
+            <view class="endline">
+        <view class="endbox">
+          <text>贷款金额</text>
+          <text>{{enddata.totalDknum}}万</text>
+        </view>
+        <view class="endbox">
+          <text>还款总额</text>
+          <text>{{enddata.totalPrice}}</text>
+        </view>
+      </view>
+      <view class="endline">
+        <view class="endbox">
+          <text>利息总额</text>
+          <text>{{enddata.totalLixi}}</text>
+        </view>
+        <view class="endbox">
+          <text>还款月数</text>
+          <text>{{enddata.totalDknum*12}}</text>
+        </view>
+      </view>
+      <view class="endline last">
+        <view class="endbox">
+          <text>月均还款</text>
+          <text>{{enddata.yuegong}}</text>
+        </view>
+        <view class="endbox">
+          <text>每月递减</text>
+          <text>{{enddata.yuegong}}</text>
+        </view>
+      </view>
+      <view class="huiline"></view>
+  </van-tab>
 </van-tabs>
