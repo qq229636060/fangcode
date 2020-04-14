@@ -11,8 +11,13 @@ Page({
     year_index:0,
     dk_year:1,
     shangdai_index:0,
+    gjjdai_index:0,
     shangdai_numdata:1,//商业贷款利率
-    shangdai_array:jsonData.dataList.shangdaiSelect
+    gjjdai_numdata:1,
+    shangdai_lilvarr:jsonData.dataList.shangdaiLilv,
+    gjj_lilvarr:jsonData.dataList.gjjLilv,
+    shangdai_array:jsonData.dataList.shangdaiSelect,//商代选择
+    gjjdai_array:jsonData.dataList.gjjSelect//公积金选择
   },
   goto:function(e){
     wx.showLoading({
@@ -49,7 +54,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-      console.log(jsonData)
+      console.log(jsonData.dataList.gjjSelect)
   },
 
   /**

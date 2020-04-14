@@ -7,8 +7,9 @@ Page({
    */
   data: {
     active:0,
-    prevpage_data:{},//接受的数据
-    enddata:""//计算后的数据
+    prevpage_data:{},//接受的等额数据
+    enddata:"",//计算后的本息数据
+    enddata1:"",//计算后的本金数据
   },
 
   /**
@@ -28,13 +29,19 @@ Page({
     this.jisuan()
   },
   jisuan:function(){
-    var jsdata = loan.Calculation.singleDk(this.data.prevpage_data.tyepe,this.data.prevpage_data.sydk_money,this.data.prevpage_data.sydk_year,this.data.prevpage_data.sydk_lilv);
-    console.log(jsdata)
-    jsdata.totalLixi = jsdata.totalLixi.toFixed(2)
-    jsdata.totalPrice = jsdata.totalPrice.toFixed(2)
-    jsdata.yuegong = jsdata.yuegong.toFixed(2)
+        var jsdata = loan.Calculation.singleDk(this.data.prevpage_data.tyepe,this.data.prevpage_data.sydk_money,this.data.prevpage_data.sydk_year,this.data.prevpage_data.sydk_lilv);
+        var jsdata1 = loan.Calculation.singleDk('2',this.data.prevpage_data.sydk_money,this.data.prevpage_data.sydk_year,this.data.prevpage_data.sydk_lilv);
+        jsdata.totalLixi = jsdata.totalLixi.toFixed(2)
+        jsdata.totalPrice = jsdata.totalPrice.toFixed(2)
+        jsdata.yuegong = jsdata.yuegong.toFixed(2)
+        jsdata1.totalLixi = jsdata1.totalLixi.toFixed(2)
+        jsdata1.totalPrice = jsdata1.totalPrice.toFixed(2)
+        jsdata1.yuegong = jsdata1.yuegong.toFixed(2);
+        jsdata1.yuegongdijian = jsdata1.yuegongdijian.toFixed(2)
+        console.log(jsdata1)
     this.setData({
-      enddata:jsdata
+      enddata:jsdata,
+      enddata1:jsdata1
     })
   },
   onChange(e){

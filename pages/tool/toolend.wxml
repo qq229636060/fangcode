@@ -18,7 +18,7 @@
         </view>
         <view class="endbox">
           <text>还款月数</text>
-          <text>{{enddata.totalDknum*12}}</text>
+          <text>{{enddata.year*12}}</text>
         </view>
       </view>
       <view class="endline last">
@@ -33,31 +33,31 @@
             <view class="endline">
         <view class="endbox">
           <text>贷款金额</text>
-          <text>{{enddata.totalDknum}}万</text>
+          <text>{{enddata1.totalDknum}}万</text>
         </view>
         <view class="endbox">
           <text>还款总额</text>
-          <text>{{enddata.totalPrice}}</text>
+          <text>{{enddata1.totalPrice}}</text>
         </view>
       </view>
       <view class="endline">
         <view class="endbox">
           <text>利息总额</text>
-          <text>{{enddata.totalLixi}}</text>
+          <text>{{enddata1.totalLixi}}</text>
         </view>
         <view class="endbox">
           <text>还款月数</text>
-          <text>{{enddata.totalDknum*12}}</text>
+          <text>{{enddata1.year*12}}</text>
         </view>
       </view>
       <view class="endline last">
         <view class="endbox">
           <text>月均还款</text>
-          <text>{{enddata.yuegong}}</text>
+          <text>{{enddata1.yuegong}}</text>
         </view>
         <view class="endbox">
           <text>每月递减</text>
-          <text>{{enddata.yuegong}}</text>
+          <text>{{enddata1.yuegongdijian}}</text>
         </view>
       </view>
       <view class="huiline"></view>
