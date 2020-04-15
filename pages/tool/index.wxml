@@ -1,10 +1,10 @@
-<van-tabs active="a" border='false' color="#27CDA1">
+<van-tabs active="a" border='false' color="#27CDA1" bind:change="nav_onChange">
   <van-tab title="商业贷款" name="a">
       <view class="z_gcell">
        <view class="z_cell">
            <view class="z_cell_l">贷款金额</view>
            <view class="z_cell_r">
-              <input type="number" bindinput="bindinput_money"></input>万
+              <input type="number" bindinput="bindinput_money" data-name="symoney"></input>万
            </view>
        </view>
        <view class="z_cell">
@@ -37,7 +37,7 @@
        <view class="z_cell">
            <view class="z_cell_l">贷款金额</view>
            <view class="z_cell_r">
-              <input type="number" bindinput="bindinput_money"></input>万
+              <input type="number" bindinput="bindinput_money" data-name="gjjmoney"></input>万
            </view>
        </view>
        <view class="z_cell">
@@ -68,5 +68,73 @@
   
   
   </van-tab>
-  <van-tab title="组合贷款" name="c">内容 3</van-tab>
+  <van-tab title="组合贷款" name="c">  
+    <view class="sybox">
+      <view class="f26">商业贷款</view>
+      <view class="z_gcell">
+       <view class="z_cell">
+           <view class="z_cell_l">贷款金额</view>
+           <view class="z_cell_r">
+              <input type="number" bindinput="bindinput_money" ></input>万
+           </view>
+       </view>
+       <view class="z_cell">
+           <view class="z_cell_l">贷款年限</view>
+           <view class="z_cell_r">
+              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year">
+                <view class="picker">
+                 {{year_array[year_index].year}}年
+                </view>
+              </picker>
+              <van-icon name="arrow" />
+           </view>
+       </view>
+       <view class="z_cell">
+           <view class="z_cell_l">商业利率</view>
+           <view class="z_cell_r">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{shangdai_index}}" range="{{shangdai_array}}" range-key="name">
+                <view class="picker">
+                 {{shangdai_array[shangdai_index].name}}
+                </view>
+              </picker>
+               <van-icon name="arrow" />
+           </view>
+       </view>
+      </view>
+    </view>
+    <view class="gjjbox">
+     <view class="f26">公积金</view>
+      <view class="z_gcell">
+       <view class="z_cell">
+           <view class="z_cell_l">贷款金额</view>
+           <view class="z_cell_r">
+              <input type="number" bindinput="bindinput_money"></input>万
+           </view>
+       </view>
+       <view class="z_cell">
+           <view class="z_cell_l">贷款年限</view>
+           <view class="z_cell_r">
+              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year">
+                <view class="picker">
+                 {{year_array[year_index].year}}年
+                </view>
+              </picker>
+              <van-icon name="arrow" />
+           </view>
+       </view>
+       <view class="z_cell">
+           <view class="z_cell_l">公积金利率</view>
+           <view class="z_cell_r">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{gjjdai_index}}" range="{{gjjdai_array}}" range-key="name">
+                <view class="picker">
+                 {{gjjdai_array[gjjdai_index].name}}
+                </view>
+              </picker>
+               <van-icon name="arrow" />
+           </view>
+       </view>
+      </view>
+    </view>
+     <view class="z_btn" bindtap="goto">确定</view> 
+  </van-tab>
 </van-tabs>

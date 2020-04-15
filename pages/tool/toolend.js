@@ -23,9 +23,7 @@ Page({
          prevpage_data: data
       })
     })
-    console.log(loan);
     console.log(this.data.prevpage_data);
-    console.log(this.data.prevpage_data.tyepe,this.data.prevpage_data.sydk_money,this.data.prevpage_data.sydk_year,this.data.prevpage_data.sydk_lilv)
     this.jisuan()
   },
   jisuan:function(){
