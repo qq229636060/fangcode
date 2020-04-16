@@ -21,7 +21,7 @@
        <view class="z_cell">
            <view class="z_cell_l">商业利率</view>
            <view class="z_cell_r">
-            <picker bindchange="bindpicker_shangdaiSelect" value="{{shangdai_index}}" range="{{shangdai_array}}" range-key="name">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{lilvlist_index}}" range="{{shangdai_array}}" range-key="name" data-name="sy_lv">
                 <view class="picker">
                  {{shangdai_array[shangdai_index].name}}
                 </view>
@@ -54,7 +54,7 @@
        <view class="z_cell">
            <view class="z_cell_l">公积金利率</view>
            <view class="z_cell_r">
-            <picker bindchange="bindpicker_shangdaiSelect" value="{{gjjdai_index}}" range="{{gjjdai_array}}" range-key="name">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{gjjdai_index}}" range="{{gjjdai_array}}" range-key="name" data-name="gjj_lv">
                 <view class="picker">
                  {{gjjdai_array[gjjdai_index].name}}
                 </view>
@@ -75,13 +75,13 @@
        <view class="z_cell">
            <view class="z_cell_l">贷款金额</view>
            <view class="z_cell_r">
-              <input type="number" bindinput="bindinput_money" ></input>万
+              <input type="number" bindinput="bindinput_money" data-name="zh_money"></input>万
            </view>
        </view>
        <view class="z_cell">
            <view class="z_cell_l">贷款年限</view>
            <view class="z_cell_r">
-              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year">
+              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year" data-name="zh_syyear">
                 <view class="picker">
                  {{year_array[year_index].year}}年
                 </view>
@@ -92,7 +92,7 @@
        <view class="z_cell">
            <view class="z_cell_l">商业利率</view>
            <view class="z_cell_r">
-            <picker bindchange="bindpicker_shangdaiSelect" value="{{shangdai_index}}" range="{{shangdai_array}}" range-key="name">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{shangdai_index}}" range="{{shangdai_array}}" range-key="name" data-name="gjjyear">
                 <view class="picker">
                  {{shangdai_array[shangdai_index].name}}
                 </view>
@@ -108,7 +108,7 @@
        <view class="z_cell">
            <view class="z_cell_l">贷款金额</view>
            <view class="z_cell_r">
-              <input type="number" bindinput="bindinput_money"></input>万
+              <input type="number" bindinput="bindinput_money" data-name="zh_money1"></input>万
            </view>
        </view>
        <view class="z_cell">

@@ -7,13 +7,17 @@ Page({
   data: {
     money:"",//商业贷款金额
     money1:"",//公积金贷款金额
+    money_zh:"",//组合贷款商业金额
+    money_zh1:"",//组合贷款公积金金额
+    zhsy_year:"",//组合商业年限
+    zhgjj_year:"",//组合公积金
     active:"a",
     year_array:jsonData.dataList.loanyear,
     year_index:19,
     dk_year:20,
     shangdai_index:0,
+    shangdai_numdata:1,//贷款利率
     gjjdai_index:0,
-    shangdai_numdata:1,//商业贷款利率
     gjjdai_numdata:1,
     shangdai_lilvarr:jsonData.dataList.shangdaiLilv,
     gjj_lilvarr:jsonData.dataList.gjjLilv,
@@ -61,6 +65,24 @@ Page({
         })
         return false
       }
+    }else if(e == "c"){
+      if(this.data.money_zh == '' || this.data.money_zh1 == ''){
+        wx.hideLoading()
+        wx.showToast({
+          title:"请填写贷款金额",
+          mask:true,
+          icon:'none'
+        })
+        return false
+      }
+
+      return false
+      wx.navigateTo({
+        url:'toolend',
+        success: function(res) {
+          res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.dk_year,sydk_lilv:last_lv,tyepe:1})
+        }
+      })
     }
     return true
   },
@@ -73,10 +95,13 @@ Page({
        _this.if_empt("a")
     }else if(_this.data.active == "b"){
        _this.if_empt("b")
-    }
+    }else if(_this.data.active == "c"){
+      _this.if_empt("c")
+      return false
+   }
     console.log(_this.data.active)
     var last_lv = _this.calllilv();
-    console.log(last_lv)
+    return false
     setTimeout(()=>{
       wx.navigateTo({
         url:'toolend',
@@ -134,13 +159,20 @@ Page({
       year_index: e.detail.value,
       dk_year:this.data.year_array[e.detail.value].year
     })
-    console.log(this.data.dk_year)
   },
   bindpicker_shangdaiSelect:function(e){
-    this.setData({
-      shangdai_index: e.detail.value,
-      shangdai_numdata:this.data.shangdai_array[e.detail.value].lilv
-    })
+    if(e.target.dataset.name == "sy_lv"){
+      this.setData({
+        shangdai_index: e.detail.value,
+        shangdai_numdata:this.data.shangdai_array[e.detail.value].lilv
+      })
+    }else if(e.target.dataset.name == "gjj_lv"){
+      this.setData({
+        gjjdai_index: e.detail.value,
+        gjjdai_numdata:this.data.gjjdai_array[e.detail.value].lilv
+      })
+    }
+   
   },
   bindinput_money:function(e){
     if(e.target.dataset.name == "symoney"){
@@ -150,6 +182,14 @@ Page({
     }else if(e.target.dataset.name == "ggjmoney"){
       this.setData({
         money1:e.detail.value
+      })
+    }else if(e.target.dataset.name == "zh_money"){
+      this.setData({
+        money_zh:e.detail.value
+      })
+    }else if(e.target.dataset.name == "zh_money1"){
+      this.setData({
+        money_zh1:e.detail.value
       })
     }
     
