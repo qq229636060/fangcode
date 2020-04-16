@@ -11,6 +11,10 @@ Page({
     money_zh1:"",//组合贷款公积金金额
     zhsy_year:"",//组合商业年限
     zhgjj_year:"",//组合公积金
+    zhsyyear_index:19,
+    zhsyyear_year:20,
+    zhgjjyear_index:19,
+    zhgjjyear_year:20,
     active:"a",
     year_array:jsonData.dataList.loanyear,
     year_index:19,
@@ -19,6 +23,10 @@ Page({
     shangdai_numdata:1,//贷款利率
     gjjdai_index:0,
     gjjdai_numdata:1,
+    zhsydai_index:0,
+    zhsydai_numdata:1,
+    zhgjjdai_index:0,
+    zhgjjdai_numdata:1,
     shangdai_lilvarr:jsonData.dataList.shangdaiLilv,
     gjj_lilvarr:jsonData.dataList.gjjLilv,
     shangdai_array:jsonData.dataList.shangdaiSelect,//商代选择
@@ -155,15 +163,27 @@ Page({
 
   },
   bindpicker_year:function(e){
-    this.setData({
-      year_index: e.detail.value,
-      dk_year:this.data.year_array[e.detail.value].year
-    })
+    if(e.target.dataset.name == "zh_syyear"){
+      this.setData({
+        zhsyyear_index: e.detail.value,
+        zhsyyear_year:this.data.year_array[e.detail.value].year
+      })
+    }else if(e.target.dataset.name == "zh_gjjyear"){
+      this.setData({
+        zhgjjyear_index: e.detail.value,
+        zhgjjyear__year:this.data.year_array[e.detail.value].year
+      })
+    }else{
+      this.setData({
+        year_index: e.detail.value,
+        dk_year:this.data.year_array[e.detail.value].year
+      })
+    }
   },
   bindpicker_shangdaiSelect:function(e){
     if(e.target.dataset.name == "sy_lv"){
       this.setData({
-        shangdai_index: e.detail.value,
+        zhsyyear_index: e.detail.value,
         shangdai_numdata:this.data.shangdai_array[e.detail.value].lilv
       })
     }else if(e.target.dataset.name == "gjj_lv"){
@@ -171,8 +191,17 @@ Page({
         gjjdai_index: e.detail.value,
         gjjdai_numdata:this.data.gjjdai_array[e.detail.value].lilv
       })
+    }else if(e.target.dataset.name == "zh_syname"){
+      this.setData({
+        zhsydai_index: e.detail.value,
+        zhsydai_numdata:this.data.gjjdai_array[e.detail.value].lilv
+      })
+    }else if(e.target.dataset.name == "zh_gjjname"){
+      this.setData({
+        zhgjjdai_index: e.detail.value,
+        zhgjjdai_numdata:this.data.gjjdai_array[e.detail.value].lilv
+      })
     }
-   
   },
   bindinput_money:function(e){
     if(e.target.dataset.name == "symoney"){

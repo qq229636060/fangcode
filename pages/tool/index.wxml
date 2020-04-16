@@ -81,9 +81,9 @@
        <view class="z_cell">
            <view class="z_cell_l">贷款年限</view>
            <view class="z_cell_r">
-              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year" data-name="zh_syyear">
+              <picker bindchange="bindpicker_year" value="{{zhsyyear_index}}" range="{{year_array}}" range-key="year" data-name="zh_syyear">
                 <view class="picker">
-                 {{year_array[year_index].year}}年
+                 {{year_array[zhsyyear_index].year}}年
                 </view>
               </picker>
               <van-icon name="arrow" />
@@ -92,9 +92,9 @@
        <view class="z_cell">
            <view class="z_cell_l">商业利率</view>
            <view class="z_cell_r">
-            <picker bindchange="bindpicker_shangdaiSelect" value="{{shangdai_index}}" range="{{shangdai_array}}" range-key="name" data-name="gjjyear">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{zhsydai_index}}" range="{{shangdai_array}}" range-key="name" data-name="zh_syname">
                 <view class="picker">
-                 {{shangdai_array[shangdai_index].name}}
+                 {{shangdai_array[zhsydai_index].name}}
                 </view>
               </picker>
                <van-icon name="arrow" />
@@ -114,7 +114,7 @@
        <view class="z_cell">
            <view class="z_cell_l">贷款年限</view>
            <view class="z_cell_r">
-              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year">
+              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year" data-name="zh_gjjyear">
                 <view class="picker">
                  {{year_array[year_index].year}}年
                 </view>
@@ -125,9 +125,9 @@
        <view class="z_cell">
            <view class="z_cell_l">公积金利率</view>
            <view class="z_cell_r">
-            <picker bindchange="bindpicker_shangdaiSelect" value="{{gjjdai_index}}" range="{{gjjdai_array}}" range-key="name">
+            <picker bindchange="bindpicker_shangdaiSelect" value="{{zhgjjdai_index}}" range="{{gjjdai_array}}" range-key="name" data-name="zh_gjjname">
                 <view class="picker">
-                 {{gjjdai_array[gjjdai_index].name}}
+                 {{gjjdai_array[zhgjjdai_index].name}}
                 </view>
               </picker>
                <van-icon name="arrow" />
