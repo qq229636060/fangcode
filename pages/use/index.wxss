@@ -7,4 +7,5 @@ page{background:rgba(248,248,248,1) ;}
 .usetxt text:last-child{color: #999; font-size: 26rpx;}
 .useicon{ width: 53rpx; height: 53rpx; margin-right: 16px;vertical-align: middle;}
 .mt30{margin-top: 30rpx;}
-.nonebtn{ background: #fff; width: 30rpx; padding: 0; text-align: left;}
+.nonebtn{ background: #fff; width: 150rpx; padding: 0; text-align: left; border:none}
+.nonebtn::after{border:none}
