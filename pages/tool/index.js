@@ -34,6 +34,7 @@ Page({
   },
   calllilv(){
     var lastlilv;
+    var zhlast ={};
     var _this = this;
     if(_this.data.active == "a"){
       _this.data.shangdai_lilvarr.forEach(function(item,index){
@@ -48,76 +49,109 @@ Page({
          }
      })
     }else if(_this.data.active == "c"){
-      lastlilv =100
+      _this.data.shangdai_lilvarr.forEach(function(item,index){
+        if(_this.data.zhsyyear_year>=item.year){
+          zhlast.sylv = (_this.data.zhsydai_numdata*item.lilv).toFixed(4)
+        }
+      })
+      _this.data.gjj_lilvarr.forEach(function(item,index){
+        if(_this.data.zhgjjyear_year>=item.year){
+          zhlast.gjjlv = (_this.data.gjjdai_numdata*item.lilv).toFixed(4)
+        }
+      })
+      return zhlast;
     }
     return lastlilv;
   },
-  if_empt:function(e){
-    if(e == "a"){
-      if(this.data.money == ''){
-        wx.hideLoading()
+  ts_money:function(){
+    wx.hideLoading()
         wx.showToast({
           title:"请填写贷款金额",
           mask:true,
           icon:'none'
-        })
+      })
+  },
+  if_empt:function(e){
+    if(e == "a"){
+      console.log(this.data.money)
+      if(this.data.money == ''){
         return false
+      }else{
+        return true
       }
     }else if(e == "b"){
       if(this.data.money1 == ''){
-        wx.hideLoading()
-        wx.showToast({
-          title:"请填写贷款金额",
-          mask:true,
-          icon:'none'
-        })
         return false
+      }else{
+        return true
       }
     }else if(e == "c"){
       if(this.data.money_zh == '' || this.data.money_zh1 == ''){
         wx.hideLoading()
-        wx.showToast({
-          title:"请填写贷款金额",
-          mask:true,
-          icon:'none'
-        })
         return false
+      }else{
+        return true
       }
-
-      return false
-      wx.navigateTo({
-        url:'toolend',
-        success: function(res) {
-          res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.dk_year,sydk_lilv:last_lv,tyepe:1})
-        }
-      })
     }
-    return true
+
   },
   goto:function(e){
+    var _this = this;
     wx.showLoading({
       title: '计算中',
     })
     var _this = this;
     if(_this.data.active == "a"){
-       _this.if_empt("a")
+       if(!_this.if_empt("a")){
+          _this.ts_money()
+         return false
+       }
     }else if(_this.data.active == "b"){
-       _this.if_empt("b")
+      if(!_this.if_empt("b")){
+        _this.ts_money()
+       return false
+     }
     }else if(_this.data.active == "c"){
-      _this.if_empt("c")
-      return false
-   }
-    console.log(_this.data.active)
-    var last_lv = _this.calllilv();
-    return false
-    setTimeout(()=>{
+        console.log(_this.if_empt("c"))
+        if(!_this.if_empt("c")){
+          _this.ts_money()
+        return false
+      }
+    }
+    if(this.data.active == "a"){
+      var last_lv = _this.calllilv();
       wx.navigateTo({
         url:'toolend',
         success: function(res) {
           res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money,sydk_year:_this.data.dk_year,sydk_lilv:last_lv,tyepe:1})
         }
       })
-    },100)
+    }else if(this.data.active == "b"){
+      var last_lv = _this.calllilv();
+      wx.navigateTo({
+        url:'toolend',
+        success: function(res) {
+          res.eventChannel.emit('moneydata',{ sydk_money: _this.data.money1,sydk_year:_this.data.dk_year,sydk_lilv:last_lv,tyepe:2})
+        }
+      })
+    }else if(this.data.active == "c"){
+      var last_zhsylv = _this.calllilv();
+      wx.navigateTo({
+        url:'toolend',
+        success: function(res) {
+          res.eventChannel.emit('moneydata',{
+            zhmoney: _this.data.money_zh,
+            zhmoney1: _this.data.money_zh1,
+            zhyear:_this.data.zhsyyear_year,
+            zhyear1:_this.data.zhgjjyear_year,
+            last_lilv:last_zhsylv.sylv,
+            last_lilv1:last_zhsylv.gjjlv,
+            tyepe:3})
+        }
+      })
+      return false
+    }
+
     
   },
   /**
@@ -163,20 +197,21 @@ Page({
 
   },
   bindpicker_year:function(e){
+    var _this = this;
     if(e.target.dataset.name == "zh_syyear"){
       this.setData({
         zhsyyear_index: e.detail.value,
-        zhsyyear_year:this.data.year_array[e.detail.value].year
+        zhsyyear_year:_this.data.year_array[e.detail.value].year
       })
     }else if(e.target.dataset.name == "zh_gjjyear"){
       this.setData({
         zhgjjyear_index: e.detail.value,
-        zhgjjyear__year:this.data.year_array[e.detail.value].year
+        zhgjjyear_year:_this.data.year_array[e.detail.value].year
       })
     }else{
       this.setData({
         year_index: e.detail.value,
-        dk_year:this.data.year_array[e.detail.value].year
+        dk_year:_this.data.year_array[e.detail.value].year
       })
     }
   },
@@ -204,19 +239,20 @@ Page({
     }
   },
   bindinput_money:function(e){
-    if(e.target.dataset.name == "symoney"){
+    if(e.currentTarget.dataset.name == "symoney"){
       this.setData({
         money:e.detail.value
       })
-    }else if(e.target.dataset.name == "ggjmoney"){
+    }else if(e.currentTarget.dataset.name == "gjjmoney"){
+      console.log(e)
       this.setData({
         money1:e.detail.value
       })
-    }else if(e.target.dataset.name == "zh_money"){
+    }else if(e.currentTarget.dataset.name == "zh_money"){
       this.setData({
         money_zh:e.detail.value
       })
-    }else if(e.target.dataset.name == "zh_money1"){
+    }else if(e.currentTarget.dataset.name == "zh_money1"){
       this.setData({
         money_zh1:e.detail.value
       })

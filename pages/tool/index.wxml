@@ -114,9 +114,9 @@
        <view class="z_cell">
            <view class="z_cell_l">贷款年限</view>
            <view class="z_cell_r">
-              <picker bindchange="bindpicker_year" value="{{year_index}}" range="{{year_array}}" range-key="year" data-name="zh_gjjyear">
+              <picker bindchange="bindpicker_year" value="{{zhgjjyear_index}}" range="{{year_array}}" range-key="year" data-name="zh_gjjyear">
                 <view class="picker">
-                 {{year_array[year_index].year}}年
+                 {{year_array[zhgjjyear_index].year}}年
                 </view>
               </picker>
               <van-icon name="arrow" />
