@@ -1,0 +1,12 @@
+<view class="dpselect">
+是否有去售楼处看过房：
+<text class="{{act == 0 ? 'curs':''}}" bindtap="select" data-id="0">考虑看房</text>
+<text class="{{act == 1 ? 'curs':''}}" bindtap="select" data-id="1">已看过房</text>
+</view>
+<view class="xiangdui">
+<textarea placeholder="对本楼盘的环境、位置、配套设置满意吗？说说你的看法" focus="{{focus}}"  class="texts" bindinput="cont"/>
+<view class="txt">还差{{number}}个字</view>
+</view>
+<view class="z_btn" bindtap="goto_fbdp">
+          我要点评
+</view>

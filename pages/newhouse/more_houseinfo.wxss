@@ -1,0 +1,22 @@
+.house_info_text{padding: 0 40rpx; margin-top:35rpx; position: relative; border-bottom: solid 1rpx #EEEEEE; padding-bottom: 30rpx;}
+.housename{font-size: 40rpx; display: flex; display: -webkit-flex; align-items: center;}
+.housename image{ width: 63rpx; margin-left: 10rpx;}
+.house_txt{font-size: 28rpx; color: #999; display: flex; display: -webkit-flex;align-items: center; margin-bottom: 5rpx;}
+.house_txt .house_txt{font-size: 28rpx; color: #666;}
+.moneyred{ color: #FF3831; display: flex; align-items: center;}
+.moneyred view{font-size: 38rpx;}
+.smap{width: 35rpx; height: 33rpx; margin-left: 10rpx;}
+.adder{
+  max-width: 500rpx;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  -webkit-text-overflow:ellipsis;
+}
+.h2{ font-size: 32rpx; margin-left: 30rpx; padding: 50rpx 0 30rpx 0;}
+.house_tag{ margin-top:10rpx;}
+.house_tag text{ font-size: 22rpx; height: 36rpx; line-height: 36rpx; color: #8099AF; border: solid 1rpx #E0EBF4; padding:0 20rpx; display: inline-block; margin-right: 10rpx;}
+.noneline{border: none;}
+.lines{background: #F8F8F8;height: 20rpx; width: 100%;}
+.righttxt{ text-align: left!important;}

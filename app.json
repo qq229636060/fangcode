@@ -4,6 +4,11 @@
     "pages/newhouse/index",
     "pages/use/index",
     "pages/newhouse/houseinfo",
+    "pages/newhouse/more_houseinfo",
+    "pages/newhouse/dianpin",
+    "pages/newhouse/fb_dianpin",
+    "pages/newhouse/ask",
+    "pages/newhouse/hxlist",
     "pages/tool/index",
     "pages/tool/toolend"
   ],

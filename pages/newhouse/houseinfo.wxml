@@ -21,8 +21,8 @@
       <view class="house_txt">开盘：<text>时间待定</text></view>
       <view class="house_txt">地址：<text class="adder">福州市仓山区盖山镇浦下村</text><image src="../../img/smap.png" class="smap"></image></view>
       <view class="house_tag"><text>住宅</text></view>
-      <view class="jsq">房贷计算器</view>
-      <view class="morebtn">更多信息</view>
+      <view class="jsq" bindtap="gotojisuan">房贷计算器</view>
+      <view class="morebtn" bindtap="gotomore">更多信息</view>
       <view class="notice">
         <text bindtap="notice">降价通知</text>
         <text>开盘通知</text>
@@ -93,7 +93,7 @@
             <view class="use_time">2019.03.18 21:42</view>
           </view>
         </view>
-        <view class="morebtn">
+        <view class="morebtn" bindtap="gotodp">
           我要点评
         </view>
        </view>
@@ -102,7 +102,7 @@
     <view class="lp_ask mt50">
       <view class="title_x">
           <view class="h2">楼盘问答</view>
-          <view class="more">查看更多<view></view></view>
+          <view class="more" bindtap="gotoask">查看更多<view></view></view>
         </view>
       </view>
       <view class="lp_asklist">
@@ -126,7 +126,7 @@
               <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
             </view>
         </view>
-        <view class="morebtn">
+        <view class="morebtn" bindtap="gotoask">
             我要咨询
           </view>
     </view>

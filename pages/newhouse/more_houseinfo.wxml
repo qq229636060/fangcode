@@ -1,0 +1,27 @@
+<!--pages/newhouse/more_houseinfo.wxml-->
+<view class="house_info_text noneline">
+      <view class="housename">世茂云境<image src="../../img/i1.png" mode="widthFix"></image></view>
+      <view class="house_txt">售价：<view class="moneyred"><view>11000</view>/㎡</view></view>
+      <view class="house_txt">开盘：<text>时间待定</text></view>
+      <view class="house_txt">地址：<text class="adder">福州市仓山区盖山镇浦下村</text><image src="../../img/smap.png" class="smap"></image></view>
+      <view class="house_tag"><text>住宅</text></view>
+ </view>
+<view class="lines"></view>
+<view class="h2">建筑规划</view>
+<van-cell-group border="{{false}}">
+  <van-cell title="建筑类型" value="小高层,高层 住宅" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="产权年限" value="70年" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="容积率" value="2.5" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="绿化率" value="35%" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="规划户数" value="2130户" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="楼层状况" value="11栋高层31层" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="工程进度" value="在建中，竣工时间：2021-11-30" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+</van-cell-group>
+<view class="lines"></view>
+<view class="h2">物业信息</view>
+<van-cell-group border="{{false}}">
+  <van-cell title="物业管理费" value="住宅：1.9元/m²/月" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="物业公司" value="中海物业" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="车位数" value="2799 （地上：389 个 地下：2410个）" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="车位比" value="1:1.3" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+</van-cell-group>

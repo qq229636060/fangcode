@@ -1,0 +1,9 @@
+/* pages/newhouse/fb_dianpin.wxss */
+page{ background: #F8F8F8;}
+.dpselect{ padding: 30rpx; font-size: 28rpx; display:flex; align-items: center;background: #fff;}
+.dpselect text{ width: 150rpx; height: 50rpx; background: #F8F9FB; color: #666; display: block;text-align: center; line-height: 50rpx; border-radius: 20rpx; font-size: 24rpx; margin-left: 15rpx;}
+.dpselect .curs{ background: #99F3DB; color: #59B79E;}
+.texts{background: #fff; width: 100%; height: 500rpx; padding: 30rpx; box-sizing:border-box;font-size: 24rpx;border-top: solid 1rpx #eee;}
+.z_btn{ border:none;  bottom: 0px; width: 100%; height: 100rpx; background: #27CDA1; color: #fff; text-align: center; line-height: 100rpx; position: fixed; z-index: 9999;}
+.xiangdui{ position: relative;}
+.txt{position: absolute; right: 20rpx; bottom: 20rpx; font-size: 24rpx; color: #999;}

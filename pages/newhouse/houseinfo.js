@@ -63,18 +63,28 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
+  
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
+  },
+  gotojisuan:function(){
+    wx.navigateTo({
+      url:'../tool/index'
+    })
+  },
+  gotomore:function(){
+    wx.navigateTo({
+      url:'more_houseinfo'
+    })
+  },
+  gotodp:function(){
+    wx.navigateTo({
+      url:'dianpin'
+    })
   },
   notice:function(e){
     this.setData({
@@ -85,5 +95,10 @@ Page({
     this.setData({
       show:false
  });
+  },
+  gotoask:function(){
+    wx.navigateTo({
+      url:'ask'
+    })
   }
 })
