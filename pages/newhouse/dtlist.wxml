@@ -1,0 +1,15 @@
+<!--pages/newhouse/dtlist.wxml-->
+ <view class="lplist">
+          <view class="lpbox flex-wrp">
+            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"  class="dtpic"></image>
+            <view class="lpmsg">
+              <view class="h3">
+                放风单价超1万元/㎡！时隔9个月，新产品涨幅或超25%？！
+              </view>
+              <view class="times">
+                <image src="../../img/time.png" class="timeicon"></image>
+                2020.01.02 20:25:34
+              </view>
+            </view>
+          </view>
+</view>

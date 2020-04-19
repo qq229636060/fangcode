@@ -1,1 +1,12 @@
 /* pages/newhouse/hxlist.wxss */
+.dpselect{ padding: 30rpx; font-size: 28rpx; display:flex; align-items: center;background: #fff;}
+.dpselect text{ width: 150rpx; height: 50rpx; background: #F8F9FB; color: #666; display: block;text-align: center; line-height: 50rpx; border-radius: 20rpx; font-size: 24rpx; margin-left: 15rpx;}
+.dpselect .curs{ background: #99F3DB; color: #59B79E;}
+.house_tag{ margin-top:10rpx;}
+.house_tag text{ font-size: 22rpx; height: 36rpx; line-height: 36rpx; color: #8099AF; border: solid 1rpx #E0EBF4; padding:0 20rpx; display: inline-block; margin-right: 10rpx;}
+.hxlist{margin-top:30rpx}
+.hxbox{ display: flex; padding:40rpx; align-items: center; border-bottom:solid 1rpx #eee; }
+.hxbox_l{ width: 174rpx; height: 125rpx; border: solid 2rpx #E6E6E6; margin-right: 20rpx; overflow: hidden;}
+.hxbox_l image{ width: 174rpx; height: 125rpx;}
+.hxbox_r{ width: 500rpx;}
+.hxbox_r .h2{ font-size: 30rpx;}

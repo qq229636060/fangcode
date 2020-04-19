@@ -1,0 +1,23 @@
+<!--pages/newhouse/dtcont.wxml-->
+<view class="h2">放风单价超1万元/㎡！时隔9个月，新产品涨幅或超25%？！</view>
+<view class="times pleft35">
+  <image src="../../img/time.png" class="timeicon"></image>2020.01.02 20:25:34
+</view>
+<view class="cont">
+泉州恒大御景半岛线上看房通道开启，查看实时房价、 当前优惠，请上恒房通！购房78折限时优惠，截止时间3月31日，3000元定套房，推荐成交得35000元+总房款 1%佣金，优惠后均价4788元/㎡起，主推建面约80-143 ㎡瞰海装修美宅。项目规划欧式园林、铂金会所、社区 幼儿园、儿童反斗城、风情商业街等多元配套，近享舒 适优居。以上信息仅供参考，具体信息以售楼处公布为准，有意者可电话咨询售楼处。
+</view>
+<view class="lines"></view>
+  <view class="lplist">
+          <view class="lpbox flex-wrp">
+            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"  class="dtpic"></image>
+            <view class="lpmsg">
+              <view class="h3">
+                放风单价超1万元/㎡！时隔9个月，新产品涨幅或超25%？！
+              </view>
+              <view class="times">
+                <image src="../../img/time.png" class="timeicon"></image>
+                2020.01.02 20:25:34
+              </view>
+            </view>
+          </view>
+      </view>

@@ -96,6 +96,16 @@ Page({
       show:false
  });
   },
+  gotodtlist:function(){
+    wx.navigateTo({
+      url:'dtlist'
+    })
+  },
+  gotohxlist:function(){
+    wx.navigateTo({
+      url:'hxlist'
+    })
+  },
   gotoask:function(){
     wx.navigateTo({
       url:'ask'

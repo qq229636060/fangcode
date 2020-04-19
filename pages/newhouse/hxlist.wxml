@@ -1,2 +1,26 @@
 <!--pages/newhouse/hxlist.wxml-->
-<text>pages/newhouse/hxlist.wxml</text>
+<view class="dpselect">
+<text class="{{act == 0 ? 'curs':''}}" bindtap="select" data-id="0">全部3</text>
+<text class="{{act == 1 ? 'curs':''}}" bindtap="select" data-id="1">二室</text>
+<text class="{{act == 2 ? 'curs':''}}" bindtap="select" data-id="2">三室</text>
+</view>
+<view class="hxlist">
+    <view class="hxbox">
+      <view class="hxbox_l"><image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg"></image></view>
+      <view class="hxbox_r">
+          <view class="h2">2室2厅1卫 86m²</view>
+          <view class="house_tag">
+            <text>户型方正</text><text>户型方正</text>
+          </view>
+      </view>
+    </view>
+    <view class="hxbox">
+      <view class="hxbox_l"><image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg"></image></view>
+      <view class="hxbox_r">
+          <view class="h2">2室2厅1卫 86m²</view>
+          <view class="house_tag">
+            <text>户型方正</text><text>户型方正</text>
+          </view>
+      </view>
+    </view>
+</view>

@@ -83,6 +83,13 @@
 					"id": -1,
 					"name": "pages/newhouse/fb_dianpin",
 					"pathName": "pages/newhouse/fb_dianpin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newhouse/dtcont",
+					"pathName": "pages/newhouse/dtcont",
 					"scene": null
 				}
 			]

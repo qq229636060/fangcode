@@ -11,7 +11,7 @@
       </view>
     </view>
    <mp-cells class="mt30">
-            <mp-cell value="我的关注" hover link>
+            <mp-cell value="我的关注" hover link bindtap="gotofocus">
                 <image slot="icon" src="../../img/u1.png" class="useicon"></image>
             </mp-cell>
             <mp-cell value="历史记录" hover link>

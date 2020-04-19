@@ -38,7 +38,7 @@
     <view class="hx_pic mt50">
       <view class="title_x">
         <view class="h2">世茂云境户型(3)</view>
-        <view class="more">查看更多<view></view></view>
+        <view class="more" bindtap="gotohxlist">查看更多<view></view></view>
       </view>
       <view class="scroll_x_box">
         <view class="hxpicbox">
@@ -62,7 +62,7 @@
     <view class="lpdt mt50">
        <view class="title_x">
         <view class="h2">楼盘动态</view>
-        <view class="more">查看更多<view></view></view>
+        <view class="more" bindtap="gotodtlist">查看更多<view></view></view>
        </view>
          <view class="lplist">
           <view class="lpbox flex-wrp">

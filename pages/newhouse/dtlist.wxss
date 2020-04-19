@@ -1,0 +1,18 @@
+/* pages/newhouse/dtlist.wxss */
+/*列表*/
+.flex-wrp {display: flex; }
+.lpbox{ border-bottom: solid 1px #eee; padding: 40rpx 0;}
+.lpbox image{ width: 245rpx; height: 183rpx; border-radius: 10rpx; margin:0 20rpx 0 30rpx;}
+.lpbox .dtpic{ width: 210rpx; height: 140rpx; border-radius: 10rpx; margin:0 20rpx 0 30rpx;}
+.lpmsg{ width: 500rpx; height: 90rpx;}
+.lpmsg .h3{font-size: 30rpx;}
+.lpmsg view{ margin-bottom: 5rpx;}
+.lpmsg view:last-child{margin-bottom: 0;}
+.lpmsg .lpname{font-size: 34rpx; display: flex; align-items: center;}
+.lpmsg .lpname image{ width: 63rpx; height: 31rpx;margin:0 10rpx 0 0}
+.lpmsg .lp_txt{ font-size: 24rpx; color:#333 ;}
+.lpmsg .lp_money{ font-size: 24rpx; color: #FF3831; margin: 0;}
+.lpmsg .lp_money i{font-size: 36rpx;}
+.lpmsg .lp_tag i{ font-size: 22rpx; color:#999; border:solid 1px #CECECE; padding: 5rpx 8rpx; display: inline-block;}
+.times{ font-size: 26rpx; color: #999999; display: flex; display: -webkit-flex; align-items: center; margin-top: 10rpx;}
+.times .timeicon{ width: 26rpx; height: 26rpx; margin:0; margin-right: 10rpx;}

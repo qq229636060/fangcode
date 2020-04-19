@@ -1,17 +1,13 @@
-// pages/newhouse/hxlist.js
+// pages/use/focus.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    act:0
+
   },
-  select:function(e){
-    this.setData({
-     act:e.currentTarget.dataset.id
-   });
- },
+
   /**
    * 生命周期函数--监听页面加载
    */
