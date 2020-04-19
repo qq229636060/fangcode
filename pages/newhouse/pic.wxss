@@ -1,0 +1,5 @@
+.piccont{ padding:20rpx 40rpx; width: 670rpx; display: flex;flex-wrap:wrap; justify-content: space-between;}
+.bigpic{ width: 670rpx; height: 348rpx; overflow: hidden; margin-bottom: 20rpx;}
+.bigpic image{width: 100%;}
+.spic{ width: 210rpx; height: 160rpx; overflow: hidden;margin-bottom: 20rpx;}
+.spic image{ width: 100%;} 

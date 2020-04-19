@@ -90,6 +90,13 @@
 					"id": -1,
 					"name": "pages/newhouse/dtcont",
 					"pathName": "pages/newhouse/dtcont",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newhouse/pic",
+					"pathName": "pages/newhouse/pic",
 					"scene": null
 				}
 			]

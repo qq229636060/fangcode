@@ -1,0 +1,32 @@
+<!--pages/newhouse/pic.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="楼盘">
+    <view class="piccont">
+      <view class="bigpic" bindtap="look">
+        <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+      <view class="spic">
+      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+       <view class="spic">
+      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+       <view class="spic">
+      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+      <view class="spic">
+      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+       <view class="spic">
+      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+       <view class="spic">
+      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="沙盘">内容 2</van-tab>
+  <van-tab title="户型">内容 3</van-tab>
+  <van-tab title="周边配套">内容 4</van-tab>
+  <van-tab title="售楼处">内容 4</van-tab>
+</van-tabs>
