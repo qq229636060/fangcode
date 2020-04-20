@@ -1,0 +1,2 @@
+<!--pages/use/mobile.wxml-->
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机</button>

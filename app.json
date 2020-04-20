@@ -4,6 +4,7 @@
     "pages/newhouse/index",
     "pages/use/index",
     "pages/use/focus",
+    "pages/use/mobile",
     "pages/newhouse/pic",
     "pages/newhouse/houseinfo",
     "pages/newhouse/more_houseinfo",

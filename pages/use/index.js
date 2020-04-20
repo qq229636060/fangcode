@@ -1,22 +1,59 @@
 // pages/use/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      isLogin:false
+      isLogin:false,
+      authorization:false
   },
   gotofocus:function(){
     wx.navigateTo({
       url:'focus'
     })
   },
+  gotomobile:function(){
+    wx.navigateTo({
+      url:'mobile'
+    })
+  },
+  btn_sub:function(res){
+    var _this =this;
+    app.globalData.userInfo = res.detail.userInfo
+    if (app.globalData.userInfo) {
+      _this.gotomobile()
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+         console.log(1)
+      }
+    } else {
+      console.log(2)
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // console.log(options)
+    // if (app.globalData.userInfo) {
+    //     this.setData({
+    //       authorization:false
+    //     })
+    // }else{
+    //   this.setData({
+    //     authorization:true
+    //   })
+    // }
   },
 
   /**
