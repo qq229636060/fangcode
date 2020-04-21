@@ -8,6 +8,12 @@
 //其他参数可以自定义传入
 const requestAjax = function (url, postData, types,message, success, fail) {
   // console.log(data)
+  console.log(wx.getStorageSync('token_data'))
+  
+  var loctoken = "";
+  if(wx.getStorageSync('token_data')){
+    loctoken = wx.getStorageSync('token_data')
+  }
   wx.showNavigationBarLoading()
   if (message != "") {
     wx.showLoading({
@@ -21,7 +27,7 @@ const requestAjax = function (url, postData, types,message, success, fail) {
     header: {
       //'Content-Type': 'application/json' 默认
       'content-type': 'application/x-www-form-urlencoded',
-      //'Token':token,根据自己的接口写header的传参
+      'token':loctoken,//根据自己的接口写header的传参
       //'Logintime': logintime
     },
     method: types,//方法也可以改成变量 传入

@@ -1,5 +1,6 @@
 // pages/use/index.js
 const app = getApp();
+const zajax = require('../../utils/comm.js');
 Page({
 
   /**
@@ -7,12 +8,16 @@ Page({
    */
   data: {
       isLogin:false,
-      authorization:false
+      authorization:false,
+      servicePhone:"",
+      useinfo:""
   },
   gotofocus:function(){
-    wx.navigateTo({
-      url:'focus'
-    })
+    if(this.data.isLogin){
+      wx.navigateTo({
+        url:'focus'
+      })
+    }
   },
   gotomobile:function(){
     wx.navigateTo({
@@ -21,12 +26,29 @@ Page({
   },
   btn_sub:function(res){
     var _this =this;
-    app.globalData.userInfo = res.detail.userInfo
+    console.log(res.detail.userInfo)
+    app.globalData.userInfo = res.detail.userInfo;
+    app.globalData.usedata = res.detail;
     if (app.globalData.userInfo) {
-      _this.gotomobile()
+      wx.login({
+        success: res => {
+          console.log(res);
+          console.log(app.globalData.usedata)
+          var data={
+            code:res.code,
+            encryptedData:app.globalData.usedata.encryptedData,
+            iv:app.globalData.usedata.iv,
+            signature:app.globalData.usedata.signature,
+            rawData:app.globalData.usedata.rawData
+          }
+          zajax.requestAjax('/api/wechat/auth',data,'post','正在加载',function(res){
+             if(res.code == 0){
+               _this.gotomobile()
+             }
+          })
+        }
+      })
     } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
          console.log(1)
       }
@@ -44,16 +66,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options)
-    // if (app.globalData.userInfo) {
-    //     this.setData({
-    //       authorization:false
-    //     })
-    // }else{
-    //   this.setData({
-    //     authorization:true
-    //   })
-    // }
+    var _this = this;
+    zajax.requestAjax('/api/my/index','','post','正在加载',function(res){
+        if(res.code == 0){
+          if (res.data.member == "") {
+            _this.setData({
+                authorization:false,
+              })
+          }else{
+            console.log("a")
+            _this.setData({
+              authorization:true,
+              isLogin:true,
+              useinfo:res.data.member
+            })
+          }
+        }
+    })
+
+    
   },
 
   /**
@@ -68,6 +99,7 @@ Page({
    */
   onShow: function () {
 
+    //this.onLoad();
   },
 
   /**

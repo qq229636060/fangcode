@@ -10,13 +10,24 @@ Page({
     interval:3000,
     list:[]
   },
-  onReady: function () {
-    
+  gotocont:function(){
+    wx.navigateTo({
+      url:"../newhouse/houseinfo"
+    })
+  },
+  gotojisuan:function(){
+    wx.navigateTo({
+      url:"../tool/index"
+    })
+  },
+  gotonewlist:function(){
+    wx.navigateTo({
+      url:"../newhouse/index"
+    })
   },
   onLoad: function () {
     var _this = this;
     zajax.requestAjax('/api/index/index','','post','正在加载',function(res){
-      var housearr = [];
       res.data.house.forEach(function(item){
           if(item.tabs != ""){
               item.tabs = Object.values(item.tabs)

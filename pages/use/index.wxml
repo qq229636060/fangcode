@@ -1,29 +1,40 @@
 <!--pages/use/index.wxml-->
-<view>23232</view>
-<view class="container">
+
     <view class="usetop">
-      <image src="../../img/useface.png" class="useface"></image>
+      <image src="../../img/useface.png" class="useface" wx:if='{{!isLogin}}'></image>
+      <image src="{{useinfo.avatar_url}}" class="useface" wx:else></image>
       <view wx:if='{{!isLogin}}' class="usetxt">
         <button open-type="getUserInfo" class="nonebtn" bindgetuserinfo='btn_sub' wx:if="{{authorization == true}}">点击登录</button>
         <button class="nonebtn" wx:else bindtap="gotomobile">点击登录</button>
       </view>
       <view class="usetxt" wx:else>
-        <text>Sammi</text>
-        <text>1860****023</text>
+        <text>{{useinfo.nick_name}}</text>
+        <text>{{useinfo.mobile}}</text>
       </view>
     </view>
-   <mp-cells class="mt30">
-            <mp-cell value="我的关注" hover link bindtap="gotofocus">
-                <image slot="icon" src="../../img/u1.png" class="useicon"></image>
-            </mp-cell>
-            <mp-cell value="历史记录" hover link>
-                <image slot="icon" src="../../img/u2.png" class="useicon"></image>
-            </mp-cell>
-            <mp-cell value="关注公众号" hover link>
-                <image slot="icon" src="../../img/u3.png" class="useicon"></image>
-            </mp-cell>
-            <mp-cell value="客服电话" footer="400-1234-5678" hover link>
-                <image slot="icon" src="../../img/u4.png" class="useicon"></image>
-            </mp-cell>
-  </mp-cells>
-</view>
+    <van-cell-group class="mt30">
+      <van-cell is-link bindtap="gotofocus">
+            <view slot="title" class="title">
+              <image src="../../img/u1.png" class="useicon"></image>
+              <view class="van-cell-text">我的关注</view>
+            </view>
+      </van-cell>
+      <van-cell is-link>
+            <view slot="title" class="title">
+              <image src="../../img/u2.png" class="useicon"></image>
+              <view class="van-cell-text">历史记录</view>
+            </view>
+      </van-cell>
+       <van-cell is-link>
+            <view slot="title" class="title">
+              <image src="../../img/u3.png" class="useicon"></image>
+              <view class="van-cell-text">关注公众号</view>
+            </view>
+      </van-cell>
+       <van-cell is-link value="{{servicePhone}}">
+            <view slot="title" class="title">
+              <image src="../../img/u4.png" class="useicon"></image>
+              <view class="van-cell-text">客服电话</view>
+            </view>
+      </van-cell>
+    </van-cell-group>

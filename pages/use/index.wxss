@@ -9,3 +9,4 @@ page{background:rgba(248,248,248,1) ;}
 .mt30{margin-top: 30rpx;}
 .nonebtn{ background: #fff; width: 150rpx; padding: 0; text-align: left; border:none}
 .nonebtn::after{border:none}
+.title{ display: flex; align-items: center;}

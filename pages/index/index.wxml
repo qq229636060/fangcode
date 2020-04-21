@@ -21,8 +21,10 @@
       <view class="page-section-spacing">
           <view class="flex-wrp" style="flex-direction:row;">
             <view class="flex-item">
+               <navigator url="../newhouse/index" open-type="switchTab">
                 <image src="../../img/n1.png"></image>
                 <view>新房</view>
+                </navigator>
             </view>
             <view class="flex-item">
                 <image src="../../img/n2.png"></image>
@@ -32,7 +34,7 @@
                 <image src="../../img/n3.png"></image>
                 <view>VR看房</view>
             </view>
-            <view class="flex-item">
+            <view class="flex-item" bindtap="gotojisuan">
                 <image src="../../img/n4.png"></image>
                 <view>算房价</view>
             </view>
@@ -43,7 +45,7 @@
     <view class="toplist">
       <view class="hotname">推荐楼盘</view>
       <view class="lplist">
-          <view class="lpbox flex-wrp" wx:for="{{list}}" wx:key="*this">
+          <view class="lpbox flex-wrp" wx:for="{{list}}" wx:key="*this" bindtap="gotocont">
             <image src="{{item.cover2}}"></image>
             <view class="lpmsg">
                 <view class="lpname">

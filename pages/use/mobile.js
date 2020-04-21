@@ -1,4 +1,6 @@
 // pages/use/mobile.js
+const app = getApp();
+const zajax = require('../../utils/comm.js');
 Page({
 
   /**
@@ -8,9 +10,36 @@ Page({
 
   },
   getPhoneNumber (e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
+    console.log(e)
+    wx.login({
+      success: res => {
+        console.log(e.detail.iv)
+        console.log(e.detail.encryptedData)
+        var data={
+          code:res.code,
+          encryptedData:e.detail.encryptedData,
+          iv:e.detail.iv
+        }
+        zajax.requestAjax('/api/wechat/mobile',data,'post','正在加载',function(res){
+           if(res.code == 0){
+            wx.setStorage({
+              key:"token_data",
+              data:res.data.token
+            })
+            wx.navigateBack({
+              delta: 1,
+              success: function (e) {
+                  console.log(getCurrentPages())
+                  var page = getCurrentPages().pop();
+                  if (page == undefined || page == null) return;
+                  page.onLoad();
+              }
+            })
+           }
+        })
+      }
+    })
+    
   },
   /**
    * 生命周期函数--监听页面加载
