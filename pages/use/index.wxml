@@ -1,5 +1,4 @@
 <!--pages/use/index.wxml-->
-
     <view class="usetop">
       <image src="../../img/useface.png" class="useface" wx:if='{{!isLogin}}'></image>
       <image src="{{useinfo.avatar_url}}" class="useface" wx:else></image>

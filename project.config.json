@@ -25,7 +25,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.5",
+	"libVersion": "2.10.4",
 	"appid": "wx345d41597a72ea8e",
 	"projectname": "fangcode",
 	"debugOptions": {

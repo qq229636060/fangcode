@@ -20,12 +20,13 @@ Page({
     }
   },
   gotomobile:function(){
-    wx.navigateTo({
-      url:'mobile'
-    })
+      wx.navigateTo({
+        url:'mobile'
+      })
   },
   btn_sub:function(res){
     var _this =this;
+    console.log(12)
     console.log(res.detail.userInfo)
     app.globalData.userInfo = res.detail.userInfo;
     app.globalData.usedata = res.detail;
