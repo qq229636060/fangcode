@@ -12,3 +12,5 @@
 .lpmsg .lp_money i{font-size: 36rpx;}
 .lpmsg .lp_tag i{ font-size: 22rpx; color:#999; border:solid 1px #CECECE; padding: 5rpx 8rpx; display: inline-block;}
 .flex-wrp{display: flex;}
+.nones{ display: flex; justify-content: center; align-items: center;flex-direction:column; height: 100%; color: #999; }
+.nones image{ width: 200rpx;}

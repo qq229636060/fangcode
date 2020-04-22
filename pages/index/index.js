@@ -10,9 +10,9 @@ Page({
     interval:3000,
     list:[]
   },
-  gotocont:function(){
+  gotocont:function(e){
     wx.navigateTo({
-      url:"../newhouse/houseinfo"
+      url:"../newhouse/houseinfo?id="+e.currentTarget.dataset.id
     })
   },
   gotojisuan:function(){

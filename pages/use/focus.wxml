@@ -12,6 +12,6 @@
           </view>
       </view>
 <view wx:else class="nones">
-              <image src="../../img/none.png"></image>
+              <image src="../../img/none.png" mode="aspectFit"></image>
               <view>暂无关注</view>
 </view>

@@ -1,10 +1,12 @@
 // pages/newhouse/houseinfo.js
+const zajax = require('../../utils/comm.js');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    houseid:"",
+    houseinfo:"",
     background:[
       {
         id:1,
@@ -25,7 +27,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     var _this = this;
+     this.setData({
+       houseid:options.id
+     })
+     var data = {
+        id:_this.data.houseid
+     }
+     zajax.requestAjax('/api/house/info',data,'post','正在加载',function(res){
+        if(res.code == 0){
+          res.data.info.tabs = Object.values(res.data.info.tabs);
+          _this.setData({
+            houseinfo:res.data.info
+          })
+        }
+     })
   },
 
   /**

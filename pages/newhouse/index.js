@@ -1,10 +1,14 @@
 // pages/newhouse/index.js
-const app = getApp()
+const zajax = require('../../utils/comm.js');
+var listarr = [];
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    pages:1,
+    list:[],
+    close_more:false,
     dropDownMenuTitle: ['区域', '价格', '户型', '更多'],
     data1: [{
         id: 0,
@@ -107,7 +111,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this;
+    var data={
+      aid:"",
+      pid:"",
+      rid:"",
+      mid:"",
+      sid:"",
+      page:_this.data.pages
+    }
+    
+    zajax.requestAjax('/api/house/list',data,'post','正在加载',function(res){
+       console.log(res.data.length)
+       if(res.code == 0){
+            if(res.data.length != 0){
+            res.data.forEach(function(item){
+              if(item.tabs != ""){
+                      item.tabs = Object.values(item.tabs)
+                  }
+                  listarr.push(item)
+              })
+              _this.setData({
+                list:listarr
+              });
+              _this.setData({
+                pages:_this.data.pages+1
+            })
+          }else{
+             _this.setData({
+               close_more:true
+             })
+          }
+       }
+    })
   },
 
   /**
@@ -155,7 +191,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+      var _this = this;
+      if(!this.data.close_more){
+        _this.onLoad()
+      }   
   },
 
   /**

@@ -16,11 +16,11 @@
         </view>
     </view>
     <view class="house_info_text">
-      <view class="housename">世茂云境<image src="../../img/i1.png" mode="widthFix"></image></view>
-      <view class="house_txt">售价：<view class="moneyred"><view>11000</view>/㎡</view></view>
-      <view class="house_txt">开盘：<text>时间待定</text></view>
-      <view class="house_txt">地址：<text class="adder">福州市仓山区盖山镇浦下村</text><image src="../../img/smap.png" class="smap"></image></view>
-      <view class="house_tag"><text>住宅</text></view>
+      <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
+      <view class="house_txt">售价：<view class="moneyred"><view>{{houseinfo.price}}</view>{{houseinfo.unit}}</view></view>
+      <view class="house_txt">开盘：<text>{{houseinfo.open_time}}</text></view>
+      <view class="house_txt">地址：<text class="adder">{{houseinfo.address}}</text><image src="../../img/smap.png" class="smap"></image></view>
+      <view class="house_tag"><text wx:for='{{houseinfo.tabs}}' wx:key="tabs">{{item}}</text></view>
       <view class="jsq" bindtap="gotojisuan">房贷计算器</view>
       <view class="morebtn" bindtap="gotomore">更多信息</view>
       <view class="notice">
