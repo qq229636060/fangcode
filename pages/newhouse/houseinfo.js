@@ -7,6 +7,7 @@ Page({
   data: {
     houseid:"",
     houseinfo:"",
+    list:"",//相识楼盘
     background:[
       {
         id:1,
@@ -37,8 +38,12 @@ Page({
      zajax.requestAjax('/api/house/info',data,'post','正在加载',function(res){
         if(res.code == 0){
           res.data.info.tabs = Object.values(res.data.info.tabs);
+          res.data.same.forEach(function(item){
+            item.tabs = Object.values(item.tabs)
+          })
           _this.setData({
-            houseinfo:res.data.info
+            houseinfo:res.data.info,
+            list:res.data.same
           })
         }
      })

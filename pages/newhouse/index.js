@@ -162,6 +162,11 @@ Page({
   selectedItem: function(e) {
     console.log('id --' + e.detail.selectedId + "cityname = " + e.detail.selectedTitle);
   },
+  gotocont:function(e){
+    wx.navigateTo({
+      url:"../newhouse/houseinfo?id="+e.currentTarget.dataset.id
+    })
+  },
   showDialog: function(e) {
 
   },

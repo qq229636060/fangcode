@@ -26,15 +26,13 @@ Page({
   },
   btn_sub:function(res){
     var _this =this;
-    console.log(12)
-    console.log(res.detail.userInfo)
+    console.log(res)
     app.globalData.userInfo = res.detail.userInfo;
     app.globalData.usedata = res.detail;
     if (app.globalData.userInfo) {
       wx.login({
         success: res => {
           console.log(res);
-          console.log(app.globalData.usedata)
           var data={
             code:res.code,
             encryptedData:app.globalData.usedata.encryptedData,
@@ -44,7 +42,9 @@ Page({
           }
           zajax.requestAjax('/api/wechat/auth',data,'post','正在加载',function(res){
              if(res.code == 0){
-               _this.gotomobile()
+               console.log(res);
+               
+              _this.gotomobile()
              }
           })
         }
@@ -70,16 +70,20 @@ Page({
     var _this = this;
     zajax.requestAjax('/api/my/index','','post','正在加载',function(res){
         if(res.code == 0){
+          console.log(res.data)
+          _this.setData({
+            servicePhone:res.data.servicePhone
+           })
           if (res.data.member == "") {
             _this.setData({
                 authorization:false,
               })
-          }else{
-            console.log("a")
+          }else{      
             _this.setData({
               authorization:true,
               isLogin:true,
-              useinfo:res.data.member
+              useinfo:res.data.member,
+              
             })
           }
         }
