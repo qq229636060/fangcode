@@ -137,14 +137,14 @@
         </view>
     </view>
     <view class="agentlist">
-      <view class="agentbox">
+      <view class="agentbox" wx:for="{{broker}}" wx:key="*this" wx:if="{{broker.lenght != 0}}">
         <view class="agentbox_l">
           <image src="../../img/useface.png" class="ag_1"></image>
-          <view class="ag_2">陈敏</view>
+          <view class="ag_2">{{item.name}}</view>
         </view>
         <view class="agentbox_r">
-          <view class="tel_btn"><i></i>电话</view>
-          <view class="wechat_btn"><i></i>咨询</view>
+          <view class="tel_btn" data-id="{{item.mobile}}" bindtap="callme"><i></i>电话</view>
+          <view class="wechat_btn" data-id="{{item.qrcode}}" bindtap="op_code"><i></i>咨询</view>
         </view>
       </view>
     </view>
@@ -180,9 +180,10 @@
     </view>
    <van-action-sheet show="{{ show }}" z-index="9999" title="{{tz_txt}}" bind:close="close_bm">
     <view class="telfrombox">
-        <input type="text" placeholder="请输入您的姓名"></input>
-        <input type="number" placeholder="请输入您的手机号"></input>
+        <input type="text" placeholder="请输入您的姓名" bindinput='changname'></input>
+        <input type="number" placeholder="请输入您的手机号" bindinput="changtel" maxlength="11"></input>
     </view>
-    <view class="bm_btnz">确定</view>
+    <view class="bm_btnz" bindtap="bm">确定</view>
     </van-action-sheet>
+    <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999"><image class="qcode" mode="aspectFill" src="{{qcode}}"></image></van-popup>
 </view>

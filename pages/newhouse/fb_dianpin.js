@@ -1,4 +1,5 @@
 // pages/newhouse/fb_dianpin.js
+const zajax = require('../../utils/comm.js');
 Page({
 
   /**
@@ -6,7 +7,9 @@ Page({
    */
   data: {
     number:15,
-    act:0
+    act:0,
+    houseid:"",
+    cont:""
   },
 
   /**
@@ -26,13 +29,45 @@ Page({
         z = z - index
     }
     this.setData({
-      number:z
+      number:z,
+      cont:e.detail.value
     });
   },
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      houseid:options.id
+    });
   },
-
+  fb:function(){
+    if(this.data.number > 0){
+      wx.showModal({
+        title:"还差"+this.data.number+"字才能点评",
+        showCancel:false
+      });
+      return false
+    }
+    var data = {
+       id:this.data.houseid,
+       look:this.data.act,
+       yelp:this.data.cont
+    }
+    zajax.requestAjax('/api/house/yelpsave',data,'post','正在加载',function(res){
+       if(res.code == 0){
+        wx.showModal({
+          title:res.msg,
+          showCancel:false,
+          success (res) {
+            if (res.confirm) {
+                wx.navigateBack({//返回
+                  delta: 1
+                })
+            }
+          }
+        });
+       }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

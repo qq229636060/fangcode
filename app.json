@@ -15,7 +15,8 @@
     "pages/newhouse/dtlist",
     "pages/newhouse/dtcont",
     "pages/tool/index",
-    "pages/tool/toolend"
+    "pages/tool/toolend",
+    "pages/tool/map"
   ],
   "window": {
     "backgroundTextStyle": "light",

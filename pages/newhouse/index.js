@@ -132,9 +132,7 @@ Page({
                   listarr.push(item)
               })
               _this.setData({
-                list:listarr
-              });
-              _this.setData({
+                list:listarr,
                 pages:_this.data.pages+1
             })
           }else{

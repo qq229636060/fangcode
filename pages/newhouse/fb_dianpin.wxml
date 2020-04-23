@@ -7,6 +7,6 @@
 <textarea placeholder="对本楼盘的环境、位置、配套设置满意吗？说说你的看法" focus="{{focus}}"  class="texts" bindinput="cont"/>
 <view class="txt">还差{{number}}个字</view>
 </view>
-<view class="z_btn" bindtap="goto_fbdp">
+<view class="z_btn" bindtap="fb">
           我要点评
 </view>

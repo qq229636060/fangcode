@@ -8,6 +8,10 @@ Page({
     houseid:"",
     houseinfo:"",
     list:"",//相识楼盘
+    bm_name:"",
+    bm_tel:"",
+    broker:"",//经纪人
+    qcode:"",//二维码
     background:[
       {
         id:1,
@@ -21,6 +25,7 @@ Page({
     interval:3000,
     duration:500,
     show:false,
+    showcode:false,
     tz_txt:"世茂云境的降价通知"//降价通知标题
   },
 
@@ -43,12 +48,37 @@ Page({
           })
           _this.setData({
             houseinfo:res.data.info,
-            list:res.data.same
+            list:res.data.same,
+            broker:res.data.broker
           })
         }
      })
   },
-
+  callme:function(e){
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.id,
+      fail:function(){
+        return false
+      }
+    })
+  },
+  op_code:function(e){
+     
+      this.setData({
+        qcode:e.currentTarget.dataset.id,
+        showcode:true
+      })     
+  },
+  onClose:function(){
+    this.setData({
+      showcode:false
+    })     
+  },
+  gotocont:function(e){
+    wx.redirectTo({
+      url:"houseinfo?id="+e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -103,8 +133,12 @@ Page({
     })
   },
   gotodp:function(){
+    wx.setStorage({
+      key:"houseinfo",
+      data:this.data.houseinfo
+    })
     wx.navigateTo({
-      url:'dianpin'
+      url:'dianpin?id='+this.data.houseid
     })
   },
   notice:function(e){
@@ -129,7 +163,58 @@ Page({
   },
   gotoask:function(){
     wx.navigateTo({
-      url:'ask'
+      url:'ask?id='+this.data.houseid
+    })
+  },
+  changname:function(e){
+      this.setData({
+        bm_name:e.detail.value
+      })
+  },
+  changtel:function(e){
+      this.setData({
+        bm_tel:e.detail.value
+      })
+  },
+  if_mobile(tel){
+      var reg =/^0?1[3|4|5|6|7|8][0-9]\d{8}$/;
+      return reg.test(tel);
+  },
+  bm:function(){
+    var _this = this;
+    if(this.data.bm_name == "" || this.data.bm_tel == ""){
+      wx.showModal({
+        title:"请填写完整资料",
+        showCancel:false
+      });
+      return false
+    }
+    if(!this.if_mobile(this.data.bm_tel)){
+      wx.showModal({
+        title:"请填写正确的手机号",
+        showCancel:false
+      });
+      return false
+    }
+    var data={
+      id:this.data.houseid,
+      name:this.data.bm_name,
+      mobile:this.data.bm_tel
+    }
+    zajax.requestAjax('/api/house/noticesave',data,'post','正在加载',function(res){
+        if(res.code == 0){
+          wx.showModal({
+            title:res.msg,
+            showCancel:false,
+            success (res) {
+              if (res.confirm) {
+                _this.setData({
+                  show: false
+                })
+              }    
+            }
+          });
+        }
     })
   }
 })

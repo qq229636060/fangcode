@@ -1,18 +1,18 @@
-<view class="house_info_text noneline">
-      <view class="housename">世茂云境<image src="../../img/i1.png" mode="widthFix"></image></view>
-      <view class="house_txt">售价：<view class="moneyred"><view>11000</view>/㎡</view></view>
-      <view class="house_txt">开盘：<text>时间待定</text></view>
-      <view class="house_txt">地址：<text class="adder">福州市仓山区盖山镇浦下村</text><image src="../../img/smap.png" class="smap"></image></view>
-      <view class="house_tag"><text>住宅</text></view>
- </view>
-<view class="lines"></view>
+  <view class="house_info_text noneline">
+      <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
+      <view class="house_txt">售价：<view class="moneyred"><view>{{houseinfo.price}}</view>{{houseinfo.unit}}</view></view>
+      <view class="house_txt">开盘：<text>{{houseinfo.open_time}}</text></view>
+      <view class="house_txt">地址：<text class="adder">{{houseinfo.address}}</text><image src="../../img/smap.png" class="smap"></image></view>
+      <view class="house_tag"><text wx:for='{{houseinfo.tabs}}' wx:key="tabs">{{item}}</text></view>
+    </view>
+  <view class="lines"></view>
   <view class="dp_list">
-        <view class="dp_box">
-          <view class="dp_box_l"><image src="../../img/useface.png"></image></view>
+        <view class="dp_box" wx:for="{{dianpinlist}}" wx:key="*this">
+          <view class="dp_box_l"><image src="{{item.member_avatar}}"></image></view>
           <view class="dp_box_r">
-            <view class="use_name">我是用户名人…</view>
-            <view class="use_cont">我是一条超级长的评论，大家来看看这么长的评论是怎么显示的</view>
-            <view class="use_time">2019.03.18 21:42</view>
+            <view class="use_name">{{item.member_name}}</view>
+            <view class="use_cont">{{item.yelp}}</view>
+            <view class="use_time">{{item.created}}</view>
           </view>
         </view>
        </view>

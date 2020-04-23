@@ -8,12 +8,14 @@
 //其他参数可以自定义传入
 const requestAjax = function (url, postData, types,message, success, fail) {
   // console.log(data)
-  console.log(wx.getStorageSync('token_data'))
   
   var loctoken = "";
-  if(wx.getStorageSync('token_data')){
-    loctoken = wx.getStorageSync('token_data')
-  }
+  wx.getStorage({
+    key: 'token_data',
+    success (res) {
+      loctoken =res.data
+    }
+  })
   wx.showNavigationBarLoading()
   if (message != "") {
     wx.showLoading({
@@ -36,6 +38,12 @@ const requestAjax = function (url, postData, types,message, success, fail) {
       wx.hideNavigationBarLoading()
       if (message != "") {
         wx.hideLoading()
+      }
+      if (res.statusCode == -100) {
+        wx.setStorage({
+          key:"token_data",
+          data:""
+        })
       }
       if (res.statusCode == 200) {
         success(res.data)

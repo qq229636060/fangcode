@@ -3,7 +3,7 @@
       <image src="../../img/useface.png" class="useface" wx:if='{{!isLogin}}'></image>
       <image src="{{useinfo.avatar_url}}" class="useface" wx:else></image>
       <view wx:if='{{!isLogin}}' class="usetxt">
-        <button open-type="getUserInfo" class="nonebtn" bindgetuserinfo='btn_sub' wx:if="{{authorization == true}}">点击登录</button>
+        <button open-type="getUserInfo" class="nonebtn" bindgetuserinfo='btn_sub' wx:if="{{authorization == false}}">点击登录</button>
         <button class="nonebtn" wx:else bindtap="gotomobile">点击登录</button>
       </view>
       <view class="usetxt" wx:else>

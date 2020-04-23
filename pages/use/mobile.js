@@ -29,7 +29,6 @@ Page({
             wx.navigateBack({
               delta: 1,
               success: function (e) {
-                  console.log(getCurrentPages())
                   var page = getCurrentPages().pop();
                   if (page == undefined || page == null) return;
                   page.onLoad();
