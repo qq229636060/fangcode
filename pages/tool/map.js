@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    markers: [],
+    lng:"",
+    lat:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     console.log(options);
+     var mapdata = [{
+      iconPath: "../../img/map.png",
+      id: 0,
+      latitude: options.lat,
+      longitude: options.lng,
+      width: 50,
+      height: 50,
+      title:"本案地址"
+    }]
+    this.setData({
+      markers:mapdata,
+      lng:options.lng,
+      lat:options.lat
+    })
   },
 
   /**

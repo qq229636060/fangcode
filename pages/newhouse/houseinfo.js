@@ -12,6 +12,8 @@ Page({
     bm_tel:"",
     broker:"",//经纪人
     qcode:"",//二维码
+    lng:"",
+    lat:"",
     background:[
       {
         id:1,
@@ -46,10 +48,13 @@ Page({
           res.data.same.forEach(function(item){
             item.tabs = Object.values(item.tabs)
           })
+          var new_zuo = _this.bMapToQQMap(res.data.info.lng,res.data.info.lat)
           _this.setData({
             houseinfo:res.data.info,
             list:res.data.same,
-            broker:res.data.broker
+            broker:res.data.broker,
+            lng:new_zuo[0],
+            lat:new_zuo[1]
           })
         }
      })
@@ -73,6 +78,11 @@ Page({
     this.setData({
       showcode:false
     })     
+  },
+  gotomap:function(){
+    wx.redirectTo({
+      url:"../tool/map?lng="+this.data.lng+"&lat="+this.data.lat
+    })
   },
   gotocont:function(e){
     wx.redirectTo({
@@ -122,6 +132,18 @@ Page({
   onShareAppMessage: function () {
 
   },
+  bMapToQQMap:function(lng, lat) {
+    if (lng == null || lng == '' || lat == null || lat == '')
+        return [lng, lat];
+    var x_pi = 3.14159265358979324;
+    var x = parseFloat(lng) - 0.0065;
+    var y = parseFloat(lat) - 0.006;
+    var z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * x_pi);
+    var theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_pi);
+    var lng = (z * Math.cos(theta)).toFixed(7);
+    var lat = (z * Math.sin(theta)).toFixed(7);
+    return [lng, lat];
+},
   gotojisuan:function(){
     wx.navigateTo({
       url:'../tool/index'
