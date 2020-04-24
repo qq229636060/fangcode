@@ -24,16 +24,19 @@ Page({
            if(res.code == 0){
             wx.setStorage({
               key:"token_data",
-              data:res.data.token
-            })
-            wx.navigateBack({
-              delta: 1,
-              success: function (e) {
-                  var page = getCurrentPages().pop();
-                  if (page == undefined || page == null) return;
-                  page.onLoad();
+              data:res.data.token,
+              success(res){
+                wx.navigateBack({
+                  delta: 1,
+                  success: function (e) {
+                      var page = getCurrentPages().pop();
+                      if (page == undefined || page == null) return;
+                      page.onLoad();
+                  }
+                })
               }
             })
+   
            }
         })
       }

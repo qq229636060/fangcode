@@ -2,18 +2,7 @@
 <view class="container pb120">
     <view class="housepic">
       <view class="picnumber">共100张</view>
-      <view class="page-section">
-          <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" 
-          duration="{{duration}}">
-            <block wx:key="*this" wx:for="{{background}}">
-              <swiper-item>
-                <view class="swiper-item {{item}}">
-                  <image src="{{item.url}}"></image>
-                </view>
-              </swiper-item>
-            </block>
-          </swiper>
-        </view>
+      <image src="{{houseinfo.cover}}" mode="aspectFill"></image>
     </view>
     <view class="house_info_text">
       <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
@@ -30,8 +19,8 @@
     </view>
     <view class="tel">
       <view class="tel_l">
-        <text>0595-8888888</text>
-        <text>联系时，请告知福房网上看到，谢谢！</text>
+        <text>{{houseinfo.phone}}</text>
+        <text>联系时，请告知{{houseinfo.web_name}}上看到，谢谢！</text>
       </view>
       <view class="tel_r"><image src="../../img/tel.png"></image></view>
     </view>
@@ -59,21 +48,21 @@
         </view>
       </view>
     </view>
-    <view class="lpdt mt50">
+    <view class="lpdt mt50" wx:if="{{newlist.length != 0}}">
        <view class="title_x">
         <view class="h2">楼盘动态</view>
         <view class="more" bindtap="gotodtlist">查看更多<view></view></view>
        </view>
-         <view class="lplist">
+         <view class="lplist" wx:for="{{newlist}}" wx:key="*this" data-id="{{item.id}}" bindtap="gotocont">
           <view class="lpbox flex-wrp">
-            <image src="https://gy.ffw.com.cn/up/rent/20180504/93/88/79452.jpeg.200x150.jpeg"  class="dtpic"></image>
+            <image src="{{item.cover}}"  class="dtpic"></image>
             <view class="lpmsg">
               <view class="h3">
-                放风单价超1万元/㎡！时隔9个月，新产品涨幅或超25%？！
+               {{item.title}}
               </view>
               <view class="times">
                 <image src="../../img/time.png" class="timeicon"></image>
-                2020.01.02 20:25:34
+                 {{item.push_time}}
               </view>
             </view>
           </view>
@@ -81,16 +70,16 @@
     </view>
     <view class="lp_yelp mt50">
       <view class="title_x">
-        <view class="h2">楼盘点评(100)</view>
+        <view class="h2">楼盘点评({{yelp.length}})</view>
         <view class="more">查看更多<view></view></view>
        </view>
        <view class="dp_list">
-        <view class="dp_box">
-          <view class="dp_box_l"><image src="../../img/useface.png"></image></view>
+        <view class="dp_box" wx:for="{{yelp}}" wx:key="*this">
+          <view class="dp_box_l"><image src="{{item.member_avatar}}"></image></view>
           <view class="dp_box_r">
-            <view class="use_name">我是用户名人…</view>
-            <view class="use_cont">我是一条超级长的评论，大家来看看这么长的评论是怎么显示的</view>
-            <view class="use_time">2019.03.18 21:42</view>
+            <view class="use_name">{{item.member_name}}</view>
+            <view class="use_cont">{{item.yelp}}</view>
+            <view class="use_time">{{item.created}}</view>
           </view>
         </view>
         <view class="morebtn" bindtap="gotodp">
@@ -106,38 +95,28 @@
         </view>
       </view>
       <view class="lp_asklist">
-        <view class="lp_askbox">
+        <view class="lp_askbox" wx:for="{{question}}" wx:key="*this">
             <view class="ask1">
               <i>问</i>
-              <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
+              <view class="asktxt">{{item.question}}</view>
             </view>
             <view class="ask2">
               <i>答</i>
-              <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
-            </view>
-        </view>
-        <view class="lp_askbox">
-            <view class="ask1">
-              <i>问</i>
-              <view class="asktxt">3.4米层高的做两层不压抑吗？</view>
-            </view>
-            <view class="ask2">
-              <i>答</i>
-              <view class="asktxt hui">3.4米层高的做两层不压抑吗？</view>
+              <view class="asktxt hui">{{item.answer}}</view>
             </view>
         </view>
         <view class="morebtn" bindtap="gotoask">
             我要咨询
           </view>
     </view>
-    <view class="lp_gw mt50">
+    <view class="lp_gw mt50" wx:if="{{broker.length != 0}}">
       <view class="title_x">
           <view class="h2">置业顾问</view>
           <view class="more">政策解读 楼盘导览 户型解析</view>
         </view>
     </view>
-    <view class="agentlist">
-      <view class="agentbox" wx:for="{{broker}}" wx:key="*this" wx:if="{{broker.lenght != 0}}">
+    <view class="agentlist" wx:if="{{broker.length != 0}}">
+      <view class="agentbox" wx:for="{{broker}}" wx:key="*this">
         <view class="agentbox_l">
           <image src="../../img/useface.png" class="ag_1"></image>
           <view class="ag_2">{{item.name}}</view>
@@ -167,18 +146,21 @@
       </view>
     </view>
     <view class="cont_foot">
-       <view class="w60">
-        <image src="../../img/s1.png"></image>
+       <view class="w60" bindtap="soucan">
+        <image src="../../img/s1.png" wx:if="{{houseinfo.follow == 0}}"></image>
+        <image src="../../img/s2.png" wx:else></image>
         <view class="ftext">收藏</view>
        </view>
         <view class="w60">
         <image src="../../img/fx.png"></image>
         <view class="ftext">分享</view>
        </view>
-       <view class="f_btn">微聊</view>
+       <button class="none" style="width:31vw" open-type="contact" bindcontact="handleContact"
+        session-from='{"type": "image", "title": "{{houseinfo.name}}", "url": "", "desc": "您可咨询楼盘信息，我们将竭诚为您服务！", "img": "{{houseinfo.cover}}"}'
+       >微聊</button>
        <view class="f_btn">致电售楼处</view>
     </view>
-   <van-action-sheet show="{{ show }}" z-index="9999" title="{{tz_txt}}" bind:close="close_bm">
+   <van-action-sheet show="{{ show }}" z-index="9999" title="{{houseinfo.name}}的降价通知" bind:close="close_bm">
     <view class="telfrombox">
         <input type="text" placeholder="请输入您的姓名" bindinput='changname'></input>
         <input type="number" placeholder="请输入您的手机号" bindinput="changtel" maxlength="11"></input>

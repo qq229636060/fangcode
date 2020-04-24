@@ -10,62 +10,14 @@ Page({
     list:[],
     close_more:false,
     dropDownMenuTitle: ['区域', '价格', '户型', '更多'],
-    data1: [{
-        id: 0,
-        title: '不限',
-        childModel: [{
-            id: '0-1',
-            title: '不限'
-          }
-        ]
-      },
-      {
-        id: 1,
-        title: '道里区',
-        childModel: [{
-            id: '1-1',
-            title: '中央大街'
-          },
-          {
-            id: '1-2',
-            title: '埃德蒙顿路'
-          }
-        ]
-      },
-      {
-        id: 2,
-        title: '南岗区',
-        childModel: [{
-            id: '2-1',
-            title: '果戈里'
-          },
-          {
-            id: '2-2',
-            title: '通达街'
-          }
-        ]
-      },
-      {
-        id: 3,
-        title: '松北区',
-        childModel: [{
-            id: '3-1',
-            title: '世茂大道'
-          },
-          {
-            id: '3-2',
-            title: '市政府'
-          }
-        ]
-      }
-    ],
+    data1: [],
     data2: [{
         id: 1,
-        title: '个人房源'
+        text: '个人房源'
       },
       {
         id: 2,
-        title: '经纪人房源'
+        text: '经纪人房源'
       }
     ],
     data3: [{
@@ -120,7 +72,7 @@ Page({
       sid:"",
       page:_this.data.pages
     }
-    
+    this.getselect_data();
     zajax.requestAjax('/api/house/list',data,'post','正在加载',function(res){
        console.log(res.data.length)
        if(res.code == 0){
@@ -143,7 +95,17 @@ Page({
        }
     })
   },
-
+  getselect_data:function(e){
+    var _this = this;
+    zajax.requestAjax('/api/house/searchoption','','post','正在加载',function(res){
+       console.log(res);
+       if(res.code == 0){
+          _this.setData({
+            data1:res.data.area
+          })
+       }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

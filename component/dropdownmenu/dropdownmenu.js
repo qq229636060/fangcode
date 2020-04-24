@@ -151,21 +151,12 @@ Component({
     selectDistrictLeft: function(e) {
       var model = e.target.dataset.model.childModel;
       var selectedId = e.target.dataset.model.id
-      var selectedTitle = e.target.dataset.model.title;
+      var selectedTitle = e.target.dataset.model.name;
+      this.closeHyFilter();
       this.setData({
         dropDownMenuDistrictDataRight: model ? model : '',
         district_left_select: selectedId,
         district_right_select: '',
-      })
-    },
-
-    selectDistrictRight: function(e) {
-      var selectedId = e.target.dataset.model.id
-      var selectedTitle = e.target.dataset.model.title;
-      this.closeHyFilter();
-      this.setData({
-        district_right_select: selectedId,
-        district_right_select_name: selectedTitle
       })
       this.triggerEvent("selectedItem", {
         index: this.data.shownavindex,
@@ -173,6 +164,21 @@ Component({
         selectedTitle: selectedTitle
       })
     },
+
+    // selectDistrictRight: function(e) {
+    //   var selectedId = e.target.dataset.model.id
+    //   var selectedTitle = e.target.dataset.model.title;
+    //   this.closeHyFilter();
+    //   this.setData({
+    //     district_right_select: selectedId,
+    //     district_right_select_name: selectedTitle
+    //   })
+    //   this.triggerEvent("selectedItem", {
+    //     index: this.data.shownavindex,
+    //     selectedId: selectedId,
+    //     selectedTitle: selectedTitle
+    //   })
+    // },
 
     selectSourceItem: function(e) {
       var selectedId = e.target.dataset.model.id

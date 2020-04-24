@@ -6,22 +6,34 @@
 // success:成功的回调函数
 // fail：失败的回调
 //其他参数可以自定义传入
+var loctoken = "";
+
 const requestAjax = function (url, postData, types,message, success, fail) {
   // console.log(data)
-  
-  var loctoken = "";
-  wx.getStorage({
-    key: 'token_data',
-    success (res) {
-      loctoken =res.data
+  // wx.getStorage({
+  //   key: 'token_data',
+  //   success (res) {
+  //     console.log(res)
+  //     loctoken = res.data
+  //   }
+  // })
+  try {
+    var value = wx.getStorageSync('token_data')
+    if(value) {
+      console.log(value)
+      loctoken = value
     }
-  })
+  }catch (e) {
+    console.log(e)
+    loctoken = ""
+  }
   wx.showNavigationBarLoading()
   if (message != "") {
     wx.showLoading({
       title: message,
     })
   }
+  console.log(loctoken)
   wx.request({
   //可以写上请求的域名  后期改测试服正式服 改一个地方就可以 前缀写上后期上线改地址好改
     url: 'http://api.97ffw.com'+url,
@@ -35,15 +47,13 @@ const requestAjax = function (url, postData, types,message, success, fail) {
     method: types,//方法也可以改成变量 传入
     success: function (res) {
       //console.log(res.data)
+      console.log(res)
       wx.hideNavigationBarLoading()
       if (message != "") {
         wx.hideLoading()
       }
-      if (res.statusCode == -100) {
-        wx.setStorage({
-          key:"token_data",
-          data:""
-        })
+      if (res.data.code == -100) {
+         console.log("aa")
       }
       if (res.statusCode == 200) {
         success(res.data)

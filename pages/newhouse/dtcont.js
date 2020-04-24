@@ -1,18 +1,41 @@
 // pages/newhouse/dtcont.js
+const zajax = require('../../utils/comm.js');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+      houseid:"",
+      newid:"",
+      continfo:"",
+      title:"",
+      time:"",
+      conttxt:"",
+      list:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this;
+     this.setData({
+       houseid:options.houseid,
+       newid:options.id
+     })
+     var data ={
+      id:this.data.houseid,
+      newsId:this.data.newid
+     }
+     zajax.requestAjax('/api/house/newsInfo',data,'post','正在加载',function(res){
+        if(res.code == 0){
+           _this.setData({
+              continfo:res.data.info,
+              conttxt:res.data.info.info.replace(/\<img/gi, '<img style="max-width:100%;height:auto" '),
+              list:res.data.same
+           })
+        }
+     })
   },
 
   /**

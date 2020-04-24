@@ -14,21 +14,11 @@ Page({
     qcode:"",//二维码
     lng:"",
     lat:"",
-    background:[
-      {
-        id:1,
-        url:'http://pic.ffw.com.cn/cell/pic/1311/20131121143148_0.jpg'
-      },
-      {
-        id:2,
-        url:'http://pic.ffw.com.cn/cell/pic/1311/20131121143148_0.jpg'
-      }
-    ],//焦点图
-    interval:3000,
-    duration:500,
+    question:"",
+    yelp:"",
+    newlist:"",
     show:false,
-    showcode:false,
-    tz_txt:"世茂云境的降价通知"//降价通知标题
+    showcode:false
   },
 
   /**
@@ -53,6 +43,9 @@ Page({
             houseinfo:res.data.info,
             list:res.data.same,
             broker:res.data.broker,
+            question:res.data.question,
+            newlist:res.data.news,
+            yelp:res.data.yelp,
             lng:new_zuo[0],
             lat:new_zuo[1]
           })
@@ -80,13 +73,38 @@ Page({
     })     
   },
   gotomap:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url:"../tool/map?lng="+this.data.lng+"&lat="+this.data.lat
     })
   },
   gotocont:function(e){
     wx.redirectTo({
       url:"houseinfo?id="+e.currentTarget.dataset.id
+    })
+  },
+  gotocont:function(e){
+    wx.navigateTo({
+      url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+this.data.houseid
+    })
+  },
+  soucan:function(e){
+    var _this = this;
+    var data={
+      id:this.data.houseid
+    }
+    zajax.requestAjax('/api/house/followsave',data,'post','正在加载',function(res){
+       if(res.code == 0){
+         if(_this.data.houseinfo.follow == 0){
+          _this.setData({
+            'houseinfo.follow':1
+          })
+         }else{
+          _this.setData({
+            'houseinfo.follow':0
+          })
+         }
+          
+       }
     })
   },
   /**
@@ -175,7 +193,7 @@ Page({
   },
   gotodtlist:function(){
     wx.navigateTo({
-      url:'dtlist'
+      url:'dtlist?id='+this.data.houseid
     })
   },
   gotohxlist:function(){
