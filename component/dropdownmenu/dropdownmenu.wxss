@@ -154,6 +154,7 @@
 .z-height {
   overflow-y: scroll;
   background: #fff;
+  max-height: 500rpx;
 }
 
 .slidup {

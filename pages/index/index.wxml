@@ -26,11 +26,11 @@
                 <view>新房</view>
                 </navigator>
             </view>
-            <view class="flex-item">
+            <view class="flex-item" bindtap="gotodtcont">
                 <image src="../../img/n2.png"></image>
                 <view>楼市动态</view>
             </view>
-            <view class="flex-item">
+            <view class="flex-item" bindtap="vrlist">
                 <image src="../../img/n3.png"></image>
                 <view>VR看房</view>
             </view>

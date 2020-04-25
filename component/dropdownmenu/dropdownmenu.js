@@ -6,11 +6,7 @@ Component({
     },
     dropDownMenuDistrictData: {
       type: Array,
-      value: [],
-      observer: function(newVal, oldVal) {
-        let model = newVal[0] ? newVal[0] : null
-        this.selectDefaltDistrictLeft(model)
-      }
+      value: []
     },
 
     dropDownMenuSourceData: {
@@ -134,29 +130,28 @@ Component({
     },
 
 
-    selectDefaltDistrictLeft(model) {
-      if (!model) {
-        return
-      }
-      var model = model.childModel;
-      var selectedId = model.id
-      var selectedTitle = model.title;
-      this.setData({
-        dropDownMenuDistrictDataRight: model ? model : '',
-        district_left_select: selectedId,
-        district_right_select: '',
-      })
-    },
+    // selectDefaltDistrictLeft(model) {
+    //   if (!model) {
+    //     return
+    //   }
+    //   var model = model.childModel;
+    //   var selectedId = model.id
+    //   var selectedTitle = model.title;
+    //   this.setData({
+    //     dropDownMenuDistrictDataRight: model ? model : '',
+    //     district_left_select: selectedId,
+    //     district_right_select: '',
+    //   })
+    // },
 
     selectDistrictLeft: function(e) {
-      var model = e.target.dataset.model.childModel;
+      console.log(e)
       var selectedId = e.target.dataset.model.id
       var selectedTitle = e.target.dataset.model.name;
       this.closeHyFilter();
       this.setData({
-        dropDownMenuDistrictDataRight: model ? model : '',
         district_left_select: selectedId,
-        district_right_select: '',
+        district_left_select_name:selectedTitle,
       })
       this.triggerEvent("selectedItem", {
         index: this.data.shownavindex,
@@ -181,6 +176,7 @@ Component({
     // },
 
     selectSourceItem: function(e) {
+      console.log(e)
       var selectedId = e.target.dataset.model.id
       var selectedTitle = e.target.dataset.model.title;
       this.closeHyFilter();
@@ -212,7 +208,7 @@ Component({
 
     selectStyleItem: function(e) {
       var selectedId = e.target.dataset.model.id
-      var selectedTitle = e.target.dataset.model.title;
+      var selectedTitle = e.target.dataset.model.name;
       this.closeHyFilter();
       this.setData({
         selected_style_id: selectedId,
@@ -269,6 +265,7 @@ Component({
       });
     },
     moreselect:function(e){
+      
       var index = e.currentTarget.dataset.index;
       var bindex = e.currentTarget.dataset.bigindex;
       console.log(index);

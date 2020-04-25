@@ -17,17 +17,16 @@
   </view>
 </view>
 
-<view class="district {{district_open ? 'show' : 'disappear'}} " bindtap="close">
-  <view class="half half-right">
-    <view class="{{district_left_select == item.id ? 'current_left_select' : ''}}" wx:for="{{dropDownMenuDistrictData}}" catchtap="selectDistrictLeft" data-model='{{item}}' wx:key="unique">
+<view class="container container_hd {{district_open ? 'show' : 'disappear'}} " bindtap="close">
+   <view class='z-height'>
+    <view>
+      <block wx:key="unique"   wx:for="{{dropDownMenuDistrictData}}">
+         <view class="sortitem {{selected_style_id==item.id ? ' active ' : ' '}}" catchtap="selectDistrictLeft" data-model='{{item}}'>
       {{item.name}}
     </view>
-  </view>
-  <!-- <view class="half half-right">
-    <view class="{{district_right_select == item.id ? 'current_right_select' : ''}}" wx:for="{{dropDownMenuDistrictDataRight}}" catchtap="selectDistrictRight" data-model='{{item}}' wx:key="unique">
-      {{item.title}}
+      </block>
     </view>
-  </view> -->
+  </view>
 </view>
 
 <view class="container container_hd {{source_open ? 'show' : 'disappear'}} " bindtap="close">
@@ -43,7 +42,7 @@
   <view class='z-height'>
     <view>
       <block wx:for="{{dropDownMenuStyleData}}" wx:key="unique">
-        <view class="sortitem {{selected_style_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' catchtap='selectStyleItem'> {{item.title}}</view>
+        <view class="sortitem {{selected_style_id == item.id ? ' active ' : ' '}}" data-model='{{item}}' catchtap='selectStyleItem'> {{item.name}}</view>
       </block>
     </view>
   </view>
@@ -55,25 +54,25 @@
         <view class="sortitem"> 
             <view class="h2">{{dropDownMenuFilterData[0].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[0].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='0' data-index='{{index}}' data-model='{{list.selectid}}' catchtap="moreselect" wx:key="d">{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[0].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='0' data-index='{{index}}' data-model='{{list.selectid}}' catchtap="moreselect" wx:key="d">{{list.title}}</view>
             </view>
         </view>
         <view class="sortitem"> 
             <view class="h2">{{dropDownMenuFilterData[1].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[1].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='1' data-index='{{index}}' data-model='{{list.selectid}}' wx:key="c" catchtap="moreselect">{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[1].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='1' data-index='{{index}}' data-model='{{list.id}}' wx:key="c" catchtap="moreselect">{{list.name}}</view>
             </view>
         </view>
         <view class="sortitem"> 
             <view class="h2">{{dropDownMenuFilterData[2].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[2].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='2' data-index='{{index}}' data-model='{{list.selectid}}' wx:key="b" catchtap="moreselect">{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[2].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='2' data-index='{{index}}' data-model='{{list.id}}' wx:key="b" catchtap="moreselect">{{list.name}}</view>
             </view>
         </view>
         <view class="sortitem"> 
             <view class="h2">{{dropDownMenuFilterData[3].title}}</view> 
             <view class="zll">
-              <view wx:for="{{dropDownMenuFilterData[3].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='3' data-index='{{index}}' data-model='{{list.selectid}}' wx:key="a" catchtap="moreselect">{{list.selectname}}</view>
+              <view wx:for="{{dropDownMenuFilterData[3].selectbox}}" wx:for-item="list" class="moreselect {{list.is_select ? 'cur' : ''}}" data-bigindex='3' data-index='{{index}}' data-model='{{list.id}}' wx:key="a" catchtap="moreselect">{{list.name}}</view>
             </view>
         </view>
       </block>

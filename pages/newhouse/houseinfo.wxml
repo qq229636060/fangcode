@@ -1,7 +1,7 @@
 <!--pages/newhouse/houseinfo.wxml-->
 <view class="container pb120">
     <view class="housepic">
-      <view class="picnumber">共100张</view>
+      <view class="picnumber">共{{houseinfo.photoNum}}张</view>
       <image src="{{houseinfo.cover}}" mode="aspectFill"></image>
     </view>
     <view class="house_info_text">
@@ -53,7 +53,7 @@
         <view class="h2">楼盘动态</view>
         <view class="more" bindtap="gotodtlist">查看更多<view></view></view>
        </view>
-         <view class="lplist" wx:for="{{newlist}}" wx:key="*this" data-id="{{item.id}}" bindtap="gotocont">
+         <view class="lplist" wx:for="{{newlist}}" wx:key="*this" data-id="{{item.id}}" bindtap="gotodtcont">
           <view class="lpbox flex-wrp">
             <image src="{{item.cover}}"  class="dtpic"></image>
             <view class="lpmsg">

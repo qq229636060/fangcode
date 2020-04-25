@@ -61,7 +61,6 @@ Page({
     })
   },
   op_code:function(e){
-     
       this.setData({
         qcode:e.currentTarget.dataset.id,
         showcode:true
@@ -82,7 +81,7 @@ Page({
       url:"houseinfo?id="+e.currentTarget.dataset.id
     })
   },
-  gotocont:function(e){
+  gotodtcont:function(e){
     wx.navigateTo({
       url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+this.data.houseid
     })

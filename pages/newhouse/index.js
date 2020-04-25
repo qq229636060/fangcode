@@ -11,24 +11,8 @@ Page({
     close_more:false,
     dropDownMenuTitle: ['区域', '价格', '户型', '更多'],
     data1: [],
-    data2: [{
-        id: 1,
-        text: '个人房源'
-      },
-      {
-        id: 2,
-        text: '经纪人房源'
-      }
-    ],
-    data3: [{
-        id: 1,
-        title: '出租'
-      },
-      {
-        id: 2,
-        title: '出售'
-      }
-    ],
+    data2: [],
+    data3: [],
     data4: [
       {
       id: 1,
@@ -95,13 +79,43 @@ Page({
        }
     })
   },
+  changarr:function(objs,room){
+    var arr= [];
+    if(room == 0){
+      for (let i in objs) {
+        objs[i].id = i;
+        arr.push(objs[i]); //属性
+      }
+      console.log(arr)
+      return arr
+    }else{
+      for (let i in objs) {
+        arr.push(objs[i]); //属性
+      }
+    }
+   
+    return arr
+  },
+  changarr1:function(objs){
+     var arr = []
+     for (let i in objs) {
+      arr.push({'name':objs[i],'id':i}); //属性
+      }
+      return arr
+  },
   getselect_data:function(e){
     var _this = this;
     zajax.requestAjax('/api/house/searchoption','','post','正在加载',function(res){
-       console.log(res);
        if(res.code == 0){
           _this.setData({
-            data1:res.data.area
+            data1:res.data.area,
+            data2:_this.changarr(res.data.soPrice),
+            data3:_this.changarr(res.data.soRoom,0),
+            'data4[0].selectbox':_this.changarr(res.data.soMj),
+            'data4[1].selectbox':_this.changarr1(res.data.soPropertyType),
+            'data4[2].selectbox':_this.changarr1(res.data.soStatus),
+            'data4[3].selectbox':_this.changarr1(res.data.soDecorate)
+            
           })
        }
     })
