@@ -158,15 +158,15 @@ Page({
         var sidarr = [];
         var tidarr = [];
         var didarr = [];
-        arr.forEach(function(item){
-            if(item.types == 0){
-               midarr.push(item.id)
-            }else if(item.types == 1){
-              sidarr.push(item.id)
-            }else if(item.types == 2){
-              tidarr.push(item.id)
-            }else if(item.types == 3){
-              didarr.push(item.id)
+        arr.forEach(function(item,index){
+            if(index == 0){
+               midarr.push(item.split("_")[1])
+            }else if(index == 1){
+              sidarr.push(item.split("_")[1])
+            }else if(index == 2){
+              tidarr.push(item.split("_")[1])
+            }else if(index == 3){
+              didarr.push(item.split("_")[1])
             }
         });
         this.setData({

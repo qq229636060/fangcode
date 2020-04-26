@@ -38,7 +38,8 @@ Component({
     selected_source_id: 0,
     selected_source_name: '',
     selected_filter_id: 0,
-    selected_filter_name: ''
+    selected_filter_name: '',
+    curid:[]
   },
   methods: {
     close:function(e){
@@ -267,26 +268,32 @@ Component({
     moreselect:function(e){
       var index = e.currentTarget.dataset.index;
       var bindex = e.currentTarget.dataset.bigindex;
+      var model = e.currentTarget.dataset.model
       var now_dom = this.data.dropDownMenuFilterData;
-      now_dom[bindex].selectbox[index].is_select = !now_dom[bindex].selectbox[index].is_select
-      console.log(now_dom);
+      var arr = this.data.curid; 
+      now_dom[bindex].selectbox[index].is_select = bindex+"_"+model;
+      //console.log(bindex+"_"+index)
+      arr[bindex] = bindex+"_"+model;
+      console.log(arr[bindex])
       this.setData({
-        dropDownMenuFilterData:now_dom
+        dropDownMenuFilterData:now_dom,
+        curid:arr
       });
+      console.log(this.data.curid)
     },
     ok:function(){
-         var okarr = [];
-         var arr = this.data.dropDownMenuFilterData;
-         arr.forEach(function(item,index){
-             item.selectbox.forEach(function(items){
-                  if(items.is_select){
-                     okarr.push({'types':index,'id':items.id})
-                  }
-             }) 
-         })
+        //  var okarr = [];
+        //  var arr = this.data.dropDownMenuFilterData;
+        //  arr.forEach(function(item,index){
+        //      item.selectbox.forEach(function(items){
+        //           if(items.is_select){
+        //              okarr.push({'types':index,'id':items.id})
+        //           }
+        //      }) 
+        //  })
          this.triggerEvent("selectedItem", {
             index: this.data.shownavindex,
-             arr:okarr
+            arr:this.data.curid
         })
         this.closeHyFilter();
        
