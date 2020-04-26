@@ -1,4 +1,4 @@
-// pages/newhouse/more_houseinfo.js
+// pages/newhouse/hxcont.js
 const zajax = require('../../utils/comm.js');
 Page({
 
@@ -7,30 +7,36 @@ Page({
    */
   data: {
       houseid:"",
-      housetxt:""
+      hxid:"",
+      picarr:"",
+      hxinfo:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
       this.setData({
-        houseid:options.id
-      });
-      var data = {
-         id:this.data.houseid
-      }
-      zajax.requestAjax('/api/house/param',data,'post','正在加载',function(res){
-          if(res.code == 0 ){
-              res.data.tabs = Object.values(res.data.tabs);
-             _this.setData({
-                housetxt:res.data
-             })
-          }
+         houseid:options.id,
+         hxid:options.hxid
       })
+      this.getdata()
   },
-
+  getdata:function(){
+    var _this = this;
+    var data = {
+       id:this.data.houseid,
+       hxId:this.data.hxid
+    }
+    zajax.requestAjax('/api/house/hxInfo',data,'post','正在加载',function(res){
+        if(res.code == 0){
+            _this.setData({
+            picarr:res.data.photo,
+            hxinfo:res.data
+            })
+        }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

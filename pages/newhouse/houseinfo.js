@@ -17,6 +17,7 @@ Page({
     question:"",
     yelp:"",
     newlist:"",
+    hxlist:"",
     show:false,
     showcode:false
   },
@@ -46,6 +47,7 @@ Page({
             question:res.data.question,
             newlist:res.data.news,
             yelp:res.data.yelp,
+            hxlist:res.data.hxPhoto,
             lng:new_zuo[0],
             lat:new_zuo[1]
           })
@@ -53,6 +55,14 @@ Page({
      })
   },
   callme:function(e){
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.id,
+      fail:function(){
+        return false
+      }
+    })
+  },
+  callhome:function(e){
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.id,
       fail:function(){
@@ -81,6 +91,11 @@ Page({
       url:"houseinfo?id="+e.currentTarget.dataset.id
     })
   },
+  gotohxcont:function(e){
+    wx.navigateTo({
+      url:"hxcont?id="+this.data.houseid+"&hxid="+e.currentTarget.dataset.id
+    })
+   },
   gotodtcont:function(e){
     wx.navigateTo({
       url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+this.data.houseid
@@ -104,6 +119,11 @@ Page({
          }
           
        }
+    })
+  },
+  gotopic:function(e){
+    wx.redirectTo({
+      url:"pic?id="+this.data.houseid
     })
   },
   /**
@@ -168,7 +188,7 @@ Page({
   },
   gotomore:function(){
     wx.navigateTo({
-      url:'more_houseinfo'
+      url:'more_houseinfo?id='+this.data.houseid
     })
   },
   gotodp:function(){
@@ -197,7 +217,7 @@ Page({
   },
   gotohxlist:function(){
     wx.navigateTo({
-      url:'hxlist'
+      url:'hxlist?id='+this.data.houseid
     })
   },
   gotoask:function(){

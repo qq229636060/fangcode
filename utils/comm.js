@@ -20,11 +20,9 @@ const requestAjax = function (url, postData, types,message, success, fail) {
   try {
     var value = wx.getStorageSync('token_data')
     if(value) {
-      console.log(value)
       loctoken = value
     }
   }catch (e) {
-    console.log(e)
     loctoken = ""
   }
   wx.showNavigationBarLoading()
@@ -33,7 +31,6 @@ const requestAjax = function (url, postData, types,message, success, fail) {
       title: message,
     })
   }
-  console.log(loctoken)
   wx.request({
   //可以写上请求的域名  后期改测试服正式服 改一个地方就可以 前缀写上后期上线改地址好改
     url: 'http://api.97ffw.com'+url,
@@ -67,7 +64,7 @@ const requestAjax = function (url, postData, types,message, success, fail) {
       if (message != "") {
         wx.hideLoading()
       }
-      fail()
+       console.log(res)
     },
     complete: function (res) {
 

@@ -1,8 +1,9 @@
 <!--pages/newhouse/houseinfo.wxml-->
 <view class="container pb120">
-    <view class="housepic">
+    <view class="housepic" bindtap="gotopic">
       <view class="picnumber">共{{houseinfo.photoNum}}张</view>
       <image src="{{houseinfo.cover}}" mode="aspectFill"></image>
+      <image src="../../img/VR.png" class="vricon" wx:if="{{houseinfo.vr == 1}}"></image>
     </view>
     <view class="house_info_text">
       <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
@@ -18,7 +19,7 @@
       </view>
     </view>
     <view class="tel">
-      <view class="tel_l">
+      <view class="tel_l" bindtap="callhome" data-id="{{houseinfo.phone}}">
         <text>{{houseinfo.phone}}</text>
         <text>联系时，请告知{{houseinfo.web_name}}上看到，谢谢！</text>
       </view>
@@ -26,25 +27,13 @@
     </view>
     <view class="hx_pic mt50">
       <view class="title_x">
-        <view class="h2">世茂云境户型(3)</view>
+        <view class="h2">{{houseinfo.name}}户型({{hxlist.length}})</view>
         <view class="more" bindtap="gotohxlist">查看更多<view></view></view>
       </view>
       <view class="scroll_x_box">
-        <view class="hxpicbox">
-            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
-            <view class="f26">3室2厅1卫 35m</view>
-        </view>
-         <view class="hxpicbox">
-            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
-            <view class="f26">3室2厅1卫 35m</view>
-        </view>
-         <view class="hxpicbox">
-            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
-            <view class="f26">3室2厅1卫 35m</view>
-        </view>
-         <view class="hxpicbox">
-            <image src="http://pic.ffw.com.cn/cell/pic/1702/20170220152647_2.jpg" class="hximg"></image>
-            <view class="f26">3室2厅1卫 35m</view>
+        <view class="hxpicbox" wx:for="{{hxlist}}" wx:key="*this" bindtap="gotohxcont" data-id="{{item.id}}">
+            <image src="{{item.img}}" class="hximg"></image>
+            <view class="f26">{{item.title}} {{item.area}}m</view>
         </view>
       </view>
     </view>
@@ -71,7 +60,7 @@
     <view class="lp_yelp mt50">
       <view class="title_x">
         <view class="h2">楼盘点评({{yelp.length}})</view>
-        <view class="more">查看更多<view></view></view>
+        <view class="more" bindtap="gotodp">查看更多<view></view></view>
        </view>
        <view class="dp_list">
         <view class="dp_box" wx:for="{{yelp}}" wx:key="*this">
@@ -158,7 +147,7 @@
        <button class="none" style="width:31vw" open-type="contact" bindcontact="handleContact"
         session-from='{"type": "image", "title": "{{houseinfo.name}}", "url": "", "desc": "您可咨询楼盘信息，我们将竭诚为您服务！", "img": "{{houseinfo.cover}}"}'
        >微聊</button>
-       <view class="f_btn">致电售楼处</view>
+       <view class="f_btn" bindtap="callhome" data-id="{{houseinfo.phone}}">致电售楼处</view>
     </view>
    <van-action-sheet show="{{ show }}" z-index="9999" title="{{houseinfo.name}}的降价通知" bind:close="close_bm">
     <view class="telfrombox">

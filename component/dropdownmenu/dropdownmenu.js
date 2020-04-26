@@ -265,17 +265,31 @@ Component({
       });
     },
     moreselect:function(e){
-      
       var index = e.currentTarget.dataset.index;
       var bindex = e.currentTarget.dataset.bigindex;
-      console.log(index);
-      console.log(bindex);
       var now_dom = this.data.dropDownMenuFilterData;
       now_dom[bindex].selectbox[index].is_select = !now_dom[bindex].selectbox[index].is_select
       console.log(now_dom);
       this.setData({
         dropDownMenuFilterData:now_dom
       });
+    },
+    ok:function(){
+         var okarr = [];
+         var arr = this.data.dropDownMenuFilterData;
+         arr.forEach(function(item,index){
+             item.selectbox.forEach(function(items){
+                  if(items.is_select){
+                     okarr.push({'types':index,'id':items.id})
+                  }
+             }) 
+         })
+         this.triggerEvent("selectedItem", {
+            index: this.data.shownavindex,
+             arr:okarr
+        })
+        this.closeHyFilter();
+       
     }
   },
   //组件生命周期函数，在组件实例进入页面节点树时执行

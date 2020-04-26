@@ -14,33 +14,32 @@ Page({
     data2: [],
     data3: [],
     data4: [
+        {
+        id: 1,
+        title: '面积',
+        selectbox:[]
+      }, {
+        id: 2,
+        title: '物业',
+        selectbox:[]
+      }, {
+        id: 3,
+        title: '销售状态',
+        selectbox:[]
+      },
       {
-      id: 1,
-      title: '面积',
-      selectbox:[
-        {selectid:1,selectname:'60以下',is_select:false},
-        {selectid:2,selectname:'60-80',is_select:false},
-        {selectid:3,selectname:'60以下',is_select:false},
-        {selectid:4,selectname:'60-80',is_select:false},
-        {selectid:5,selectname:'60以下',is_select:false},
-        {selectid:6,selectname:'60-80',is_select:false},
-        {selectid:7,selectname:'60以下',is_select:false},
-        {selectid:8,selectname:'60-80',is_select:false}]
-    }, {
-      id: 2,
-      title: '物业',
-      selectbox:[{selectid:1,selectname:'住宅',is_select:false},{selectid:2,selectname:'别墅',is_select:false}]
-    }, {
-      id: 3,
-      title: '销售状态',
-      selectbox:[{selectid:1,selectname:'在售',is_select:false},{selectid:2,selectname:'待售',is_select:false}]
-    },
-    {
-      id: 4,
-      title: '装修',
-      selectbox:[{selectid:1,selectname:'毛胚',is_select:false},{selectid:2,selectname:'精装',is_select:false}]
-    }
+        id: 4,
+        title: '装修',
+        selectbox:[]
+      }
   ],
+      aid:"",//区域
+      pid:"",//价格
+      rid:"",//户型
+      mid:"",//面积
+      sid:"",//状态
+      tid:"",//物业类型
+      did:""//装修
   },
   
   /**
@@ -49,13 +48,17 @@ Page({
   onLoad: function (options) {
     var _this = this;
     var data={
-      aid:"",
-      pid:"",
-      rid:"",
-      mid:"",
-      sid:"",
+      aid:this.data.aid,//区域
+      pid:this.data.pid,//价格
+      rid:this.data.rid,//户型
+      mid:this.data.mid,//面积
+      sid:this.data.sid,//状态
+      tid:this.data.tid,//物业类型
+      did:this.data.did,//装修
+      kw:"",
       page:_this.data.pages
     }
+    console.log(data)
     this.getselect_data();
     zajax.requestAjax('/api/house/list',data,'post','正在加载',function(res){
        console.log(res.data.length)
@@ -134,7 +137,52 @@ Page({
 
   },
   selectedItem: function(e) {
+    console.log(e)
     console.log('id --' + e.detail.selectedId + "cityname = " + e.detail.selectedTitle);
+    if(e.detail.index == 1){
+       this.setData({
+          aid:e.detail.selectedId
+       })
+    }else if(e.detail.index == 2){
+      console.log(e.detail.selectedId)
+      this.setData({
+         pid:e.detail.selectedId
+     })
+    }else if(e.detail.index == 3){
+      this.setData({
+        rid:e.detail.selectedId
+      })   
+    }else if(e.detail.index == 4){
+        var arr = e.detail.arr;
+        var midarr = [];
+        var sidarr = [];
+        var tidarr = [];
+        var didarr = [];
+        arr.forEach(function(item){
+            if(item.types == 0){
+               midarr.push(item.id)
+            }else if(item.types == 1){
+              sidarr.push(item.id)
+            }else if(item.types == 2){
+              tidarr.push(item.id)
+            }else if(item.types == 3){
+              didarr.push(item.id)
+            }
+        });
+        this.setData({
+           mid:midarr,
+           sid:sidarr,
+           tid:tidarr,
+           did:didarr
+        })
+    }
+    listarr= [];
+    this.setData({
+      list:[],
+      close_more:false,
+      pages:1
+    })
+    this.onLoad();
   },
   gotocont:function(e){
     wx.navigateTo({
@@ -171,6 +219,7 @@ Page({
    */
   onReachBottom: function () {
       var _this = this;
+      console.log(this.data.close_more)
       if(!this.data.close_more){
         _this.onLoad()
       }   

@@ -1,32 +1,10 @@
 <!--pages/newhouse/pic.wxml-->
 <van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="楼盘">
+  <van-tab title="{{item}}" wx:for="{{titlearr}}" wx:key="*this" wx:for-index="idx">
     <view class="piccont">
-      <view class="bigpic" bindtap="look">
-        <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
-      </view>
-      <view class="spic">
-      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
-      </view>
-       <view class="spic">
-      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
-      </view>
-       <view class="spic">
-      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
-      </view>
-      <view class="spic">
-      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
-      </view>
-       <view class="spic">
-      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
-      </view>
-       <view class="spic">
-      <image src="http://pic.ffw.com.cn/cell/pic/1912/20191218141140_0.jpg"></image>
+      <view class="{{idx1 == 0?'bigpic':'spic'}}" bindtap="look" wx:for='{{piclist[idx]}}' wx:for-index="idx1" wx:key="*this" data-url="{{item.img}}">
+        <image src="{{item.img}}"></image>
       </view>
     </view>
   </van-tab>
-  <van-tab title="沙盘">内容 2</van-tab>
-  <van-tab title="户型">内容 3</van-tab>
-  <van-tab title="周边配套">内容 4</van-tab>
-  <van-tab title="售楼处">内容 4</van-tab>
 </van-tabs>
