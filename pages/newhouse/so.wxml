@@ -1,0 +1,15 @@
+<!--pages/newhouse/so.wxml-->
+<view class="fix"><input class="soblock" type="text" placeholder="请输入楼盘名/小区等" bindinput="so"></input></view>
+ <view class="lplist">
+          <view class="lpbox flex-wrp" wx:for="{{list}}" wx:key="*this" bindtap="gotocont" data-id="{{item.id}}">
+            <image src="{{item.cover2}}"></image>
+            <view class="lpmsg">
+                <view class="lpname">
+                <view class="house_type">{{item.status_name}}</view>{{item.name}}</view>
+                <view class="lp_txt">{{item.area_name}} | {{item.mj}}</view>
+                <view class="lp_money" wx:if="{{item.price != 0}}"><i>{{item.price}}</i>{{item.unit}}</view>
+                <view class="lp_money" wx:else><i>待定</i></view>
+                <view class="lp_tag"><i wx:for="{{item.tabs}}" wx:key="*this">{{item}}</i></view>
+            </view>
+          </view>
+ </view>

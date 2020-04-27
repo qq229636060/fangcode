@@ -104,6 +104,13 @@
 					"id": -1,
 					"name": "pages/tool/map",
 					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newhouse/so",
+					"pathName": "pages/newhouse/so",
 					"scene": null
 				}
 			]

@@ -48,7 +48,13 @@ const requestAjax = function (url, postData, types,message, success, fail) {
       if (message != "") {
         wx.hideLoading()
       }
-      
+      if(res.data == "-1"){
+        wx.showToast({
+          title: res.data.msg,
+          icon: false,
+          duration: 2000
+        })
+      }
       if (res.statusCode == 200) {
         success(res.data)
       } else {
