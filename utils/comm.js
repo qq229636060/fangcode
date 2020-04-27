@@ -7,7 +7,6 @@
 // fail：失败的回调
 //其他参数可以自定义传入
 var loctoken = "";
-
 const requestAjax = function (url, postData, types,message, success, fail) {
   // console.log(data)
   // wx.getStorage({
@@ -17,6 +16,7 @@ const requestAjax = function (url, postData, types,message, success, fail) {
   //     loctoken = res.data
   //   }
   // })
+  
   try {
     var value = wx.getStorageSync('token_data')
     if(value) {
@@ -33,7 +33,7 @@ const requestAjax = function (url, postData, types,message, success, fail) {
   }
   wx.request({
   //可以写上请求的域名  后期改测试服正式服 改一个地方就可以 前缀写上后期上线改地址好改
-    url: 'http://api.97ffw.com'+url,
+    url: 'https://api.97ffw.com'+url,
     data: postData,
     header: {
       //'Content-Type': 'application/json' 默认
@@ -44,14 +44,11 @@ const requestAjax = function (url, postData, types,message, success, fail) {
     method: types,//方法也可以改成变量 传入
     success: function (res) {
       //console.log(res.data)
-      console.log(res)
       wx.hideNavigationBarLoading()
       if (message != "") {
         wx.hideLoading()
       }
-      if (res.data.code == -100) {
-         console.log("aa")
-      }
+      
       if (res.statusCode == 200) {
         success(res.data)
       } else {
@@ -72,5 +69,5 @@ const requestAjax = function (url, postData, types,message, success, fail) {
   })
 }
 module.exports = {
-  requestAjax: requestAjax,
+  requestAjax: requestAjax
 }

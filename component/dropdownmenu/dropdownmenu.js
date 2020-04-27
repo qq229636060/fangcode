@@ -272,9 +272,12 @@ Component({
       var now_dom = this.data.dropDownMenuFilterData;
       var arr = this.data.curid; 
       now_dom[bindex].selectbox[index].is_select = bindex+"_"+model;
-      //console.log(bindex+"_"+index)
-      arr[bindex] = bindex+"_"+model;
-      console.log(arr[bindex])
+      if(now_dom[bindex].selectbox[index].is_select == arr[bindex]){
+        arr[bindex] = ""
+      }else{
+        arr[bindex] = bindex+"_"+model;
+      }
+      
       this.setData({
         dropDownMenuFilterData:now_dom,
         curid:arr

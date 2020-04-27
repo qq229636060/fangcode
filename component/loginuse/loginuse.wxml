@@ -1,0 +1,20 @@
+<view class="windows_login">
+    <view class="loginbox">
+      <view class="tbox">房小8 <van-icon name="cross" bind:click="close" class="close"/></view>
+      <view class="usebox">
+         <image src="../../img/w1.png" mode="aspectFit"></image>
+          <view class="rtxt">
+            <view>全方位楼盘信息</view>
+            <view>最新楼盘资讯、楼盘动态</view>
+          </view>
+        </view>
+        <view class="usebox">
+          <image src="../../img/w2.png" mode="aspectFit"></image>
+          <view class="rtxt">
+            <view>即时在线客服</view>
+            <view>远程沟通，了解楼盘信息 </view>
+          </view>
+      </view>
+       <button open-type="getUserInfo" bindgetuserinfo='btn_sub' type="primary" class="mt50">点击登录</button>
+    </view>
+</view>

@@ -13,7 +13,8 @@ Page({
     housequestion_num:"",
     q_cont:"",
     questionCount:"",
-    qlist:[]
+    qlist:[],
+    _iflogin:false
   },
 
   /**
@@ -22,7 +23,8 @@ Page({
   onLoad: function (options) {
     var _this = this;
     this.setData({
-      houseid:options.id
+      houseid:options.id,
+      _iflogin:false
     });
     this.getdata();
   },
@@ -31,8 +33,22 @@ Page({
         q_cont:e.detail.value
      })
   },
+  gotomobile:function(e){
+    if(e.detail == "close"){
+      this.setData({
+        _iflogin:false
+      })
+    }else{
+      wx.navigateTo({
+        url:'../use/mobile'
+      })
+    }
+  },
   getdata:function(){
     var _this = this;
+    this.setData({
+      _iflogin:false
+    })
     var data = {
       id:this.data.houseid,
       page:this.data.pages
@@ -76,6 +92,10 @@ Page({
           title:res.msg,
           showCancel:false
         })
+       }else if(res.code == -100){
+          _this.setData({
+            _iflogin:true
+          })
        }
     })
   },

@@ -9,7 +9,8 @@ Page({
     number:15,
     act:0,
     houseid:"",
-    cont:""
+    cont:"",
+    _iflogin:false
   },
 
   /**
@@ -36,10 +37,28 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      houseid:options.id
+      houseid:options.id,
+      _iflogin:false
     });
   },
+  getdata(){
+    this.setData({
+      _iflogin:false
+    });
+  },
+  gotomobile:function(e){
+    if(e.detail == "close"){
+      this.setData({
+        _iflogin:false
+      })
+    }else{
+      wx.navigateTo({
+        url:'../use/mobile'
+      })
+    }
+  },
   fb:function(){
+    var _this = this
     if(this.data.number > 0){
       wx.showModal({
         title:"还差"+this.data.number+"字才能点评",
@@ -65,6 +84,10 @@ Page({
             }
           }
         });
+       }else if(res.code == -100){
+         _this.setData({
+          _iflogin:true
+        })
        }
     })
   },

@@ -7,7 +7,9 @@
     </view>
     <view class="house_info_text">
       <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
-      <view class="house_txt">售价：<view class="moneyred"><view>{{houseinfo.price}}</view>{{houseinfo.unit}}</view></view>
+      <view class="house_txt">售价：<view class="moneyred" wx:if="{{houseinfo.price != 0}}"><view>{{houseinfo.price}}</view>{{houseinfo.unit}}</view>
+      <view class="moneyred" wx:else><view>待定</view></view>
+      </view>
       <view class="house_txt">开盘：<text>{{houseinfo.open_time}}</text></view>
       <view class="house_txt">地址：<text class="adder">{{houseinfo.address}}</text><image src="../../img/smap.png" class="smap" bindtap="gotomap"></image></view>
       <view class="house_tag"><text wx:for='{{houseinfo.tabs}}' wx:key="tabs">{{item}}</text></view>
@@ -15,7 +17,7 @@
       <view class="morebtn" bindtap="gotomore">更多信息</view>
       <view class="notice">
         <text bindtap="notice">降价通知</text>
-        <text>开盘通知</text>
+        <text bindtap="openlp">开盘通知</text>
       </view>
     </view>
     <view class="tel">
@@ -156,5 +158,13 @@
     </view>
     <view class="bm_btnz" bindtap="bm">确定</view>
     </van-action-sheet>
+    <van-action-sheet show="{{ showopen }}" z-index="9999" title="{{houseinfo.name}}的开盘通知" bind:close="close_bm1">
+      <view class="telfrombox">
+          <input type="text" placeholder="请输入您的姓名" bindinput='changname1'></input>
+          <input type="number" placeholder="请输入您的手机号" bindinput="changtel1" maxlength="11"></input>
+      </view>
+      <view class="bm_btnz" bindtap="bm1">确定</view>
+    </van-action-sheet>
     <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999"><image class="qcode" mode="aspectFill" src="{{qcode}}"></image></van-popup>
+    <logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>
 </view>

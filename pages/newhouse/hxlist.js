@@ -17,7 +17,7 @@ Page({
     var hxlist = this.data.allhx;
     var tmparr = [];
     hxlist.forEach(function(item,index){
-        if(item.shi == tiaojian.shi &&  item.ting == tiaojian.cnt){
+        if(item.shi == tiaojian.shi){
           tmparr.push(item)
         }
     }) 

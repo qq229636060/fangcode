@@ -10,3 +10,4 @@
 <view class="z_btn" bindtap="fb">
           我要点评
 </view>
+ <logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>

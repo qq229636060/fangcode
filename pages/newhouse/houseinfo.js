@@ -1,5 +1,6 @@
 // pages/newhouse/houseinfo.js
 const zajax = require('../../utils/comm.js');
+
 Page({
   /**
    * 页面的初始数据
@@ -10,6 +11,8 @@ Page({
     list:"",//相识楼盘
     bm_name:"",
     bm_tel:"",
+    bm_name1:"",
+    bm_tel1:"",
     broker:"",//经纪人
     qcode:"",//二维码
     lng:"",
@@ -19,40 +22,52 @@ Page({
     newlist:"",
     hxlist:"",
     show:false,
-    showcode:false
+    showopen:false,
+    showcode:false,
+    _iflogin:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
      var _this = this;
      this.setData({
-       houseid:options.id
+       houseid:options.id,
+       _iflogin:false
      })
-     var data = {
-        id:_this.data.houseid
-     }
-     zajax.requestAjax('/api/house/info',data,'post','正在加载',function(res){
-        if(res.code == 0){
-          res.data.info.tabs = Object.values(res.data.info.tabs);
-          res.data.same.forEach(function(item){
-            item.tabs = Object.values(item.tabs)
-          })
-          var new_zuo = _this.bMapToQQMap(res.data.info.lng,res.data.info.lat)
-          _this.setData({
-            houseinfo:res.data.info,
-            list:res.data.same,
-            broker:res.data.broker,
-            question:res.data.question,
-            newlist:res.data.news,
-            yelp:res.data.yelp,
-            hxlist:res.data.hxPhoto,
-            lng:new_zuo[0],
-            lat:new_zuo[1]
-          })
-        }
-     })
+     this.getdata()
+    
+  },
+  getdata(){
+    var _this = this;
+    this.setData({
+      _iflogin:false
+    })
+    var data = {
+      id:_this.data.houseid
+   }
+   zajax.requestAjax('/api/house/info',data,'post','正在加载',function(res){
+      if(res.code == 0){
+        res.data.info.tabs = Object.values(res.data.info.tabs);
+        res.data.same.forEach(function(item){
+          item.tabs = Object.values(item.tabs)
+        })
+        var new_zuo = _this.bMapToQQMap(res.data.info.lng,res.data.info.lat)
+        _this.setData({
+          houseinfo:res.data.info,
+          list:res.data.same,
+          broker:res.data.broker,
+          question:res.data.question,
+          newlist:res.data.news,
+          yelp:res.data.yelp,
+          hxlist:res.data.hxPhoto,
+          lng:new_zuo[0],
+          lat:new_zuo[1]
+        })
+      }
+   })
   },
   callme:function(e){
     wx.makePhoneCall({
@@ -118,13 +133,29 @@ Page({
           })
          }
           
-       }
+       }else if(res.code == -100){
+        _this.setData({
+          _iflogin:true
+        })
+    }
     })
   },
   gotopic:function(e){
     wx.redirectTo({
       url:"pic?id="+this.data.houseid
     })
+  },
+  gotomobile:function(e){
+    if(e.detail == "close"){
+      this.setData({
+        _iflogin:false
+      })
+    }else{
+      wx.navigateTo({
+        url:'../use/mobile'
+      })
+    }
+   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -205,9 +236,19 @@ Page({
          show:true
     });
   },
+  openlp:function(e){
+    this.setData({
+      showopen:true
+ });
+  },
   close_bm:function(){
     this.setData({
       show:false
+ });
+  },
+  close_bm1:function(){
+    this.setData({
+      showopen:false
  });
   },
   gotodtlist:function(){
@@ -235,6 +276,16 @@ Page({
         bm_tel:e.detail.value
       })
   },
+  changname1:function(e){
+    this.setData({
+      bm_name1:e.detail.value
+    })
+},
+changtel1:function(e){
+    this.setData({
+      bm_tel1:e.detail.value
+    })
+},
   if_mobile(tel){
       var reg =/^0?1[3|4|5|6|7|8][0-9]\d{8}$/;
       return reg.test(tel);
@@ -269,6 +320,43 @@ Page({
               if (res.confirm) {
                 _this.setData({
                   show: false
+                })
+              }    
+            }
+          });
+        }
+    })
+  },
+  bm1:function(){
+    var _this = this;
+    if(this.data.bm_name1 == "" || this.data.bm_tel1 == ""){
+      wx.showModal({
+        title:"请填写完整资料",
+        showCancel:false
+      });
+      return false
+    }
+    if(!this.if_mobile(this.data.bm_tel1)){
+      wx.showModal({
+        title:"请填写正确的手机号",
+        showCancel:false
+      });
+      return false
+    }
+    var data={
+      id:this.data.houseid,
+      name:this.data.bm_name1,
+      mobile:this.data.bm_tel1
+    }
+    zajax.requestAjax('/api/house/opennoticesave',data,'post','正在加载',function(res){
+        if(res.code == 0){
+          wx.showModal({
+            title:res.msg,
+            showCancel:false,
+            success (res) {
+              if (res.confirm) {
+                _this.setData({
+                  showopen: false
                 })
               }    
             }

@@ -2,4 +2,4 @@
 .bigpic{ width: 670rpx; height: 348rpx; overflow: hidden; margin-bottom: 20rpx;}
 .bigpic image{width: 100%;}
 .spic{ width: 210rpx; height: 160rpx; overflow: hidden;margin-bottom: 20rpx;}
-.spic image{ width: 100%;} 
+.spic image{ width: 100%;height: 100%;} 

@@ -1,0 +1,27 @@
+.windows_login{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 9999;
+}
+.loginbox{ width: 600rpx; height: 690rpx; background: #fff; position: absolute;left: 50%; top:50%; margin-top: -385rpx; margin-left: -300rpx; box-sizing: border-box; border-radius: 30rpx;}
+.tbox{
+  width:600rpx;
+  height:100rpx;
+  font-size: 46rpx;
+  text-align: center;
+  line-height:100rpx;
+  color: #05956F;
+  background:rgba(39,205,161,0.2);
+  border-radius:30rpx 30rpx 0px 0px;
+  position: relative;
+  }
+  .usebox{margin-top: 40rpx; display: flex; justify-content: center; width: 500rpx; margin: 80rpx auto 0 auto}
+  .usebox image{ width: 74rpx; height: 74rpx; margin-right: 20rpx;}
+  .usebox .rtxt view:first-child{ font-size: 32rpx; margin-bottom: 5rpx; color: #333;}
+  .usebox .rtxt view{ font-size: 24rpx; color: #999999;}
+  .mt50 {margin-top: 100rpx;}
+  .close{ position: absolute; right: 20rpx; top:15rpx; color: #333;}

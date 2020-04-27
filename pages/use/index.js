@@ -44,7 +44,6 @@ Page({
           zajax.requestAjax('/api/wechat/auth',data,'post','正在加载',function(res){
              if(res.code == 0){
                console.log(res);
-               
               _this.gotomobile()
              }
           })
@@ -68,6 +67,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     this.getdata()
+    
+  },
+  getdata(){
     var _this = this;
     zajax.requestAjax('/api/my/index','','post','正在加载',function(res){
         if(res.code == 0){
@@ -89,8 +92,6 @@ Page({
           }
         }
     })
-
-    
   },
 
   /**

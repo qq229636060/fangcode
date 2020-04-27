@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-action-sheet": "@vant/weapp/action-sheet/index",
-    "van-popup": "@vant/weapp/popup/index"
+    "van-popup": "@vant/weapp/popup/index",
+    "logins": "/component/loginuse/loginuse"
   }
 }

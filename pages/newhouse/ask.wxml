@@ -16,3 +16,4 @@
   <input class="btoominput" placeholder="向经理提问，4～30字" bindinput="q" maxlength="30"></input>
   <view class="tj" bindtap="tj">提问</view>
 </view>
+<logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>

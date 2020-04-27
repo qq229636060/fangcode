@@ -1,10 +1,11 @@
 <!--pages/newhouse/more_houseinfo.wxml-->
 <view class="house_info_text noneline">
       <view class="housename">{{housetxt.name}}<view class="house_type">{{housetxt.status_txt}}</view></view>
-      <view class="house_txt">售价：<view class="moneyred"><view>{{housetxt.price}}</view>{{housetxt.unit}}</view></view>
+      <view class="house_txt">售价：<view class="moneyred" wx:if="{{housetxt.price != 0}}"><view>{{housetxt.price}}</view>{{housetxt.unit}}</view>
+      <view class="moneyred" wx:else><view>待定</view></view></view>
       <view class="house_txt">开盘：<text>{{housetxt.open_time}}</text></view>
       <view class="house_txt">地址：<text class="adder">{{housetxt.address}}</text><image src="../../img/smap.png" class="smap"></image></view>
-      <view class="house_tag"><text wx:for="{{housetxt.tabs}}">{{item}}</text></view>
+      <view class="house_tag"><text wx:for="{{housetxt.tabs}}" wx:key="*this">{{item}}</text></view>
  </view>
 <view class="lines"></view>
 <view class="h2">建筑规划</view>
