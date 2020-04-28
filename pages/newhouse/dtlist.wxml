@@ -1,6 +1,6 @@
 <!--pages/newhouse/dtlist.wxml-->
  <view class="lplist">
-          <view class="lpbox flex-wrp" wx:for="{{dtarr}}" bindtap="gotocont" data-id="{{item.id}}">
+          <view class="lpbox flex-wrp" wx:for="{{dtarr}}" bindtap="gotocont" data-id="{{item.id}}" data-houseid="{{item.house_id}}" wx:key="*this">
             <image src="{{item.cover}}"  class="dtpic"></image>
             <view class="lpmsg">
               <view class="h3">

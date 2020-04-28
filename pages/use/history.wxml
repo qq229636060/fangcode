@@ -1,0 +1,17 @@
+<!--pages/use/history.wxml-->
+<view class="lplist">
+          <view class="lpbox" wx:for="{{list}}" wx:key="*this" bindtap="gotocont" data-id="{{item.house_id}}" wx:for-index="idx">
+            <view class="times" wx:if="{{list[idx-1].created != item.created}}">{{item.created}}</view>
+            <view  class="flex-wrp">
+            <image src="{{item.cover2}}"></image>
+            <view class="lpmsg">
+                <view class="lpname">
+                <view class="house_type">{{item.status_name}}</view>{{item.name}}</view>
+                <view class="lp_txt">{{item.area_name}} | {{item.mj}}</view>
+              <view class="lp_money" wx:if="{{item.price != 0}}"><i>{{item.price}}</i>{{item.unit}}</view>
+                <view class="lp_money" wx:else><i>待定</i></view>
+                <view class="lp_tag"><i wx:for="{{item.tabs}}" wx:key="*this">{{item}}</i></view>
+            </view>
+            </view>
+          </view>
+  </view>

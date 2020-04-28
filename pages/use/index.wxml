@@ -18,7 +18,7 @@
               <view class="van-cell-text">我的关注</view>
             </view>
       </van-cell>
-      <van-cell is-link>
+      <van-cell is-link bindtap="gotolishi">
             <view slot="title" class="title">
               <image src="../../img/u2.png" class="useicon"></image>
               <view class="van-cell-text">历史记录</view>

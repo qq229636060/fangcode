@@ -15,6 +15,11 @@ Page({
       url:"../newhouse/houseinfo?id="+e.currentTarget.dataset.id
     })
   },
+  gotoso:function(){
+    wx.navigateTo({
+      url:"../newhouse/so"
+    })
+  },
   gotodtcont:function(){
     wx.navigateTo({
       url:"../newhouse/dtlist?id=''"

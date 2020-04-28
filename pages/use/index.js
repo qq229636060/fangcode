@@ -70,6 +70,11 @@ Page({
      this.getdata()
     
   },
+  gotolishi:function(){
+    wx.navigateTo({
+      url:'history'
+    })
+  },
   getdata(){
     var _this = this;
     zajax.requestAjax('/api/my/index','','post','正在加载',function(res){

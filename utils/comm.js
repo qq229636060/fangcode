@@ -48,10 +48,10 @@ const requestAjax = function (url, postData, types,message, success, fail) {
       if (message != "") {
         wx.hideLoading()
       }
-      if(res.data == "-1"){
+      if(res.data.code == "-1"){
         wx.showToast({
           title: res.data.msg,
-          icon: false,
+          icon: 'none',
           duration: 2000
         })
       }

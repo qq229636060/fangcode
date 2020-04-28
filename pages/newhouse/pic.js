@@ -39,6 +39,10 @@ Page({
           var nav = [];
           var allpic = [];
           var configarr = res.data.photoType;
+          if(res.data.vr.length != 0){
+             nav.push("vr");
+             parr[0] = res.data.vr
+          }
           for (let key in res.data.photo) {
             for(let i in configarr){
                if(key == i){
@@ -52,6 +56,7 @@ Page({
                   allpic.push(items.img)
               })
           })
+          console.log(parr)
           _this.setData({
             titlearr:nav,
             piclist:parr,

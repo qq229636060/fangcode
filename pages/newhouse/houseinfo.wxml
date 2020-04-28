@@ -16,8 +16,8 @@
       <view class="jsq" bindtap="gotojisuan">房贷计算器</view>
       <view class="morebtn" bindtap="gotomore">更多信息</view>
       <view class="notice">
-        <text bindtap="notice">降价通知</text>
-        <text bindtap="openlp">开盘通知</text>
+        <view bindtap="notice"><i class="c1"></i>降价通知</view>
+        <view bindtap="openlp"><i class="c2"></i>开盘通知</view>
       </view>
     </view>
     <view class="tel">
@@ -25,7 +25,7 @@
         <text>{{houseinfo.phone}}</text>
         <text>联系时，请告知{{houseinfo.web_name}}上看到，谢谢！</text>
       </view>
-      <view class="tel_r"><image src="../../img/tel.png"></image></view>
+      <view class="tel_r" bindtap="callhome"><image src="../../img/tel.png"></image></view>
     </view>
     <view class="hx_pic mt50">
       <view class="title_x">
@@ -153,7 +153,7 @@
     </view>
    <van-action-sheet show="{{ show }}" z-index="9999" title="{{houseinfo.name}}的降价通知" bind:close="close_bm">
     <view class="telfrombox">
-        <input type="text" placeholder="请输入您的姓名" bindinput='changname'></input>
+        <input type="text" placeholder="请输入您的姓名" bindinput='changname'  cursor-spacing="80"></input>
         <input type="number" placeholder="请输入您的手机号" bindinput="changtel" maxlength="11"></input>
     </view>
     <view class="bm_btnz" bindtap="bm">确定</view>

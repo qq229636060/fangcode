@@ -136,6 +136,11 @@ Page({
   onShow: function () {
 
   },
+  gotoso:function(){
+    wx.navigateTo({
+      url:"../newhouse/so"
+    })
+  },
   selectedItem: function(e) {
     console.log(e)
     console.log('id --' + e.detail.selectedId + "cityname = " + e.detail.selectedTitle);

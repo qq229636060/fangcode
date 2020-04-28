@@ -2,7 +2,7 @@
 <view class="container">
   <view class="topso">
     <view class="city"><view>福州</view><i></i></view>
-    <view class="soblock"><i></i>请输入楼盘名/小区等</view>
+    <view class="soblock" bindtap="gotoso"><i></i>请输入楼盘名/小区等</view>
   </view>
   <view class="page-section page-section-spacing swiper">
       <swiper indicator-dots="{{indicatorDots}}"
@@ -17,7 +17,7 @@
       </swiper>
     </view>
     <view class="nav">
-    <view class="page-section">
+    <view class="page-section" style="height:160rpx">
       <view class="page-section-spacing">
           <view class="flex-wrp" style="flex-direction:row;">
             <view class="flex-item">

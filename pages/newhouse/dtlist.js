@@ -50,8 +50,9 @@ Page({
     })
   },
   gotocont:function(e){
+    console.log(e)
     wx.redirectTo({
-      url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+this.data.houseid
+      url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+e.currentTarget.dataset.houseid
     })
   },
   /**
