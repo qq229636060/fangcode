@@ -71,9 +71,11 @@ Page({
     
   },
   gotolishi:function(){
-    wx.navigateTo({
-      url:'history'
-    })
+    if(this.data.isLogin){
+      wx.navigateTo({
+        url:'history'
+      })
+    }
   },
   getdata(){
     var _this = this;

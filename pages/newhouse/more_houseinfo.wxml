@@ -26,3 +26,6 @@
   <van-cell title="车位数" value="{{housetxt.parking}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="车位比" value="{{housetxt.parking_ratio}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
 </van-cell-group>
+<view class="lines"></view>
+<view class="h2" wx:if="{{housetxt.intro.length!=0}}">项目介绍</view>
+<view class="jieshao">{{housetxt.intro}}</view>

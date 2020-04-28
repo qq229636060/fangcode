@@ -24,7 +24,8 @@ Page({
     show:false,
     showopen:false,
     showcode:false,
-    _iflogin:false
+    _iflogin:false,
+    codename:""
   },
 
   /**
@@ -86,8 +87,10 @@ Page({
     })
   },
   op_code:function(e){
+     console.log(e.currentTarget.dataset.name)
       this.setData({
         qcode:e.currentTarget.dataset.id,
+        codename:e.currentTarget.dataset.name,
         showcode:true
       })     
   },

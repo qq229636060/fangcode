@@ -114,7 +114,7 @@
         </view>
         <view class="agentbox_r">
           <view class="tel_btn" data-id="{{item.mobile}}" bindtap="callme"><i></i>电话</view>
-          <view class="wechat_btn" data-id="{{item.qrcode}}" bindtap="op_code"><i></i>咨询</view>
+          <view class="wechat_btn" data-id="{{item.qrcode}}" data-name="{{item.name}}" bindtap="op_code"><i></i>咨询</view>
         </view>
       </view>
     </view>
@@ -154,17 +154,22 @@
    <van-action-sheet show="{{ show }}" z-index="9999" title="{{houseinfo.name}}的降价通知" bind:close="close_bm">
     <view class="telfrombox">
         <input type="text" placeholder="请输入您的姓名" bindinput='changname'  cursor-spacing="80"></input>
-        <input type="number" placeholder="请输入您的手机号" bindinput="changtel" maxlength="11"></input>
+        <input type="number" placeholder="请输入您的手机号" bindinput="changtel" maxlength="11" cursor-spacing="80"></input>
     </view>
     <view class="bm_btnz" bindtap="bm">确定</view>
     </van-action-sheet>
     <van-action-sheet show="{{ showopen }}" z-index="9999" title="{{houseinfo.name}}的开盘通知" bind:close="close_bm1">
       <view class="telfrombox">
-          <input type="text" placeholder="请输入您的姓名" bindinput='changname1'></input>
-          <input type="number" placeholder="请输入您的手机号" bindinput="changtel1" maxlength="11"></input>
+          <input type="text" placeholder="请输入您的姓名" bindinput='changname1' cursor-spacing="80"></input>
+          <input type="number" placeholder="请输入您的手机号" bindinput="changtel1" maxlength="11" cursor-spacing="80"></input>
       </view>
       <view class="bm_btnz" bindtap="bm1">确定</view>
     </van-action-sheet>
-    <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999"><image class="qcode" mode="aspectFill" src="{{qcode}}"></image></van-popup>
+    <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999">
+    <view class="qcode">
+       <view class="names">{{codename}}</view>
+       <image mode="aspectFill" src="{{qcode}}"></image>
+       <view class="names">长按识别并加为好友</view>
+    </view></van-popup>
     <logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>
 </view>

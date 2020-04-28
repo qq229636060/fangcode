@@ -1,4 +1,6 @@
 // pages/tool/map.js
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
+var qqmapsdk;
 Page({
 
   /**
@@ -15,6 +17,9 @@ Page({
    */
   onLoad: function (options) {
      console.log(options);
+     qqmapsdk = new QQMapWX({
+      key: 'QAQBZ-2EBCP-4O4DZ-VFMQJ-2C6GZ-OABAD'
+      });
      var mapdata = [{
       iconPath: "../../img/map.png",
       id: 0,
@@ -42,7 +47,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var loc = {
+      latitude: this.data.lat,
+      longitude: this.data.lng
+    }
+    qqmapsdk.search({
+          keyword: '酒店',
+          location: loc,
+          success: function (res) {
+              this.setData({
 
+              })
+          },
+          fail: function (res) {
+              console.log(res);
+          },
+          // complete: function (res) {
+          //     console.log(res);
+          // }
+    });
   },
 
   /**
