@@ -101,16 +101,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "pages/tool/map",
-					"pathName": "pages/index/index",
-					"query": "",
+					"pathName": "pages/tool/map",
+					"query": "lng=118.7362470&lat=24.8915274",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/newhouse/so",
 					"pathName": "pages/newhouse/so",
+					"query": "",
 					"scene": null
 				}
 			]

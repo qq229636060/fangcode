@@ -1,4 +1,30 @@
 <!--pages/tool/map.wxml-->
 <view class="map">
 <map id="map" longitude="{{lng}}" latitude="{{lat}}" scale="14"  markers="{{markers}}" bindmarkertap="markertap"  show-location></map>
+<view class="types_container">
+   <view class="{{act == 'z1' ? 'typesbox on':'typesbox'}}" data-name="教育" bindtap="select" data-id="z1">
+    <view class="type_icons edu"></view>
+    <view class="txt">教育</view>
+   </view>
+    <view class="{{act == 'z2' ? 'typesbox on':'typesbox'}}" data-name="医院" bindtap="select" data-id="z2">
+      <view class="type_icons hosp"></view>
+      <view class="txt">医院</view>
+   </view>
+   <view class="{{act == 'z3' ? 'typesbox on':'typesbox'}}" data-name="地铁" bindtap="select" data-id="z3">
+      <view class="type_icons subway"></view>
+      <view class="txt">地铁</view>
+   </view>
+    <view class="{{act == 'z4' ? 'typesbox on':'typesbox'}}" data-name="公交" bindtap="select" data-id="z4">
+      <view class="type_icons bus"></view>
+      <view class="txt">公交</view>
+   </view>
+   <view class="{{act == 'z5' ? 'typesbox on':'typesbox'}}" data-name="银行" bindtap="select" data-id="z5">
+      <view class="type_icons bank"></view>
+      <view class="txt">银行</view>
+   </view>
+   <view class="{{act == 'z6' ? 'typesbox on':'typesbox'}}" data-name="休闲" bindtap="select" data-id="z6">
+      <view class="type_icons game"></view>
+      <view class="txt">休闲</view>
+   </view>
+</view>
 </view>
