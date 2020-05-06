@@ -82,6 +82,13 @@ Page({
       })
       return false;
     }
+    if(this.data.q_cont.length < 4) {
+      wx.showModal({
+        title:"请不要填写小于4个字",
+        showCancel:false
+      })
+      return false;
+    }
     var data= {
        id:this.data.houseid,
        question:this.data.q_cont
@@ -92,6 +99,9 @@ Page({
           title:res.msg,
           showCancel:false
         })
+        _this.setData({
+          q_cont:""
+       })
        }else if(res.code == -100){
           _this.setData({
             _iflogin:true

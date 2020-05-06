@@ -3,13 +3,13 @@ page{background: #F8F8F8;}
 .asktop{font-size: 32rpx; padding:30rpx; border-bottom: solid 1px #eee; background: #fff;}
 /*问答*/
 .lp_asklist{}
-.ask1{margin-bottom: 10rpx;}
+.ask1{margin-bottom: 20rpx;}
 .ask1,.ask2{ display: flex; display: -webkit-flex; align-items: flex-start;}
 .asktxt{width: 500rpx; margin-left: 10rpx;}
 .hui{color: #666;}
 .ask1 i{ width: 36rpx; height:34rpx ; background:linear-gradient(146deg,rgba(249,165,125,1) 0%,rgba(255,81,21,1) 100%);
-border-radius:5px;opacity:0.7; display: block; font-size: 24rpx; text-align: center; line-height: 34rpx; color:#fff; margin-top: 10rpx;}
-.ask2 i{width: 36rpx; height:34rpx ; background:rgba(39,205,161,1);border-radius:5px;opacity:0.7;display: block; font-size: 24rpx; text-align: center; line-height: 34rpx; color:#fff; margin-top: 10rpx;}
+border-radius:5px;opacity:0.7; display: block; font-size: 24rpx; text-align: center; line-height: 34rpx; color:#fff; }
+.ask2 i{width: 36rpx; height:34rpx ; background:rgba(39,205,161,1);border-radius:5px;opacity:0.7;display: block; font-size: 24rpx; text-align: center; line-height: 34rpx; color:#fff; }
 .lp_askbox{ padding:40rpx 40rpx; background: #fff; margin-bottom: 20rpx; }
 .fixbtn{position: fixed;bottom: 0;background: #fff;display: flex; height: 100rpx; 
   width: 100%; align-items: center; padding: 20rpx; box-sizing: border-box;} 

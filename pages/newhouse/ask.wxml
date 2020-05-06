@@ -13,7 +13,7 @@
         </view>
 </view>
 <view class="fixbtn">
-  <input class="btoominput" placeholder="向经理提问，4～30字" bindinput="q" maxlength="30"></input>
+  <input class="btoominput" placeholder="向经理提问，4～30字" bindinput="q" maxlength="30" cursor-spacing="80" value="{{q_cont}}"></input>
   <view class="tj" bindtap="tj">提问</view>
 </view>
 <logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>
