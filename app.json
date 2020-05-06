@@ -19,7 +19,8 @@
     "pages/use/history",
     "pages/tool/index",
     "pages/tool/toolend",
-    "pages/tool/map"
+    "pages/tool/map",
+    "pages/tool/web"
   ],
   "permission": {
     "scope.userLocation": {

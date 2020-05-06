@@ -1,9 +1,9 @@
 <!--pages/newhouse/pic.wxml-->
-<van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="{{item}}" wx:for="{{titlearr}}" wx:key="*this" wx:for-index="idx">
+<van-tabs active="{{ active }}" bind:change="onChange" color="#50B89F">
+  <van-tab title="{{item}}" wx:for="{{titlearr}}" wx:key="*this" wx:for-index="idx" >
     <view class="piccont">
-      <view class="{{idx1 == 0?'bigpic':'spic'}}" bindtap="look" wx:for='{{piclist[idx]}}' wx:for-index="idx1" wx:key="*this" data-url="{{item.img}}">
-        <image src="{{item.img}}"></image>
+      <view class="{{idx1 == 0?'bigpic':'spic'}}" bindtap="look" wx:for='{{piclist[idx]}}' wx:for-index="idx1" wx:key="*this" data-url="{{item.img}}" data-vrurl="{{item.url}}">
+        <image src="{{item.img}}" mode="aspectFill"></image>
       </view>
     </view>
   </van-tab>

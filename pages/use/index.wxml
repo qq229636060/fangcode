@@ -30,7 +30,7 @@
               <view class="van-cell-text">关注公众号</view>
             </view>
       </van-cell>
-       <van-cell is-link value="{{servicePhone}}">
+       <van-cell is-link value="{{servicePhone}}" bindtap="callme" data-id="{{servicePhone}}">
             <view slot="title" class="title">
               <image src="../../img/u4.png" class="useicon"></image>
               <view class="van-cell-text">客服电话</view>

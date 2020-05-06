@@ -7,7 +7,16 @@ Page({
    */
   data: {
       houseid:"",
-      housetxt:""
+      housetxt:"",
+      mapdata:[{
+        iconPath: "../../img/map1.png",
+        id: 0,
+        latitude: "",
+        longitude:"",
+        width: 20,
+        height:39,
+        title:"本案地址"
+      }]
   },
 
   /**
@@ -25,12 +34,18 @@ Page({
           if(res.code == 0 ){
               res.data.tabs = Object.values(res.data.tabs);
              _this.setData({
-                housetxt:res.data
+                housetxt:res.data,
+                'mapdata[0].latitude':res.data.lat,
+                'mapdata[0].longitude':res.data.lng
              })
           }
       })
   },
-
+  gotomap:function(){
+    wx.navigateTo({
+      url:"../tool/map?lng="+this.data.housetxt.lng+"&lat="+this.data.housetxt.lat
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

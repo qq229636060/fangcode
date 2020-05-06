@@ -166,9 +166,9 @@ Page({
         arr.forEach(function(item,index){
             if(index == 0){
                midarr.push(item.split("_")[1])
-            }else if(index == 1){
-              sidarr.push(item.split("_")[1])
             }else if(index == 2){
+              sidarr.push(item.split("_")[1])
+            }else if(index == 1){
               tidarr.push(item.split("_")[1])
             }else if(index == 3){
               didarr.push(item.split("_")[1])

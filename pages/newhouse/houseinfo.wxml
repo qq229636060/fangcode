@@ -2,8 +2,16 @@
 <view class="container pb120">
     <view class="housepic" bindtap="gotopic">
       <view class="picnumber">共{{houseinfo.photoNum}}张</view>
-      <image src="{{houseinfo.cover}}" mode="aspectFill"></image>
-      <image src="../../img/VR.png" class="vricon" wx:if="{{houseinfo.vr == 1}}"></image>
+       <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:key="*this" wx:for="{{allpicarr}}" wx:for-index="idx" wx:if="{{idx<=6}}">
+          <swiper-item>
+            <image src="{{item}}" mode="aspectFill"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- <image src="{{houseinfo.cover}}" mode="aspectFill"></image> -->
+      <image src="../../img/vricon.png" class="vricon" wx:if="{{houseinfo.vr == 1}}"></image>
     </view>
     <view class="house_info_text">
       <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
@@ -25,7 +33,7 @@
         <text>{{houseinfo.phone}}</text>
         <text>联系时，请告知{{houseinfo.web_name}}上看到，谢谢！</text>
       </view>
-      <view class="tel_r" bindtap="callhome"><image src="../../img/tel.png"></image></view>
+      <view class="tel_r" bindtap="callhome" data-id="{{houseinfo.phone}}"><image src="../../img/tel.png"></image></view>
     </view>
     <view class="hx_pic mt50">
       <view class="title_x">
@@ -65,7 +73,7 @@
         <view class="more" bindtap="gotodp">查看更多<view></view></view>
        </view>
        <view class="dp_list">
-        <view class="dp_box" wx:for="{{yelp}}" wx:key="*this">
+        <view class="dp_box" wx:for="{{yelp}}" wx:key="*this" wx:for-index="idx" wx:if="{{idx <=2}}">
           <view class="dp_box_l"><image src="{{item.member_avatar}}"></image></view>
           <view class="dp_box_r">
             <view class="use_name">{{item.member_name}}</view>
@@ -143,8 +151,9 @@
         <view class="ftext">收藏</view>
        </view>
         <view class="w60">
-        <image src="../../img/fx.png"></image>
-        <view class="ftext">分享</view>
+        <button open-type='share' class="ftext others">
+         <image src="../../img/fx.png"></image>
+        分享</button>
        </view>
        <button class="none" style="width:31vw" open-type="contact" bindcontact="handleContact"
         session-from='{"type": "image", "title": "{{houseinfo.name}}", "url": "", "desc": "您可咨询楼盘信息，我们将竭诚为您服务！", "img": "{{houseinfo.cover}}"}'
@@ -167,7 +176,7 @@
     </van-action-sheet>
     <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999">
     <view class="qcode">
-       <view class="names">{{codename}}</view>
+       <view class="names" style="font-size:36rpx">{{codename}}</view>
        <image mode="aspectFill" src="{{qcode}}"></image>
        <view class="names">长按识别并加为好友</view>
     </view></van-popup>

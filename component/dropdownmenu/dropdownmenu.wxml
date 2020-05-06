@@ -20,7 +20,12 @@
 <view class="container container_hd {{district_open ? 'show' : 'disappear'}} " bindtap="close">
    <view class='z-height'>
     <view>
-      <block wx:key="unique"   wx:for="{{dropDownMenuDistrictData}}">
+     <block wx:key="unique">
+         <view class="sortitem {{selected_style_id==item.id ? ' active ' : ' '}}" catchtap="selectDistrictLeft" data-model='001'>
+            全部
+        </view>
+      </block>
+      <block wx:key="unique" wx:for="{{dropDownMenuDistrictData}}">
          <view class="sortitem {{selected_style_id==item.id ? ' active ' : ' '}}" catchtap="selectDistrictLeft" data-model='{{item}}'>
       {{item.name}}
     </view>
@@ -32,6 +37,9 @@
 <view class="container container_hd {{source_open ? 'show' : 'disappear'}} " bindtap="close">
   <view class='z-height'>
     <view>
+     <block>
+        <view class="sortitem {{selected_source_id==item.id ? ' active ' : ' '}}" data-model='001' catchtap='selectSourceItem'>全部</view>
+      </block>
       <block wx:for="{{dropDownMenuSourceData}}" wx:key="unique">
         <view class="sortitem {{selected_source_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' catchtap='selectSourceItem'> {{item.title}}</view>
       </block>
@@ -41,13 +49,16 @@
 <view class="container container_hd {{style_open ? 'show' : 'disappear'}} " bindtap="close">
   <view class='z-height'>
     <view>
+    <block>
+        <view class="sortitem {{selected_style_id == item.id ? ' active ' : ' '}}" data-model='001' catchtap='selectStyleItem'>全部</view>
+      </block>
       <block wx:for="{{dropDownMenuStyleData}}" wx:key="unique">
         <view class="sortitem {{selected_style_id == item.id ? ' active ' : ' '}}" data-model='{{item}}' catchtap='selectStyleItem'> {{item.name}}</view>
       </block>
     </view>
   </view>
 </view>
-<view class="container container_hd {{filter_open ? 'show' : 'disappear'}} " bindtap="close">
+<view class="container container_hd {{filter_open ? 'show' : 'disappear'}} ">
   <view class='z-height'>
     <view>
       <block>

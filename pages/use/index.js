@@ -24,6 +24,14 @@ Page({
         url:'mobile'
       })
   },
+  callme:function(e){
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.id,
+      fail:function(){
+        return false
+      }
+    })
+  },
   btn_sub:function(res){
     var _this =this;
     console.log(res)

@@ -10,7 +10,7 @@
                 <view class="lp_txt">{{item.area_name}} | {{item.mj}}</view>
               <view class="lp_money" wx:if="{{item.price != 0}}"><i>{{item.price}}</i>{{item.unit}}</view>
                 <view class="lp_money" wx:else><i>待定</i></view>
-                <view class="lp_tag"><i wx:for="{{item.tabs}}" wx:key="*this">{{item}}</i></view>
+                <view class="lp_tag"><i wx:for="{{item.tabs}}" wx:key="*this" wx:for-index="idx" wx:if="{{idx <= 2}}">{{item}}</i></view>
             </view>
             </view>
           </view>

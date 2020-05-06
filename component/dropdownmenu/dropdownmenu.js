@@ -147,8 +147,14 @@ Component({
 
     selectDistrictLeft: function(e) {
       console.log(e)
-      var selectedId = e.target.dataset.model.id
-      var selectedTitle = e.target.dataset.model.name;
+      if(e.target.dataset.model == "001"){
+        var selectedId = ""
+        var selectedTitle = "区域";
+      }else{
+        var selectedId = e.target.dataset.model.id
+        var selectedTitle = e.target.dataset.model.name;
+      }
+     
       this.closeHyFilter();
       this.setData({
         district_left_select: selectedId,
@@ -178,8 +184,14 @@ Component({
 
     selectSourceItem: function(e) {
       console.log(e)
-      var selectedId = e.target.dataset.model.id
-      var selectedTitle = e.target.dataset.model.title;
+      if(e.target.dataset.model == "001"){
+        var selectedId = ""
+        var selectedTitle = "价格";
+      }else{
+        var selectedId = e.target.dataset.model.id
+        var selectedTitle = e.target.dataset.model.title;
+      }
+     
       this.closeHyFilter();
       this.setData({
         selected_source_id: selectedId,
@@ -208,8 +220,14 @@ Component({
     },
 
     selectStyleItem: function(e) {
-      var selectedId = e.target.dataset.model.id
-      var selectedTitle = e.target.dataset.model.name;
+      if(e.target.dataset.model == "001"){
+        var selectedId = ""
+        var selectedTitle = "户型";
+      }else{
+        var selectedId = e.target.dataset.model.id
+        var selectedTitle = e.target.dataset.model.name;
+      }
+      
       this.closeHyFilter();
       this.setData({
         selected_style_id: selectedId,
@@ -255,15 +273,18 @@ Component({
       }
     },
     ag:function(){
-      var now_dom = this.data.dropDownMenuFilterData;
-      now_dom.forEach(function(item,index){
-        item.selectbox.forEach(function(items,idx){
-          items.is_select = false 
-        })
-      })
       this.setData({
-        dropDownMenuFilterData:now_dom
+        curid:[]
       });
+      // var now_dom = this.data.dropDownMenuFilterData;
+      // now_dom.forEach(function(item,index){
+      //   item.selectbox.forEach(function(items,idx){
+      //     items.is_select = false 
+      //   })
+      // })
+      // this.setData({
+      //   dropDownMenuFilterData:now_dom
+      // });
     },
     moreselect:function(e){
       var index = e.currentTarget.dataset.index;

@@ -2,6 +2,7 @@
 .pb120{ padding-bottom: 120rpx;}
 .housepic{ width: 750rpx; height: 475rpx; overflow: hidden; position: relative;}
 .housepic image{ width: 750rpx; height: 100%}
+.housepic swiper{ height: 475rpx;}
 .page-section,.page-section swiper{ width: 750rpx; height: 475rpx;}
 .swiper-item{ width: 750rpx; height: 475rpx; overflow: hidden; }
 .swiper-item image{ width: 100%; height: 100%;}
@@ -41,7 +42,7 @@ top:5rpx;}
 .mt50{margin-top: 50rpx;}
 .scroll_x_box{ width:668rpx; overflow-x: scroll; margin-left: 40rpx; margin-top:20rpx; display: flex; display: -webkit-flex;}
 .hxpicbox{ width: 230rpx; margin-right: 30rpx;}
-.hximg{ width: 230rpx; height: 230rpx; border: solid 1px #eee;}
+.hximg{ width: 230rpx; height: 230rpx; border: solid 1rpx #eee;}
 .f26{font-size: 26rpx;}
 .times{ font-size: 26rpx; color: #999999; display: flex; display: -webkit-flex; align-items: center; margin-top: 10rpx;}
 .times .timeicon{ width: 26rpx; height: 26rpx; margin:0; margin-right: 10rpx;}
@@ -57,7 +58,7 @@ border-radius:5px;opacity:0.7; display: block; font-size: 24rpx; text-align: cen
 .lp_askbox{ padding:20rpx 0 } 
 /*点评*/
 .dp_list{ padding: 0 40rpx;}
-.dp_box{  padding: 40rpx 0; display: flex; display: -webkit-flex;}
+.dp_box{  padding: 40rpx 0 0 0; display: flex; display: -webkit-flex;}
 .dp_box_l { width: 60rpx;}
 .dp_box_l image{ width: 60rpx; height: 60rpx; border-radius: 50%;}
 .dp_box_r { width: 560rpx; margin-left: 20rpx;}
@@ -129,3 +130,9 @@ border-radius:5px;opacity:0.7; display: block; font-size: 24rpx; text-align: cen
   .c1,.c2{ width: 28rpx; height: 24rpx; display:inline-block; margin-right: 10rpx;}
   .c1{ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAYCAYAAADpnJ2CAAADuklEQVRIS82W/U9bVRjHP/f27bblpaNAYVTexhxvugDbHIpOJHNqYgz7wd/9Rf8oTfa7xrihMWLG3GAqyEadYDs2yotAhdLR0lL6envNuYQOkBJLssQnubnpvef0c+5zvs/3PJKmaRqHIqdpZLPqgadGg4wsy4eHFv1b2g/MqirhaJxQZJvtRBqJ3bUYZIn6mkqcjpKiAYcn5IGqmiMUifLz70+ZWw1iMhhB2h1uMhp450Ib7c11BYG5nEYulzvyvSRJyLKEuOeB2ztJPLNLjE7N0nGmjnqXE6RdokEGt8uJs7zwF0aicVaC4X9BRY5KbAqnqxxYLebnwFAkxsikl+CzKJ98+CYldqWo9HnnVxn5zUsqk9XnCWXEk0lUVaP5pWre7+2kxul4DgyGo/wwPkMstsNn1/sxGg1FATfCURYDIcTWiFiPxPDNB0im0jS5q3mvtxNXRflB4PD4DNETAvevbms7wZ1JLwuBELF4gsa6qhcHTKTS/PJojqnHi7zcUMPs4hquyvIXA8yoKtNPl7k94dVFItL45e1J7DblZEDhEeI6ygCEWcyvbDB0bwqrYuajK11UlpdyY2gMm83Cu5c7ittDAYrvpAiGt3A5HdgUs15Xu4rUWN+McvOnh+ykMnzwxiuccbuQJYnhX6dRzCa6WxtxlNn+m2jEHyZSGSam/YzPzNF3/ixtzXVUlJXoBR2Jxfnu/iMCwTB9Xa30tNZjMZuONoE9axNlcZRKReFms1l8C38zdM+DzWohkUxxtqGWvvMtelELd/I8WaKjyc3Vyx361xeKvNMUAqq5HMtrz/j6zgMMskz/hXb8y2v4V0MoFhMt7moe+hZ0J7re30OpXcmn+ijosUDhjRvhGLdGPYjaGrjYRte5BrScxviMnwe+Rd3sRWo/vnqRqlNleoqPi4JAg0FG+OuP415m/wpwqa2Jgdc6DghlKRDi7tRjXn+1RReJmLM/xN4LyxSqLrNb9UOgIFCsdC20xVcjk5yuOsVgfw/iTDwcmayqP99T7P73qqpy49sx7IrCwKV2qivKjlepOB+FR9qtir7CYkOI7fNvRvU6fKFeurew/xdQpG544k8iW3E+HbyCuUDhFpPWdDrDF7dGKbFbuXbY2oS8xzxP8K8EGXy7G6ejNN9iFAPJj9VgcyvGzbse6mudvNV9Tu8Y8ipNpTPMLa/z/f0/MFuMuKsq9jqMk/JYDW6STGW51ttJa2OtbncHujZxlvn8q0z6FognM3s91ImBdouJnrZGvfkSlijiH2HmZdcEdSWHAAAAAElFTkSuQmCC) no-repeat 0 0; background-size:100% 100% ;}
   .c2{ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAYCAYAAAALQIb7AAACpUlEQVRIS+2WWU9TQRiGn57TfYGW0hYKliKy1LKkoJEERb0waqKJF/4I/5NX8ge8gXihiUtEiRJCMZRNwIK0pbQsZe9pqTlFDBxBqPXGhLk+Z56Zb57vnVHlcrkcRY5MJosoiqhUf55IVQxsfWuHjyNfiSVWsVst3Aw0YDLqUZ1A/WvYXCxJ//AUc7EEOp2W3V2JG4FG2n016LWaY7dYMCy7t0dwYo6hiTCx5Botl6qpctp4OTBKbZWDB9fbMBv1xcHkg938Wbax2SjpbJbO5jqaalxksnv09PVT6bDx6FY7lmJgskML8WUGRqaZjizhtFm46r9IrduBUa8lvpziWe/7s8PSUobp73Emw1HgqFYybGV9Ky+Cv66K1noPF1xlCIKQN3AxuVYYTDbr9WCI4MQ8tlIzgkJjtSjg87rx1bqxW81HjFPCzAYd6UwWARVqtbyg/cl+CZLa3ObFhy+EIwnud7Wi1aiPHLJaUOF22vKmKdVWwvQaNe+GJjCbDLTUVWE06I6HReIrPHl8G4NOe+ZWV8I0osjT529wlJVwt7MZW4npHHZ6Nc/L+Jv6/52Ncp+9+hyi1GSgrcGD6aQ+k5v6XlcLcq8cHqIo4LBZsJqNpza1nCCSlM1/d2yCbGzt8HZonODUPHqdFkEhoZyD9R4XTd5K3OXWfMIcJEnB2ShJGcLRBGPhKCplEJNDXkw0kcKo09Jx2UtNhZ1yqzkfxgXDTuumnbTE8HiY0ZkIibV16qpdtNVXU1luZWN7h57ef3SfHSxEfholV1N8Gp1lemEJKZOhw+elzGKirz+Ip8LOw+5AcZenctfy/TY5t8hgaIZoYg29TsNqaosrfi/dgUaM+v2UV46C3yCHJ9hNSwyGZhn/FkGjVnPnmh+nvRRRUOq1/9cPz7rqyMyEikcAAAAASUVORK5CYII=) no-repeat 0 0; background-size:100% 100% ;}
+  .fxbtn{font-size: 26rpx; font-style: normal; color: #666; width: 60rpx; }
+  .w60{position: relative;}
+  .others{ position: absolute; top:0; left: 0; padding: 0;font-weight: normal;}
+  .w60 button:not([size='mini']){
+    width: 60rpx; background: #fff;
+  } 

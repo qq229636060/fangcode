@@ -13,11 +13,20 @@ Page({
     allpicarr:""
   },
   look:function(e){
-    console.log(e.currentTarget.dataset.url)
-    wx.previewImage({
-      current: e.currentTarget.dataset.url, // 当前显示图片的http链接
-      urls: this.data.allpicarr // 需要预览的图片http链接列表
-    })
+    console.log(e)
+    console.log(e.currentTarget.dataset.vrurl)
+    if(e.currentTarget.dataset.vrurl && e.currentTarget.dataset.vrurl !="undefined"){
+      wx.navigateTo({
+        url:"../tool/web?url="+e.currentTarget.dataset.vrurl
+      })
+    }else{
+      console.log(this.data.allpicarr)
+      wx.previewImage({
+        current: e.currentTarget.dataset.url, // 当前显示图片的http链接
+        urls: this.data.allpicarr // 需要预览的图片http链接列表
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -40,7 +49,7 @@ Page({
           var allpic = [];
           var configarr = res.data.photoType;
           if(res.data.vr.length != 0){
-             nav.push("vr");
+             nav.push("VR");
              parr[0] = res.data.vr
           }
           for (let key in res.data.photo) {
@@ -56,7 +65,6 @@ Page({
                   allpic.push(items.img)
               })
           })
-          console.log(parr)
           _this.setData({
             titlearr:nav,
             piclist:parr,

@@ -25,7 +25,12 @@ Page({
     showopen:false,
     showcode:false,
     _iflogin:false,
-    codename:""
+    codename:"",
+    autoplay:true,
+    interval: 2000,
+    duration: 500,
+    indicatorDots: true,
+    allpicarr:""
   },
 
   /**
@@ -49,6 +54,34 @@ Page({
     var data = {
       id:_this.data.houseid
    }
+   zajax.requestAjax('/api/house/photo',data,'post','正在加载',function(res){
+    if(res.code == 0){
+      var parr = [];
+          var nav = [];
+          var allpic = [];
+          var configarr = res.data.photoType;
+          if(res.data.vr.length != 0){
+             nav.push("vr");
+             parr[0] = res.data.vr
+          }
+          for (let key in res.data.photo) {
+            for(let i in configarr){
+               if(key == i){
+                  nav.push(configarr[i])
+               }
+            }
+            parr.push(res.data.photo[key]); //属性
+          }
+          parr.forEach(function(item){
+              item.forEach(function(items){
+                  allpic.push(items.img)
+              })
+          })
+          _this.setData({
+            allpicarr:allpic
+          })
+    }
+   })
    zajax.requestAjax('/api/house/info',data,'post','正在加载',function(res){
       if(res.code == 0){
         res.data.info.tabs = Object.values(res.data.info.tabs);

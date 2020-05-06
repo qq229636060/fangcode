@@ -110,6 +110,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
   goto_fbdp(){
     wx.navigateTo({
       url:'fb_dianpin?id='+this.data.houseid

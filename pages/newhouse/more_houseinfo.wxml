@@ -4,7 +4,7 @@
       <view class="house_txt">售价：<view class="moneyred" wx:if="{{housetxt.price != 0}}"><view>{{housetxt.price}}</view>{{housetxt.unit}}</view>
       <view class="moneyred" wx:else><view>待定</view></view></view>
       <view class="house_txt">开盘：<text>{{housetxt.open_time}}</text></view>
-      <view class="house_txt">地址：<text class="adder">{{housetxt.address}}</text><image src="../../img/smap.png" class="smap"></image></view>
+      <view class="house_txt">地址：<text class="adder">{{housetxt.address}}</text><image src="../../img/smap.png" class="smap" bindtap="gotomap"></image></view>
       <view class="house_tag"><text wx:for="{{housetxt.tabs}}" wx:key="*this">{{item}}</text></view>
  </view>
 <view class="lines"></view>
@@ -12,11 +12,15 @@
 <van-cell-group border="{{false}}">
   <van-cell title="建筑类型" value="{{housetxt.build_type}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="产权年限" value="{{housetxt.year}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="建筑面积" value="{{housetxt.build_area}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="占地面积" value="{{housetxt.total_area}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="容积率" value="{{housetxt.capacity}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="绿化率" value="{{housetxt.green}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
-  <van-cell title="车位数" value="{{housetxt.households}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <!-- <van-cell title="车位数" value="{{housetxt.households}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/> -->
   <van-cell title="楼盘状态" value="{{housetxt.status_txt}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
-  <van-cell title="规划进度" value="{{housetxt.households}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="规划户数" value="{{housetxt.households}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="主力户型" value="{{housetxt.discount}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="开发商" value="{{housetxt.developer}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
 </van-cell-group>
 <view class="lines"></view>
 <view class="h2">物业信息</view>
@@ -29,3 +33,8 @@
 <view class="lines"></view>
 <view class="h2" wx:if="{{housetxt.intro.length!=0}}">项目介绍</view>
 <view class="jieshao">{{housetxt.intro}}</view>
+<view class="lines"></view>
+<view>
+<view class="h2">周边配套</view>
+<map id="map" longitude="{{housetxt.lng}}" latitude="{{housetxt.lat}}" scale="14"  bindtap="gotomap" markers="{{mapdata}}" enable-scroll="{{false}}" show-location style="width:91%; height: 280rpx; margin:0 auto 30rpx auto"></map>
+</view>

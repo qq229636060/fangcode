@@ -51,7 +51,7 @@ Page({
   },
   gotocont:function(e){
     console.log(e)
-    wx.redirectTo({
+    wx.navigateTo({
       url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+e.currentTarget.dataset.houseid
     })
   },
