@@ -3,7 +3,8 @@
  .lpbox image{ width: 245rpx; height: 183rpx; border-radius: 10rpx; margin:0 20rpx 0 30rpx;}
  .lpmsg view{ margin-bottom: 5rpx;}
  .lpmsg view:last-child{margin-bottom: 0;}
- .lpmsg .lpname{font-size: 34rpx; display: flex; align-items: center;}
+ .lpmsg .lpname{font-size: 34rpx;display: flex;align-items: top;line-height: 34rpx;margin-bottom: 10rpx;}
+ .lpmsg .lp_tag{margin-top: 10rpx;}
  .lpmsg .lpname image{ width: 63rpx; height: 31rpx; position: absolute; top:0; left: 0; margin:0}
  .lpmsg .lp_txt{ font-size: 24rpx; color:#333 ;}
  .lpmsg .lp_money{ font-size: 24rpx; color: #FF3831; margin: 0;}

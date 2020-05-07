@@ -32,6 +32,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    usedata:null
+    vr:""
   }
 })

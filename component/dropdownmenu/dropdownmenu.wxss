@@ -232,7 +232,7 @@
   overflow-y: hidden;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.moreselect{ width: 156rpx; height: 59rpx; background-color: #F6F6F6; border-radius: 10rpx; text-align: center; line-height: 59rpx; font-size: 24rpx; margin-right: 18rpx;margin-top:20rpx;}
+.moreselect{ width: 154rpx; height: 57rpx; border: solid 1rpx #F6F6F6; background-color: #F6F6F6; border-radius: 10rpx; text-align: center; line-height: 59rpx; font-size: 24rpx; margin-right: 18rpx;margin-top:20rpx; box-sizing: border-box;}
 .cur{ width: 154rpx; height: 57rpx; border: solid 1rpx #27CDA1; color: #27CDA1; background: #fff;}
 .zll{display: flex; display: -webkit-flex;flex-wrap:wrap}
 .selectbtn{display: flex; display: -webkit-flex;padding: 20rpx; border-top: solid 1px #eee;}

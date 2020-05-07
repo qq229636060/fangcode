@@ -1,4 +1,5 @@
 // pages/newhouse/index.js
+const app = getApp();
 const zajax = require('../../utils/comm.js');
 var listarr = [];
 Page({
@@ -39,7 +40,9 @@ Page({
       mid:"",//面积
       sid:"",//状态
       tid:"",//物业类型
-      did:""//装修
+      did:"",//装修
+      vr:"",
+      fristcall:true
   },
   
   /**
@@ -47,6 +50,13 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
+    if(app.globalData.vr == "1"){
+      this.setData({
+        vr:1,
+        pages:1
+      })
+      app.globalData.vr = ""
+    }
     var data={
       aid:this.data.aid,//区域
       pid:this.data.pid,//价格
@@ -56,12 +66,14 @@ Page({
       tid:this.data.tid,//物业类型
       did:this.data.did,//装修
       kw:"",
+      vr:this.data.vr,
       page:_this.data.pages
     }
-    console.log(data)
-    this.getselect_data();
+    if(this.data.fristcall){
+      this.getselect_data();
+    }
+    
     zajax.requestAjax('/api/house/list',data,'post','正在加载',function(res){
-       console.log(res.data.length)
        if(res.code == 0){
             if(res.data.length != 0){
             res.data.forEach(function(item){
@@ -117,11 +129,13 @@ Page({
             'data4[0].selectbox':_this.changarr(res.data.soMj),
             'data4[1].selectbox':_this.changarr1(res.data.soPropertyType),
             'data4[2].selectbox':_this.changarr1(res.data.soStatus),
-            'data4[3].selectbox':_this.changarr1(res.data.soDecorate)
+            'data4[3].selectbox':_this.changarr1(res.data.soDecorate),
+            fristcall:false
             
           })
        }
     })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -129,12 +143,29 @@ Page({
   onReady: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (options) {
+    if(app.globalData.vr == "1"){
+      this.setData({
+        vr:1,
+        pages:1,
+        list:[],
+        close_more:false
+      })
+      listarr = []
+      this.onLoad()
+    }else{
+      this.setData({
+        vr:"",
+        pages:1,
+        list:[],
+        close_more:false
+      })
+      listarr = []
+      this.onLoad()
+    }
   },
   gotoso:function(){
     wx.navigateTo({
@@ -202,14 +233,15 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log("c")
+    app.globalData.vr = ""
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    app.globalData.vr = ""
   },
 
   /**
@@ -224,7 +256,7 @@ Page({
    */
   onReachBottom: function () {
       var _this = this;
-      console.log(this.data.close_more)
+      console.log("hahah")
       if(!this.data.close_more){
         _this.onLoad()
       }   

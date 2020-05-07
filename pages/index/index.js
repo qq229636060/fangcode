@@ -15,6 +15,12 @@ Page({
       url:"../newhouse/houseinfo?id="+e.currentTarget.dataset.id
     })
   },
+  vrlist:function(e){
+    app.globalData.vr = "1"
+    wx.switchTab({
+      url: '../newhouse/index'
+  })
+  },
   gotoso:function(){
     wx.navigateTo({
       url:"../newhouse/so"

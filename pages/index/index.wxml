@@ -31,8 +31,10 @@
                 <view>楼市动态</view>
             </view>
             <view class="flex-item" bindtap="vrlist">
+             <navigator url="../newhouse/index" open-type="switchTab">
                 <image src="../../img/n3.png"></image>
                 <view>VR看房</view>
+                </navigator>
             </view>
             <view class="flex-item" bindtap="gotojisuan">
                 <image src="../../img/n4.png"></image>
@@ -45,7 +47,7 @@
     <view class="toplist">
       <view class="hotname">推荐楼盘</view>
       <view class="lplist">
-          <view class="lpbox flex-wrp" wx:for="{{list}}" wx:key="*this" bindtap="gotocont" data-id="{{item.id}}">
+          <view class="lpbox flex-wrp  menus" wx:for="{{list}}" wx:key="*this" bindtap="gotocont" data-id="{{item.id}}">
             <image src="{{item.cover2}}"></image>
             <view class="lpmsg">
                 <view class="lpname">
