@@ -19,7 +19,7 @@
   <!-- <van-cell title="车位数" value="{{housetxt.households}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/> -->
   <van-cell title="楼盘状态" value="{{housetxt.status_txt}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="规划户数" value="{{housetxt.households}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
-  <van-cell title="主力户型" value="{{housetxt.discount}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="主力户型" value="{{housetxt.hot_hx}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="开发商" value="{{housetxt.developer}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
 </van-cell-group>
 <view class="lines"></view>
@@ -28,7 +28,7 @@
   <van-cell title="物业管理费" value="{{housetxt.property_fee}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="物业公司" value="{{housetxt.property_company}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="车位数" value="{{housetxt.parking}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
-  <van-cell title="车位比" value="{{housetxt.parking_ratio}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <!-- <van-cell title="车位比" value="{{housetxt.parking_ratio}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/> -->
 </van-cell-group>
 <view class="lines"></view>
 <view class="h2" wx:if="{{housetxt.intro.length!=0}}">项目介绍</view>

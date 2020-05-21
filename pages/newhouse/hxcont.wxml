@@ -1,10 +1,10 @@
 <!--pages/newhouse/hxcont.wxml-->
   <view class="page-section page-section-spacing swiper h600">
-      <swiper indicator-dots="true" indicator-active-color="#27CDA1" class="h600">
+      <swiper indicator-dots="{{false}}" class="h600">
         <block wx:for="{{picarr}}" wx:key="*this">
           <swiper-item>
             <view class="swiper-item" class="flexs">
-               <image src="{{item.img}}"></image>
+               <image src="{{item.img}}" mode="scaleToFill"></image>
             </view>
           </swiper-item>
         </block>
@@ -12,7 +12,7 @@
     </view>
   <van-cell-group border="{{false}}">
   <van-cell title="户型名称:" value="{{hxinfo.title}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
-  <van-cell title="朝向:" value="{{hxinfo.facing_txt}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="户型:" value="{{hxinfo.shi}}室{{hxinfo.ting}}厅{{hxinfo.wei}}卫" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
   <van-cell title="面积:" value="{{hxinfo.area}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
-  <van-cell title="价格:" value="{{hxinfo.price}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
+  <van-cell title="参考售价:" value="{{hxinfo.price}}" border="{{false}}" value-class="righttxt" title-width="160rpx"/>
 </van-cell-group>

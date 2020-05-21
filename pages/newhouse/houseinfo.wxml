@@ -15,7 +15,7 @@
     </view>
     <view class="house_info_text">
       <view class="housename">{{houseinfo.name}}<view class="house_type">{{houseinfo.status_txt}}</view></view>
-      <view class="house_txt">售价：<view class="moneyred" wx:if="{{houseinfo.price != 0}}"><view>{{houseinfo.price}}</view>{{houseinfo.unit}}</view>
+      <view class="house_txt">参考售价：<view class="moneyred" wx:if="{{houseinfo.price != 0}}"><view>{{houseinfo.price}}</view>{{houseinfo.unit}}</view>
       <view class="moneyred" wx:else><view>待定</view></view>
       </view>
       <view class="house_txt">开盘：<text>{{houseinfo.open_time}}</text></view>
@@ -139,7 +139,7 @@
                 <view class="house_type">{{item.status_name}}</view>{{item.name}}</view>
                 <view class="lp_txt">{{item.area_name}} | {{item.mj}}</view>
                 <view class="lp_money"><i>{{item.price}}</i>{{item.unit}}</view>
-                <view class="lp_tag"><i wx:for="{{item.tabs}}" wx:key="*this">{{item}}</i></view>
+                <view class="lp_tag"><i wx:for="{{item.tabs}}" wx:key="*this" wx:for-index="idx" wx:if="{{idx<=2}}">{{item}}</i></view>
             </view>
           </view>
       </view>
