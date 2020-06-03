@@ -12,7 +12,8 @@ Page({
     lng:"",
     lat:"",
     act:"",
-    seachname:""
+    seachname:"",
+    icons:"/img/map.png"
   },
 
   /**
@@ -21,7 +22,7 @@ Page({
   onLoad: function (options) {
      console.log(options);
      qqmapsdk = new QQMapWX({
-      key: 'QAQBZ-2EBCP-4O4DZ-VFMQJ-2C6GZ-OABAD'
+      key: '35LBZ-VT6HG-URYQF-IRSG6-WQUYS-HXBWO'
       });
       mapdata = [{
       iconPath: "../../img/map1.png",
@@ -70,7 +71,7 @@ Page({
           keyword: _this.data.seachname,
           location: loc,
           success: function (res) {
-             console.log(res);
+             console.log(res.data.length);
               if(res.data.length != 0){
                   res.data.forEach(function(item,index){
                     mapdata.push({

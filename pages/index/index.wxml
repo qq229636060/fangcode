@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="topso">
-    <view class="city"><view>福州</view><i></i></view>
+    <view class="city"><view>泉州</view><i></i></view>
     <view class="soblock" bindtap="gotoso"><i></i>请输入楼盘名/小区等</view>
   </view>
   <view class="page-section page-section-spacing swiper">

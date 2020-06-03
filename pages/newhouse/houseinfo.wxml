@@ -117,7 +117,7 @@
     <view class="agentlist" wx:if="{{broker.length != 0}}">
       <view class="agentbox" wx:for="{{broker}}" wx:key="*this">
         <view class="agentbox_l">
-          <image src="../../img/useface.png" class="ag_1"></image>
+          <image src="{{item.avatar != ''? item.avatar:'../../img/useface.png'}}" class="ag_1"></image>
           <view class="ag_2">{{item.name}}</view>
         </view>
         <view class="agentbox_r">
@@ -177,8 +177,8 @@
     <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999">
     <view class="qcode">
        <view class="names" style="font-size:36rpx">{{codename}}</view>
-       <image mode="aspectFill" src="{{qcode}}"></image>
-       <view class="names">长按识别并加为好友</view>
+       <image mode="aspectFill" src="{{qcode}}" bindtap="saveImage"></image>
+       <view class="names">点击保存并加为好友</view>
     </view></van-popup>
     <logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>
 </view>

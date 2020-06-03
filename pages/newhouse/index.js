@@ -147,6 +147,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    wx.setNavigationBarTitle({
+      title: '房小8新房'
+   })
     if(app.globalData.vr == "1"){
       this.setData({
         vr:1,

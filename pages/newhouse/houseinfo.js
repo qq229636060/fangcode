@@ -30,7 +30,8 @@ Page({
     interval: 2000,
     duration: 500,
     indicatorDots: true,
-    allpicarr:""
+    allpicarr:"",
+    faces:"../../img/useface.png"
   },
 
   /**
@@ -100,6 +101,9 @@ Page({
           lng:new_zuo[0],
           lat:new_zuo[1]
         })
+        wx.setNavigationBarTitle({
+          title: res.data.info.name
+       })
       }
    })
   },
@@ -151,6 +155,37 @@ Page({
     wx.navigateTo({
       url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+this.data.houseid
     })
+  },
+  saveImage() {
+    wx.showLoading({
+      title: '保存中...', 
+      mask: true,
+    });
+    wx.downloadFile({
+      url:this.data.qcode,
+      success: function(res) {
+        if (res.statusCode === 200) {
+          let img = res.tempFilePath;
+          wx.saveImageToPhotosAlbum({
+            filePath: img,
+            success(res) {
+              wx.showToast({
+                title: '保存成功',
+                icon: 'success',
+                duration: 2000
+              });
+            },
+            fail(res) {
+              wx.showToast({
+                title: '保存失败',
+                icon: 'success',
+                duration: 2000
+              });
+            }
+          });
+        }
+      }
+    });
   },
   soucan:function(e){
     var _this = this;
@@ -204,7 +239,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
