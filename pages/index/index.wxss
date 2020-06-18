@@ -5,9 +5,9 @@
 .soblock{ width: 540rpx; height: 65rpx; border-radius: 50rpx; border: solid 2rpx #EBEBEB;margin-left: 50rpx; display: flex; align-items: center; font-size: 26rpx; color: #aaa;}
 .soblock i { width: 27rpx; height: 28rpx; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAC4UlEQVRIS72WXYiMURjH/8+Z2b2Qqx3ZyZULuaB2KaKUlHyUC5RW5Ks27XnemQkruZA2JGpjXcy879ndtlZI9mZDokQhiZWsuCAXriRsbvZq953z6Ewz0+ya2S9e5+bU+Xh+5znPJ6HG8H2/iYjaiWgbgC8i8hbA9+LxhUS0AsBiEbknIpc9z3tXS1ZpnSYfyGazCaXUZSLaBKCzvr7+Vmtr69dqgvr6+haNjY3tBnBCRB5aa9vT6fRILegEWDabXR6Px28DGMzn82dSqdTodK91+7lcbn4sFusAsDMMw+3pdPpDtXtlWBH0CMAxrfXNmUAmnzHG7AHQFYbhxmrAAsx9XTwefwng9FxBJXAReC4MwzWTv7QA833/qjO+53kn5qJRFQ07rbULPc87WLlHRa97YK1dOlMbTfcgZ0Ol1CcR2VrppRQEQT+AYWbumk7IbPaDIDgGoJmZD5Vd3xjzo66urrmWe88GUHnWhcX4+PhwQ0NDsqWlJe/2nGZDzLx6rkKnumeMGRKRo8z8vATrZebDUcCCIOgF8IqZ3VzQ7Dwzn4oIdp6IRrXWFyKHGWM6ReQbM1/6H994HcB9Zr5RgDkjaq0jcZAgCF4TUUZr/aIEi8T1c7lcUin1PpFINFa6fpRBvZKZD5SDOop01d3dPc9a+xnAZmZ+X4aVErFS6rvW+l8l4ksi0sjM+yYk4ghKzC4RuSgiqz3P+/UHrAh0VfqviqeTY4x5DOCZ1tpV7gmjaltgrR0UkRm3BUUbHSeiOy5jWGufEpHWWt+tqllpcTYNT7HCHxSRIwCeuNl9nTFmleu6iGhHKcYKcVYrJ07RysUBLHCtnIgscc2RtTaXSqWGKmUFQbAFQL+IbPA87+OUsNLFgYGB2MjIyFoAy4hogYi42vRTKeU6qDdtbW3jtR7c09OzP5/Pnw3DcF0mk/laU7N/VQV83z9JRHuVUusjhxU99AqApv8C6+joUMlk8tpvASJ29hrO6e8AAAAASUVORK5CYII=) no-repeat 0 0;
   display: block; background-size: 100%;margin-left:30rpx;margin-right: 20rpx; }
-  .page-section{width: 690rpx; height: 190rpx; margin:30rpx auto 0 30rpx;}
-  .page-section swiper{width: 690rpx; height: 190rpx;}
-  .swiper-item{ width: 690rpx; height: 190rpx; overflow: hidden; }
+  .page-section{width: 690rpx; height: 280rpx; margin:30rpx auto 0 30rpx;}
+  .page-section swiper{width: 690rpx; height: 280rpx;}
+  .swiper-item{ width: 690rpx; height: 280rpx; overflow: hidden; }
   .swiper-item image{ width: 100%; height: 100%;border-radius: 30rpx;}
   .page-section-spacing .flex-item{ width: 100rpx; flex: 1; text-align: center;}
   .page-section-spacing .flex-item view{ font-size: 26rpx; color: #666;}

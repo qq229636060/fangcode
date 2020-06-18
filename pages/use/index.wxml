@@ -11,6 +11,12 @@
         <text>{{useinfo.mobile}}</text>
       </view>
     </view>
+     <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999">
+    <view class="qcode">
+       <view class="names" style="font-size:36rpx">泉州房产网</view>
+       <image mode="aspectFill" src="../../img/codes.jpeg" bindtap="saveImage"></image>
+       <view class="names">点击保存并关注</view>
+    </view></van-popup>
     <van-cell-group class="mt30">
       <van-cell is-link bindtap="gotofocus">
             <view slot="title" class="title">
@@ -24,7 +30,7 @@
               <view class="van-cell-text">历史记录</view>
             </view>
       </van-cell>
-       <van-cell is-link>
+       <van-cell is-link bindtap="op_code">
             <view slot="title" class="title">
               <image src="../../img/u3.png" class="useicon"></image>
               <view class="van-cell-text">关注公众号</view>

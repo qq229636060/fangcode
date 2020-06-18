@@ -10,3 +10,6 @@ page{background:rgba(248,248,248,1) ;}
 .nonebtn{ background: #fff; width: 150rpx; padding: 0; text-align: left; border:none}
 .nonebtn::after{border:none}
 .title{ display: flex; align-items: center;}
+.qcode{ width: 500rpx; height: 500rpx; background: #fff; border-radius: 20rpx;justify-content: center;}
+.names{ text-align: center;margin:20rpx 0}
+.qcode image{ width: 350rpx; height: 350rpx;margin:0 auto;display: block;}

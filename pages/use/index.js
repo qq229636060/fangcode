@@ -10,8 +10,50 @@ Page({
       isLogin:false,
       authorization:false,
       servicePhone:"",
-      useinfo:""
+      useinfo:"",
+      showcode:false
   },
+  onClose:function(){
+    this.setData({
+      showcode:false
+    })     
+  },
+  op_code:function(e){
+     this.setData({
+       showcode:true
+     })     
+ },
+ saveImage() {
+  wx.showLoading({
+    title: '保存中...', 
+    mask: true,
+  });
+  wx.downloadFile({
+    url:this.data.qcode,
+    success: function(res) {
+      if (res.statusCode === 200) {
+        let img = res.tempFilePath;
+        wx.saveImageToPhotosAlbum({
+          filePath: img,
+          success(res) {
+            wx.showToast({
+              title: '保存成功',
+              icon: 'success',
+              duration: 2000
+            });
+          },
+          fail(res) {
+            wx.showToast({
+              title: '保存失败',
+              icon: 'success',
+              duration: 2000
+            });
+          }
+        });
+      }
+    }
+  });
+},
   gotofocus:function(){
     if(this.data.isLogin){
       wx.navigateTo({

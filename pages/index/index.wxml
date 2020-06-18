@@ -30,15 +30,49 @@
                 <image src="../../img/n2.png"></image>
                 <view>楼市动态</view>
             </view>
-            <view class="flex-item" bindtap="vrlist">
+              <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/ywrJ-HqVIDtjTPmLWlUmSQ">
+                <image src="../../img/n3.png"></image>
+                <view>楼市资讯</view>
+            </view>
+            <!-- <view class="flex-item" bindtap="vrlist">
              <navigator url="../newhouse/index" open-type="switchTab">
                 <image src="../../img/n3.png"></image>
                 <view>VR看房</view>
                 </navigator>
+            </view> -->
+            <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/qp8x_UdZtFdqktnvQ-cC4Q">
+                <image src="../../img/n4.png"></image>
+                <view>购房咨询</view>
             </view>
-            <view class="flex-item" bindtap="gotojisuan">
+             <view class="flex-item" bindtap="gotojisuan">
                 <image src="../../img/n4.png"></image>
                 <view>算房价</view>
+            </view>
+          </view>
+        </view>
+      </view>
+       <view class="page-section" style="height:160rpx">
+      <view class="page-section-spacing">
+          <view class="flex-wrp" style="flex-direction:row;">
+            <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/rto-iSUGuct5Q4lNC610Cg">
+                <image src="../../img/c1.png"></image>
+                <view>小八解读</view>
+            </view>
+            <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/QRwWk2tf9QjS6kCxa8ktkQ">
+                <image src="../../img/c2.png"></image>
+                <view>实地看房</view>
+            </view>
+              <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/x-geWJYlQbWVrM7seJtLGQ">
+                <image src="../../img/c3.png"></image>
+                <view>土拍报道</view>
+            </view>
+            <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/zlSzF5MRuDdX4guHpDs7sg">
+                <image src="../../img/c4.png"></image>
+                <view>问答集锦</view>
+            </view>
+             <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/yPAoC5Lz_28eATLzjpRm_Q">
+                <image src="../../img/c5.png"></image>
+                <view>小八视点</view>
             </view>
           </view>
         </view>

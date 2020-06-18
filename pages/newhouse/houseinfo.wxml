@@ -155,8 +155,8 @@
          <image src="../../img/fx.png"></image>
         分享</button>
        </view>
-       <button class="none" style="width:31vw" open-type="contact" bindcontact="handleContact"
-        session-from='{"type": "image", "title": "{{houseinfo.name}}", "url": "", "desc": "您可咨询楼盘信息，我们将竭诚为您服务！", "img": "{{houseinfo.cover}}"}'
+       <button class="none" style="width:31vw" open-type="contact" bindcontact="handleContact" show-message-card="true"
+        session-from='"api_reply_type": "receive_reply","reply_type":"image","title": "{{houseinfo.name}}", "page_path":"{{nowurl}}", "thumb_url":"{{houseinfo.cover}}"}'
        >微聊</button>
        <view class="f_btn" bindtap="callhome" data-id="{{houseinfo.phone}}">致电售楼处</view>
     </view>
