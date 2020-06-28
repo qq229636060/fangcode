@@ -41,7 +41,7 @@
                 </navigator>
             </view> -->
             <view class="flex-item" bindtap="gotoh5" data-url="https://mp.weixin.qq.com/s/qp8x_UdZtFdqktnvQ-cC4Q">
-                <image src="../../img/n4.png"></image>
+                <image src="../../img/n5.png"></image>
                 <view>购房咨询</view>
             </view>
              <view class="flex-item" bindtap="gotojisuan">

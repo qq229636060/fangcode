@@ -32,7 +32,9 @@ Page({
     indicatorDots: true,
     allpicarr:"",
     faces:"../../img/useface.png",
-    nowurl:""
+    nowurl:"",
+    bigp:false,
+    showcode1:false
   },
 
   /**
@@ -124,8 +126,22 @@ Page({
       }
     })
   },
+  ophaibao:function(e){
+      this.setData({
+        showcode1:true
+      })
+  },
   op_code:function(e){
-     console.log(e.currentTarget.dataset.name)
+     console.log(e.currentTarget.dataset.tyep)
+      if(e.currentTarget.dataset.tyep == 1){
+        this.setData({
+          bigp:true
+        })
+      }else{
+        this.setData({
+          bigp:false
+        })
+      }
       this.setData({
         qcode:e.currentTarget.dataset.id,
         codename:e.currentTarget.dataset.name,
@@ -134,7 +150,8 @@ Page({
   },
   onClose:function(){
     this.setData({
-      showcode:false
+      showcode:false,
+      showcode1:false
     })     
   },
   gotomap:function(){
@@ -157,13 +174,20 @@ Page({
       url:"dtcont?id="+e.currentTarget.dataset.id+"&houseid="+this.data.houseid
     })
   },
-  saveImage() {
+  saveImage(e) {
+    var urls = ''
+    if(e.currentTarget.dataset.id == 'big'){
+      urls = this.data.houseinfo.poster
+    }else{
+      urls = this.data.qcode
+    }
     wx.showLoading({
       title: '保存中...', 
       mask: true,
     });
+    console.log(urls)
     wx.downloadFile({
-      url:this.data.qcode,
+      url:urls,
       success: function(res) {
         if (res.statusCode === 200) {
           let img = res.tempFilePath;
@@ -176,12 +200,42 @@ Page({
                 duration: 2000
               });
             },
-            fail(res) {
-              wx.showToast({
-                title: '保存失败',
-                icon: 'success',
-                duration: 2000
-              });
+            fail: function (err) {
+              if (err.errMsg === "saveImageToPhotosAlbum:fail:auth denied" || err.errMsg === "saveImageToPhotosAlbum:fail auth deny" || err.errMsg === "saveImageToPhotosAlbum:fail authorize no response") {
+                // 这边微信做过调整，必须要在按钮中触发，因此需要在弹框回调中进行调用
+                wx.hideLoading()
+                wx.showModal({
+                  title: '提示',
+                  content: '需要您授权保存相册',
+                  showCancel: false,
+                  success: modalSuccess => {
+                    wx.openSetting({
+                      success(settingdata) {
+                        console.log("settingdata", settingdata)
+                        if (settingdata.authSetting['scope.writePhotosAlbum']) {
+                          wx.showModal({
+                            title: '提示',
+                            content: '获取权限成功,再次点击图片即可保存',
+                            showCancel: false,
+                          })
+                        } else {
+                          wx.showModal({
+                            title: '提示',
+                            content: '获取权限失败，将无法保存到相册哦~',
+                            showCancel: false,
+                          })
+                        }
+                      },
+                      fail(failData) {
+                        console.log("failData", failData)
+                      },
+                      complete(finishData) {
+                        console.log("finishData", finishData)
+                      }
+                    })
+                  }
+                })
+              }
             }
           });
         }

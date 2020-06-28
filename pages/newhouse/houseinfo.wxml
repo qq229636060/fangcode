@@ -1,5 +1,6 @@
 <!--pages/newhouse/houseinfo.wxml-->
 <view class="container pb120">
+    <view class="pagecode" bindtap="ophaibao" wx:if='{{houseinfo.poster != ""}}'><image src="../../img/pagescode.png"></image></view>
     <view class="housepic" bindtap="gotopic">
       <view class="picnumber">共{{houseinfo.photoNum}}张</view>
        <swiper indicator-dots="{{indicatorDots}}"
@@ -119,10 +120,11 @@
         <view class="agentbox_l">
           <image src="{{item.avatar != ''? item.avatar:'../../img/useface.png'}}" class="ag_1"></image>
           <view class="ag_2">{{item.name}}</view>
+          <view class="ag_3" data-id="{{item.card}}" data-tyep='1' bindtap="op_code" wx:if="{{item.card != ''}}"><image src="../../img/rencode.jpg"></image></view>
         </view>
         <view class="agentbox_r">
           <view class="tel_btn" data-id="{{item.mobile}}" bindtap="callme"><i></i>电话</view>
-          <view class="wechat_btn" data-id="{{item.qrcode}}" data-name="{{item.name}}" bindtap="op_code"><i></i>咨询</view>
+          <view class="wechat_btn" data-id="{{item.qrcode}}" data-tyep='0' data-name="{{item.name}}" bindtap="op_code"><i></i>咨询</view>
         </view>
       </view>
     </view>
@@ -175,10 +177,15 @@
       <view class="bm_btnz" bindtap="bm1">确定</view>
     </van-action-sheet>
     <van-popup show="{{ showcode }}" bind:close="onClose" z-index="9999">
-    <view class="qcode">
-       <view class="names" style="font-size:36rpx">{{codename}}</view>
-       <image mode="aspectFill" src="{{qcode}}" bindtap="saveImage"></image>
+    <view class="{{bigp?'bigqcode':'qcode'}}">
+       <view class="names" style="font-size:36rpx" wx:if="{{!bigp}}">{{codename}}</view>
+       <image mode="aspectFill" src="{{qcode}}" bindtap="saveImage" class="{{bigp?'bigpics':''}}"></image>
        <view class="names">点击保存并加为好友</view>
+    </view></van-popup>
+    <van-popup show="{{ showcode1 }}" bind:close="onClose" z-index="9999">
+    <view class="haibao">
+       <image mode="aspectFill" src="{{houseinfo.poster}}" bindtap="saveImage" class="img520" data-id='big'></image>
+       <view class="names">点击图片保存</view>
     </view></van-popup>
     <logins wx:if="{{_iflogin}}"  bind:goto='gotomobile'/>
 </view>
