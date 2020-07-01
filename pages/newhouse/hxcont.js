@@ -52,7 +52,14 @@ Page({
       title: '房源户型'
    })
   },
-
+  look:function(e){
+      console.log(e)
+      wx.previewImage({
+        current: e.currentTarget.dataset.url, // 当前显示图片的http链接
+        urls: [e.currentTarget.dataset.url] // 需要预览的图片http链接列表
+      })
+    
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -2,9 +2,9 @@
   <view class="page-section page-section-spacing swiper h600">
       <swiper indicator-dots="{{false}}" class="h600">
         <block wx:for="{{picarr}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item" class="flexs">
-               <image src="{{item.img}}" mode="scaleToFill"></image>
+          <swiper-item bindtap="look" data-url="{{item.img}}">
+            <view class="swiper-item" class="flexs" >
+               <image src="{{item.img}}" mode="scaleToFill" ></image>
             </view>
           </swiper-item>
         </block>

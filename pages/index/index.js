@@ -53,7 +53,7 @@ Page({
     　　var shareObj = {
     　　　　title: "房小8，专业购房帮手！",
     　　　　path: '/pages/index/index', // 默认是当前页面，必须是以‘/’开头的完整路径
-    　　　　imgUrl: '', //转发时显示的图片路径，支持网络和本地，不传则使用当前页默认截图。
+          imageUrl: '', //转发时显示的图片路径，支持网络和本地，不传则使用当前页默认截图。
     　　　　success: function(res){　 // 转发成功之后的回调　　　　　
     　　　　　　if(res.errMsg == 'shareAppMessage:ok'){
     　　　　　　}

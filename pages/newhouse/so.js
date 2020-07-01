@@ -21,6 +21,7 @@ Page({
       keyword:e.detail.value
     })
     if(e.detail.value != ""){
+      listarr = []
       this.getdata()
     }else{
       listarr = []
@@ -49,7 +50,7 @@ Page({
              })
              _this.setData({
                list:listarr,
-               pages:_this.data.pages+1
+               pages:_this.data.pages
            })
          }else{
             _this.setData({
