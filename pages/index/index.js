@@ -6,7 +6,7 @@ const zajax = require('../../utils/comm.js');
 Page({
   data: {
     adv:"",
-    autoplay:false,
+    autoplay:true,
     interval:3000,
     list:[]
   },

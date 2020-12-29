@@ -142,5 +142,5 @@ border-radius:5px;opacity:0.7; display: block; font-size: 24rpx; text-align: cen
 .pagecode{ width: 80rpx; height:80rpx; position: fixed; right: 10rpx; bottom:200rpx ; background: rgba(0,0,0,0.2); border-radius: 50%; text-align: center;  z-index: 999; display: flex; align-items: center;}
 .pagecode image{ width: 60rpx; height:60rpx;display: block; margin:0 auto}
 .bigqcode .bigpics{ width: 650rpx; height: 580rpx;}
-.haibao{ width: 520rpx; height: 950rpx;}
-.img520{ width: 520rpx; height:850rpx;}
+.haibao{ width: 520rpx; height: 1150rpx;}
+.img520{ width: 520rpx; height:1020rpx;}
