@@ -1,121 +1,126 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
-	"appid": "wx345d41597a72ea8e",
-	"projectname": "fangcode",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "houseinfo",
-					"pathName": "pages/newhouse/houseinfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/tool/index",
-					"pathName": "pages/tool/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/tool/toolend",
-					"pathName": "pages/tool/toolend",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/newhouse/fb_dianpin",
-					"pathName": "pages/newhouse/fb_dianpin",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/newhouse/dtcont",
-					"pathName": "pages/newhouse/dtcont",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/newhouse/pic",
-					"pathName": "pages/newhouse/pic",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "pages/tool/map",
-					"pathName": "pages/tool/map",
-					"query": "lng=118.7362470&lat=24.8915274",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/newhouse/so",
-					"pathName": "pages/newhouse/so",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.10.4",
+  "appid": "wx345d41597a72ea8e",
+  "projectname": "fangcode",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "houseinfo",
+          "pathName": "pages/newhouse/houseinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tool/index",
+          "pathName": "pages/tool/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tool/toolend",
+          "pathName": "pages/tool/toolend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newhouse/fb_dianpin",
+          "pathName": "pages/newhouse/fb_dianpin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newhouse/dtcont",
+          "pathName": "pages/newhouse/dtcont",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newhouse/pic",
+          "pathName": "pages/newhouse/pic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "pages/tool/map",
+          "pathName": "pages/tool/map",
+          "query": "lng=118.7362470&lat=24.8915274",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newhouse/so",
+          "pathName": "pages/newhouse/so",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

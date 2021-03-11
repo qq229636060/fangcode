@@ -63,7 +63,7 @@ Page({
   },
   gotomobile:function(){
       wx.navigateTo({
-        url:'mobile'
+        url:'./mobile'
       })
   },
   callme:function(e){
